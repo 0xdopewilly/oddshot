@@ -1,0 +1,73 @@
+[
+ {
+  "id": "hook",
+  "chapter": "01 \u00b7 THE SIGNAL",
+  "text": "Prediction markets move first. Memecoins follow."
+ },
+ {
+  "id": "signal",
+  "chapter": "01 \u00b7 THE SIGNAL",
+  "text": "When the crowd's odds on a real-world story suddenly jump, the memes named after that story often move hours later."
+ },
+ {
+  "id": "intro",
+  "chapter": "01 \u00b7 THE SIGNAL",
+  "text": "Oddshot is a PayBox plugin, so your agent in Claude, ChatGPT or Grok can catch that window."
+ },
+ {
+  "id": "board",
+  "chapter": "02 \u00b7 LIVE ON PAYBOX",
+  "text": "Here it is, running on PayBox. One call to Oddshot play scans the biggest Polymarket swings, finds the Solana meme riding each story, and labels the timing."
+ },
+ {
+  "id": "play",
+  "chapter": "02 \u00b7 LIVE ON PAYBOX",
+  "text": "The top play: odds on the GTA 6 trailer jumped twenty-nine points, and the GTA 6 token hasn't moved. That gap is the window."
+ },
+ {
+  "id": "swarm",
+  "chapter": "02 \u00b7 LIVE ON PAYBOX",
+  "text": "And when a story spawns a swarm of copycats, Oddshot crowns the OG. For GTA 6: thirty-five tokens, twenty-two copycats skipped, and a frenzy warning."
+ },
+ {
+  "id": "sources",
+  "chapter": "03 \u00b7 THE SEATBELT",
+  "text": "Before you ape, every token is cross-checked against three sources: market data, RugCheck, and Jupiter's audit."
+ },
+ {
+  "id": "crosscheck",
+  "chapter": "03 \u00b7 THE SEATBELT",
+  "text": "RugCheck alone rates this token good. But Jupiter shows its developer has launched over eight thousand tokens. So Oddshot flags it yellow."
+ },
+ {
+  "id": "red",
+  "chapter": "03 \u00b7 THE SEATBELT",
+  "text": "And when a token is red, like one with live mint authority, the buy is refused. Exits are never blocked."
+ },
+ {
+  "id": "ape",
+  "chapter": "04 \u00b7 APE IN",
+  "text": "Here's the real thing, inside Claude. Oddshot builds a capped swap, and PayBox opens its transaction window. You approve, and it's confirmed on Solana.",
+  "hold": 2.2
+ },
+ {
+  "id": "receipt",
+  "chapter": "05 \u00b7 THE RECEIPT",
+  "text": "Did the call age well? Oddshot flagged GTA 6 as early at 5:44 PM. Seven hours later, it's up twenty percent, and reverse mode shows the odds kept climbing."
+ },
+ {
+  "id": "bags",
+  "chapter": "05 \u00b7 THE RECEIPT",
+  "text": "And bag check scans any wallet, flagging dead tokens to exit before they cost you."
+ },
+ {
+  "id": "shipped",
+  "chapter": "06 \u00b7 SHIPPED",
+  "text": "Oddshot passed PayBox's hosted checks with all seven tools, and it's live in PayBox today."
+ },
+ {
+  "id": "outro",
+  "chapter": "06 \u00b7 SHIPPED",
+  "text": "Oddshot. The odds moved. The memes haven't. Yet."
+ }
+]

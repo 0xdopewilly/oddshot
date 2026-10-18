@@ -1,0 +1,1735 @@
+{
+ "total": 111.06,
+ "fps": 30,
+ "lines": [
+  {
+   "id": "hook",
+   "chapter": "01 \u00b7 THE SIGNAL",
+   "text": "Prediction markets move first. Memecoins follow.",
+   "words": [
+    {
+     "w": "Prediction",
+     "t": 0.104166,
+     "d": 0.335666,
+     "disp": "Prediction"
+    },
+    {
+     "w": "markets",
+     "t": 0.451375,
+     "d": 0.347208,
+     "disp": "markets"
+    },
+    {
+     "w": "move",
+     "t": 0.810166,
+     "d": 0.277791,
+     "disp": "move"
+    },
+    {
+     "w": "first",
+     "t": 1.099541,
+     "d": 0.532416,
+     "disp": "first."
+    },
+    {
+     "w": "Memecoins",
+     "t": 2.013875,
+     "d": 0.42825,
+     "disp": "Memecoins"
+    },
+    {
+     "w": "follow",
+     "t": 2.453708,
+     "d": 0.381958,
+     "disp": "follow."
+    }
+   ],
+   "dur": 3.192,
+   "start": 0.4
+  },
+  {
+   "id": "signal",
+   "chapter": "01 \u00b7 THE SIGNAL",
+   "text": "When the crowd's odds on a real-world story suddenly jump, the memes named after that story often move hours later.",
+   "words": [
+    {
+     "w": "When",
+     "t": 0.092583,
+     "d": 0.069458,
+     "disp": "When"
+    },
+    {
+     "w": "the",
+     "t": 0.173625,
+     "d": 0.069458,
+     "disp": "the"
+    },
+    {
+     "w": "crowd's",
+     "t": 0.254625,
+     "d": 0.358791,
+     "disp": "crowd's"
+    },
+    {
+     "w": "odds",
+     "t": 0.625,
+     "d": 0.277791,
+     "disp": "odds"
+    },
+    {
+     "w": "on",
+     "t": 0.914333,
+     "d": 0.081,
+     "disp": "on"
+    },
+    {
+     "w": "a",
+     "t": 1.006958,
+     "d": 0.057875,
+     "disp": "a"
+    },
+    {
+     "w": "real-world",
+     "t": 1.076375,
+     "d": 0.544,
+     "disp": "real-world"
+    },
+    {
+     "w": "story",
+     "t": 1.631958,
+     "d": 0.416666,
+     "disp": "story"
+    },
+    {
+     "w": "suddenly",
+     "t": 2.118041,
+     "d": 0.405083,
+     "disp": "suddenly"
+    },
+    {
+     "w": "jump",
+     "t": 2.534708,
+     "d": 0.381958,
+     "disp": "jump,"
+    },
+    {
+     "w": "the",
+     "t": 3.206,
+     "d": 0.081,
+     "disp": "the"
+    },
+    {
+     "w": "memes",
+     "t": 3.298625,
+     "d": 0.300916,
+     "disp": "memes"
+    },
+    {
+     "w": "named",
+     "t": 3.611125,
+     "d": 0.254625,
+     "disp": "named"
+    },
+    {
+     "w": "after",
+     "t": 3.877333,
+     "d": 0.266208,
+     "disp": "after"
+    },
+    {
+     "w": "that",
+     "t": 4.155083,
+     "d": 0.162041,
+     "disp": "that"
+    },
+    {
+     "w": "story",
+     "t": 4.328708,
+     "d": 0.3935,
+     "disp": "story"
+    },
+    {
+     "w": "often",
+     "t": 4.814833,
+     "d": 0.3125,
+     "disp": "often"
+    },
+    {
+     "w": "move",
+     "t": 5.138875,
+     "d": 0.243041,
+     "disp": "move"
+    },
+    {
+     "w": "hours",
+     "t": 5.3935,
+     "d": 0.277791,
+     "disp": "hours"
+    },
+    {
+     "w": "later",
+     "t": 5.682875,
+     "d": 0.370375,
+     "disp": "later."
+    }
+   ],
+   "dur": 6.408,
+   "start": 3.912
+  },
+  {
+   "id": "intro",
+   "chapter": "01 \u00b7 THE SIGNAL",
+   "text": "Oddshot is a PayBox plugin, so your agent in Claude, ChatGPT or Grok can catch that window.",
+   "words": [
+    {
+     "w": "Oddshot",
+     "t": 0.092583,
+     "d": 0.416666,
+     "disp": "Oddshot"
+    },
+    {
+     "w": "is",
+     "t": 0.520833,
+     "d": 0.092583,
+     "disp": "is"
+    },
+    {
+     "w": "a",
+     "t": 0.625,
+     "d": 0.057875,
+     "disp": "a"
+    },
+    {
+     "w": "PayBox",
+     "t": 0.694458,
+     "d": 0.486125,
+     "disp": "PayBox"
+    },
+    {
+     "w": "plugin",
+     "t": 1.192125,
+     "d": 0.381958,
+     "disp": "plugin,"
+    },
+    {
+     "w": "so",
+     "t": 1.851833,
+     "d": 0.104166,
+     "disp": "so"
+    },
+    {
+     "w": "your",
+     "t": 1.967583,
+     "d": 0.185166,
+     "disp": "your"
+    },
+    {
+     "w": "agent",
+     "t": 2.164333,
+     "d": 0.300916,
+     "disp": "agent"
+    },
+    {
+     "w": "in",
+     "t": 2.476833,
+     "d": 0.092583,
+     "disp": "in"
+    },
+    {
+     "w": "Claude",
+     "t": 2.581,
+     "d": 0.42825,
+     "disp": "Claude,"
+    },
+    {
+     "w": "ChatGPT",
+     "t": 3.194458,
+     "d": 0.914333,
+     "disp": "ChatGPT"
+    },
+    {
+     "w": "or",
+     "t": 4.212958,
+     "d": 0.150458,
+     "disp": "or"
+    },
+    {
+     "w": "Grok",
+     "t": 4.375,
+     "d": 0.381958,
+     "disp": "Grok"
+    },
+    {
+     "w": "can",
+     "t": 4.872666,
+     "d": 0.138875,
+     "disp": "can"
+    },
+    {
+     "w": "catch",
+     "t": 5.023166,
+     "d": 0.254625,
+     "disp": "catch"
+    },
+    {
+     "w": "that",
+     "t": 5.289333,
+     "d": 0.185166,
+     "disp": "that"
+    },
+    {
+     "w": "window",
+     "t": 5.486125,
+     "d": 0.347208,
+     "disp": "window."
+    }
+   ],
+   "dur": 6.192,
+   "start": 10.64
+  },
+  {
+   "id": "board",
+   "chapter": "02 \u00b7 LIVE ON PAYBOX",
+   "text": "Here it is, running on PayBox. One call to Oddshot play scans the biggest Polymarket swings, finds the Solana meme riding each story, and labels the timing.",
+   "words": [
+    {
+     "w": "Here",
+     "t": 0.104166,
+     "d": 0.092583,
+     "disp": "Here"
+    },
+    {
+     "w": "it",
+     "t": 0.208333,
+     "d": 0.057875,
+     "disp": "it"
+    },
+    {
+     "w": "is",
+     "t": 0.277791,
+     "d": 0.266208,
+     "disp": "is,"
+    },
+    {
+     "w": "running",
+     "t": 0.729166,
+     "d": 0.19675,
+     "disp": "running"
+    },
+    {
+     "w": "on",
+     "t": 0.9375,
+     "d": 0.104166,
+     "disp": "on"
+    },
+    {
+     "w": "PayBox",
+     "t": 1.05325,
+     "d": 0.590291,
+     "disp": "PayBox."
+    },
+    {
+     "w": "One",
+     "t": 2.037041,
+     "d": 0.150458,
+     "disp": "One"
+    },
+    {
+     "w": "call",
+     "t": 2.199083,
+     "d": 0.243041,
+     "disp": "call"
+    },
+    {
+     "w": "to",
+     "t": 2.453708,
+     "d": 0.138875,
+     "disp": "to"
+    },
+    {
+     "w": "Oddshot",
+     "t": 2.604166,
+     "d": 0.50925,
+     "disp": "Oddshot"
+    },
+    {
+     "w": "play",
+     "t": 3.125,
+     "d": 0.289333,
+     "disp": "play"
+    },
+    {
+     "w": "scans",
+     "t": 3.425916,
+     "d": 0.416666,
+     "disp": "scans"
+    },
+    {
+     "w": "the",
+     "t": 3.854166,
+     "d": 0.11575,
+     "disp": "the"
+    },
+    {
+     "w": "biggest",
+     "t": 4.050916,
+     "d": 0.358791,
+     "disp": "biggest"
+    },
+    {
+     "w": "Polymarket",
+     "t": 4.421291,
+     "d": 0.601833,
+     "disp": "Polymarket"
+    },
+    {
+     "w": "swings",
+     "t": 5.034708,
+     "d": 0.474541,
+     "disp": "swings,"
+    },
+    {
+     "w": "finds",
+     "t": 5.752333,
+     "d": 0.289333,
+     "disp": "finds"
+    },
+    {
+     "w": "the",
+     "t": 6.05325,
+     "d": 0.092583,
+     "disp": "the"
+    },
+    {
+     "w": "Solana",
+     "t": 6.157416,
+     "d": 0.416666,
+     "disp": "Solana"
+    },
+    {
+     "w": "meme",
+     "t": 6.585666,
+     "d": 0.324083,
+     "disp": "meme"
+    },
+    {
+     "w": "riding",
+     "t": 6.921291,
+     "d": 0.381958,
+     "disp": "riding"
+    },
+    {
+     "w": "each",
+     "t": 7.326375,
+     "d": 0.138875,
+     "disp": "each"
+    },
+    {
+     "w": "story",
+     "t": 7.476833,
+     "d": 0.462958,
+     "disp": "story,"
+    },
+    {
+     "w": "and",
+     "t": 8.217583,
+     "d": 0.127333,
+     "disp": "and"
+    },
+    {
+     "w": "labels",
+     "t": 8.3565,
+     "d": 0.3125,
+     "disp": "labels"
+    },
+    {
+     "w": "the",
+     "t": 8.680541,
+     "d": 0.081,
+     "disp": "the"
+    },
+    {
+     "w": "timing",
+     "t": 8.773166,
+     "d": 0.370375,
+     "disp": "timing."
+    }
+   ],
+   "dur": 9.48,
+   "start": 17.652
+  },
+  {
+   "id": "play",
+   "chapter": "02 \u00b7 LIVE ON PAYBOX",
+   "text": "The top play: odds on the GTA 6 trailer jumped twenty-nine points, and the GTA 6 token hasn't moved. That gap is the window.",
+   "words": [
+    {
+     "w": "The",
+     "t": 0.104166,
+     "d": 0.0462909,
+     "disp": "The"
+    },
+    {
+     "w": "top",
+     "t": 0.162041,
+     "d": 0.2315,
+     "disp": "top"
+    },
+    {
+     "w": "play",
+     "t": 0.405083,
+     "d": 0.300916,
+     "disp": "play:"
+    },
+    {
+     "w": "odds",
+     "t": 1.13425,
+     "d": 0.2315,
+     "disp": "odds"
+    },
+    {
+     "w": "on",
+     "t": 1.377333,
+     "d": 0.069458,
+     "disp": "on"
+    },
+    {
+     "w": "the",
+     "t": 1.458333,
+     "d": 0.069458,
+     "disp": "the"
+    },
+    {
+     "w": "GTA",
+     "t": 1.539333,
+     "d": 0.486125,
+     "disp": "GTA"
+    },
+    {
+     "w": "6",
+     "t": 2.037041,
+     "d": 0.254625,
+     "disp": "6"
+    },
+    {
+     "w": "trailer",
+     "t": 2.30325,
+     "d": 0.3935,
+     "disp": "trailer"
+    },
+    {
+     "w": "jumped",
+     "t": 2.766208,
+     "d": 0.277791,
+     "disp": "jumped"
+    },
+    {
+     "w": "twenty-nine",
+     "t": 3.055541,
+     "d": 0.486125,
+     "disp": "twenty-nine"
+    },
+    {
+     "w": "points",
+     "t": 3.55325,
+     "d": 0.451375,
+     "disp": "points,"
+    },
+    {
+     "w": "and",
+     "t": 4.270833,
+     "d": 0.092583,
+     "disp": "and"
+    },
+    {
+     "w": "the",
+     "t": 4.375,
+     "d": 0.069458,
+     "disp": "the"
+    },
+    {
+     "w": "GTA",
+     "t": 4.456,
+     "d": 0.486125,
+     "disp": "GTA"
+    },
+    {
+     "w": "6",
+     "t": 4.953708,
+     "d": 0.300916,
+     "disp": "6"
+    },
+    {
+     "w": "token",
+     "t": 5.266208,
+     "d": 0.3935,
+     "disp": "token"
+    },
+    {
+     "w": "hasn't",
+     "t": 5.671291,
+     "d": 0.300916,
+     "disp": "hasn't"
+    },
+    {
+     "w": "moved",
+     "t": 5.983791,
+     "d": 0.381958,
+     "disp": "moved."
+    },
+    {
+     "w": "That",
+     "t": 6.75925,
+     "d": 0.138875,
+     "disp": "That"
+    },
+    {
+     "w": "gap",
+     "t": 6.909708,
+     "d": 0.277791,
+     "disp": "gap"
+    },
+    {
+     "w": "is",
+     "t": 7.291666,
+     "d": 0.081,
+     "disp": "is"
+    },
+    {
+     "w": "the",
+     "t": 7.38425,
+     "d": 0.069458,
+     "disp": "the"
+    },
+    {
+     "w": "window",
+     "t": 7.465291,
+     "d": 0.358791,
+     "disp": "window."
+    }
+   ],
+   "dur": 8.184,
+   "start": 27.452
+  },
+  {
+   "id": "swarm",
+   "chapter": "02 \u00b7 LIVE ON PAYBOX",
+   "text": "And when a story spawns a swarm of copycats, Oddshot crowns the OG. For GTA 6: thirty-five tokens, twenty-two copycats skipped, and a frenzy warning.",
+   "words": [
+    {
+     "w": "And",
+     "t": 0.092583,
+     "d": 0.092583,
+     "disp": "And"
+    },
+    {
+     "w": "when",
+     "t": 0.19675,
+     "d": 0.104166,
+     "disp": "when"
+    },
+    {
+     "w": "a",
+     "t": 0.3125,
+     "d": 0.0462909,
+     "disp": "a"
+    },
+    {
+     "w": "story",
+     "t": 0.370375,
+     "d": 0.370375,
+     "disp": "story"
+    },
+    {
+     "w": "spawns",
+     "t": 0.752333,
+     "d": 0.370375,
+     "disp": "spawns"
+    },
+    {
+     "w": "a",
+     "t": 1.13425,
+     "d": 0.0462909,
+     "disp": "a"
+    },
+    {
+     "w": "swarm",
+     "t": 1.192125,
+     "d": 0.370375,
+     "disp": "swarm"
+    },
+    {
+     "w": "of",
+     "t": 1.574083,
+     "d": 0.081,
+     "disp": "of"
+    },
+    {
+     "w": "copycats",
+     "t": 1.666666,
+     "d": 0.729166,
+     "disp": "copycats,"
+    },
+    {
+     "w": "Oddshot",
+     "t": 2.754625,
+     "d": 0.462958,
+     "disp": "Oddshot"
+    },
+    {
+     "w": "crowns",
+     "t": 3.229166,
+     "d": 0.3935,
+     "disp": "crowns"
+    },
+    {
+     "w": "the",
+     "t": 3.63425,
+     "d": 0.104166,
+     "disp": "the"
+    },
+    {
+     "w": "OG",
+     "t": 3.75,
+     "d": 0.462958,
+     "disp": "OG."
+    },
+    {
+     "w": "For",
+     "t": 4.641208,
+     "d": 0.092583,
+     "disp": "For"
+    },
+    {
+     "w": "GTA",
+     "t": 4.745375,
+     "d": 0.50925,
+     "disp": "GTA"
+    },
+    {
+     "w": "6",
+     "t": 5.266208,
+     "d": 0.497666,
+     "disp": "6:"
+    },
+    {
+     "w": "thirty-five",
+     "t": 6.0185,
+     "d": 0.567125,
+     "disp": "thirty-five"
+    },
+    {
+     "w": "tokens",
+     "t": 6.597208,
+     "d": 0.532416,
+     "disp": "tokens,"
+    },
+    {
+     "w": "twenty-two",
+     "t": 7.326375,
+     "d": 0.381958,
+     "disp": "twenty-two"
+    },
+    {
+     "w": "copycats",
+     "t": 7.719916,
+     "d": 0.567125,
+     "disp": "copycats"
+    },
+    {
+     "w": "skipped",
+     "t": 8.298625,
+     "d": 0.3935,
+     "disp": "skipped,"
+    },
+    {
+     "w": "and",
+     "t": 8.9815,
+     "d": 0.069458,
+     "disp": "and"
+    },
+    {
+     "w": "a",
+     "t": 9.0625,
+     "d": 0.0462909,
+     "disp": "a"
+    },
+    {
+     "w": "frenzy",
+     "t": 9.120375,
+     "d": 0.358791,
+     "disp": "frenzy"
+    },
+    {
+     "w": "warning",
+     "t": 9.49075,
+     "d": 0.347208,
+     "disp": "warning."
+    }
+   ],
+   "dur": 10.176,
+   "start": 35.956
+  },
+  {
+   "id": "sources",
+   "chapter": "03 \u00b7 THE SEATBELT",
+   "text": "Before you ape, every token is cross-checked against three sources: market data, RugCheck, and Jupiter's audit.",
+   "words": [
+    {
+     "w": "Before",
+     "t": 0.104166,
+     "d": 0.277791,
+     "disp": "Before"
+    },
+    {
+     "w": "you",
+     "t": 0.3935,
+     "d": 0.150458,
+     "disp": "you"
+    },
+    {
+     "w": "ape",
+     "t": 0.555541,
+     "d": 0.3125,
+     "disp": "ape,"
+    },
+    {
+     "w": "every",
+     "t": 1.157416,
+     "d": 0.219916,
+     "disp": "every"
+    },
+    {
+     "w": "token",
+     "t": 1.388875,
+     "d": 0.347208,
+     "disp": "token"
+    },
+    {
+     "w": "is",
+     "t": 1.747666,
+     "d": 0.092583,
+     "disp": "is"
+    },
+    {
+     "w": "cross-checked",
+     "t": 1.851833,
+     "d": 0.601833,
+     "disp": "cross-checked"
+    },
+    {
+     "w": "against",
+     "t": 2.465291,
+     "d": 0.347208,
+     "disp": "against"
+    },
+    {
+     "w": "three",
+     "t": 2.824083,
+     "d": 0.324083,
+     "disp": "three"
+    },
+    {
+     "w": "sources",
+     "t": 3.159708,
+     "d": 0.555541,
+     "disp": "sources:"
+    },
+    {
+     "w": "market",
+     "t": 4.004625,
+     "d": 0.300916,
+     "disp": "market"
+    },
+    {
+     "w": "data",
+     "t": 4.317125,
+     "d": 0.300916,
+     "disp": "data,"
+    },
+    {
+     "w": "RugCheck",
+     "t": 4.907416,
+     "d": 0.497666,
+     "disp": "RugCheck,"
+    },
+    {
+     "w": "and",
+     "t": 5.625,
+     "d": 0.057875,
+     "disp": "and"
+    },
+    {
+     "w": "Jupiter's",
+     "t": 5.694458,
+     "d": 0.416666,
+     "disp": "Jupiter's"
+    },
+    {
+     "w": "audit",
+     "t": 6.122666,
+     "d": 0.347208,
+     "disp": "audit."
+    }
+   ],
+   "dur": 6.816,
+   "start": 46.952
+  },
+  {
+   "id": "crosscheck",
+   "chapter": "03 \u00b7 THE SEATBELT",
+   "text": "RugCheck alone rates this token good. But Jupiter shows its developer has launched over eight thousand tokens. So Oddshot flags it yellow.",
+   "words": [
+    {
+     "w": "RugCheck",
+     "t": 0.092583,
+     "d": 0.416666,
+     "disp": "RugCheck"
+    },
+    {
+     "w": "alone",
+     "t": 0.555541,
+     "d": 0.370375,
+     "disp": "alone"
+    },
+    {
+     "w": "rates",
+     "t": 0.9375,
+     "d": 0.2315,
+     "disp": "rates"
+    },
+    {
+     "w": "this",
+     "t": 1.180541,
+     "d": 0.150458,
+     "disp": "this"
+    },
+    {
+     "w": "token",
+     "t": 1.342583,
+     "d": 0.289333,
+     "disp": "token"
+    },
+    {
+     "w": "good",
+     "t": 1.6435,
+     "d": 0.266208,
+     "disp": "good."
+    },
+    {
+     "w": "But",
+     "t": 2.30325,
+     "d": 0.150458,
+     "disp": "But"
+    },
+    {
+     "w": "Jupiter",
+     "t": 2.465291,
+     "d": 0.405083,
+     "disp": "Jupiter"
+    },
+    {
+     "w": "shows",
+     "t": 2.881958,
+     "d": 0.3125,
+     "disp": "shows"
+    },
+    {
+     "w": "its",
+     "t": 3.206,
+     "d": 0.11575,
+     "disp": "its"
+    },
+    {
+     "w": "developer",
+     "t": 3.333333,
+     "d": 0.497666,
+     "disp": "developer"
+    },
+    {
+     "w": "has",
+     "t": 3.842583,
+     "d": 0.173625,
+     "disp": "has"
+    },
+    {
+     "w": "launched",
+     "t": 4.027791,
+     "d": 0.416666,
+     "disp": "launched"
+    },
+    {
+     "w": "over",
+     "t": 4.537041,
+     "d": 0.243041,
+     "disp": "over"
+    },
+    {
+     "w": "eight",
+     "t": 4.872666,
+     "d": 0.162041,
+     "disp": "eight"
+    },
+    {
+     "w": "thousand",
+     "t": 5.046291,
+     "d": 0.439833,
+     "disp": "thousand"
+    },
+    {
+     "w": "tokens",
+     "t": 5.497666,
+     "d": 0.520833,
+     "disp": "tokens."
+    },
+    {
+     "w": "So",
+     "t": 6.400458,
+     "d": 0.173625,
+     "disp": "So"
+    },
+    {
+     "w": "Oddshot",
+     "t": 6.585666,
+     "d": 0.358791,
+     "disp": "Oddshot"
+    },
+    {
+     "w": "flags",
+     "t": 6.956,
+     "d": 0.300916,
+     "disp": "flags"
+    },
+    {
+     "w": "it",
+     "t": 7.2685,
+     "d": 0.069458,
+     "disp": "it"
+    },
+    {
+     "w": "yellow",
+     "t": 7.349541,
+     "d": 0.3125,
+     "disp": "yellow."
+    }
+   ],
+   "dur": 8.016,
+   "start": 54.088
+  },
+  {
+   "id": "red",
+   "chapter": "03 \u00b7 THE SEATBELT",
+   "text": "And when a token is red, like one with live mint authority, the buy is refused. Exits are never blocked.",
+   "words": [
+    {
+     "w": "And",
+     "t": 0.104166,
+     "d": 0.069458,
+     "disp": "And"
+    },
+    {
+     "w": "when",
+     "t": 0.185166,
+     "d": 0.104166,
+     "disp": "when"
+    },
+    {
+     "w": "a",
+     "t": 0.300916,
+     "d": 0.0462909,
+     "disp": "a"
+    },
+    {
+     "w": "token",
+     "t": 0.358791,
+     "d": 0.370375,
+     "disp": "token"
+    },
+    {
+     "w": "is",
+     "t": 0.74075,
+     "d": 0.127333,
+     "disp": "is"
+    },
+    {
+     "w": "red",
+     "t": 0.879625,
+     "d": 0.358791,
+     "disp": "red,"
+    },
+    {
+     "w": "like",
+     "t": 1.539333,
+     "d": 0.150458,
+     "disp": "like"
+    },
+    {
+     "w": "one",
+     "t": 1.701375,
+     "d": 0.208333,
+     "disp": "one"
+    },
+    {
+     "w": "with",
+     "t": 1.921291,
+     "d": 0.138875,
+     "disp": "with"
+    },
+    {
+     "w": "live",
+     "t": 2.07175,
+     "d": 0.347208,
+     "disp": "live"
+    },
+    {
+     "w": "mint",
+     "t": 2.430541,
+     "d": 0.173625,
+     "disp": "mint"
+    },
+    {
+     "w": "authority",
+     "t": 2.61575,
+     "d": 0.532416,
+     "disp": "authority,"
+    },
+    {
+     "w": "the",
+     "t": 3.425916,
+     "d": 0.081,
+     "disp": "the"
+    },
+    {
+     "w": "buy",
+     "t": 3.5185,
+     "d": 0.277791,
+     "disp": "buy"
+    },
+    {
+     "w": "is",
+     "t": 3.807875,
+     "d": 0.127333,
+     "disp": "is"
+    },
+    {
+     "w": "refused",
+     "t": 3.94675,
+     "d": 0.590291,
+     "disp": "refused."
+    },
+    {
+     "w": "Exits",
+     "t": 4.919,
+     "d": 0.300916,
+     "disp": "Exits"
+    },
+    {
+     "w": "are",
+     "t": 5.2315,
+     "d": 0.069458,
+     "disp": "are"
+    },
+    {
+     "w": "never",
+     "t": 5.3125,
+     "d": 0.243041,
+     "disp": "never"
+    },
+    {
+     "w": "blocked",
+     "t": 5.567125,
+     "d": 0.405083,
+     "disp": "blocked."
+    }
+   ],
+   "dur": 6.312,
+   "start": 62.424
+  },
+  {
+   "id": "ape",
+   "chapter": "04 \u00b7 APE IN",
+   "text": "Here's the real thing, inside Claude. Oddshot builds a capped swap, and PayBox opens its transaction window. You approve, and it's confirmed on Solana.",
+   "hold": 2.2,
+   "words": [
+    {
+     "w": "Here's",
+     "t": 0.11575,
+     "d": 0.162041,
+     "disp": "Here's"
+    },
+    {
+     "w": "the",
+     "t": 0.289333,
+     "d": 0.081,
+     "disp": "the"
+    },
+    {
+     "w": "real",
+     "t": 0.381958,
+     "d": 0.19675,
+     "disp": "real"
+    },
+    {
+     "w": "thing",
+     "t": 0.590291,
+     "d": 0.277791,
+     "disp": "thing,"
+    },
+    {
+     "w": "inside",
+     "t": 1.13425,
+     "d": 0.405083,
+     "disp": "inside"
+    },
+    {
+     "w": "Claude",
+     "t": 1.550916,
+     "d": 0.3935,
+     "disp": "Claude."
+    },
+    {
+     "w": "Oddshot",
+     "t": 2.326375,
+     "d": 0.439833,
+     "disp": "Oddshot"
+    },
+    {
+     "w": "builds",
+     "t": 2.777791,
+     "d": 0.243041,
+     "disp": "builds"
+    },
+    {
+     "w": "a",
+     "t": 3.032416,
+     "d": 0.0462909,
+     "disp": "a"
+    },
+    {
+     "w": "capped",
+     "t": 3.090291,
+     "d": 0.347208,
+     "disp": "capped"
+    },
+    {
+     "w": "swap",
+     "t": 3.449083,
+     "d": 0.462958,
+     "disp": "swap,"
+    },
+    {
+     "w": "and",
+     "t": 4.201375,
+     "d": 0.081,
+     "disp": "and"
+    },
+    {
+     "w": "PayBox",
+     "t": 4.294,
+     "d": 0.486125,
+     "disp": "PayBox"
+    },
+    {
+     "w": "opens",
+     "t": 4.861125,
+     "d": 0.300916,
+     "disp": "opens"
+    },
+    {
+     "w": "its",
+     "t": 5.173625,
+     "d": 0.104166,
+     "disp": "its"
+    },
+    {
+     "w": "transaction",
+     "t": 5.289333,
+     "d": 0.648166,
+     "disp": "transaction"
+    },
+    {
+     "w": "window",
+     "t": 5.949083,
+     "d": 0.370375,
+     "disp": "window."
+    },
+    {
+     "w": "You",
+     "t": 6.701375,
+     "d": 0.138875,
+     "disp": "You"
+    },
+    {
+     "w": "approve",
+     "t": 6.851833,
+     "d": 0.474541,
+     "disp": "approve,"
+    },
+    {
+     "w": "and",
+     "t": 7.61575,
+     "d": 0.0462909,
+     "disp": "and"
+    },
+    {
+     "w": "it's",
+     "t": 7.673625,
+     "d": 0.104166,
+     "disp": "it's"
+    },
+    {
+     "w": "confirmed",
+     "t": 7.789333,
+     "d": 0.42825,
+     "disp": "confirmed"
+    },
+    {
+     "w": "on",
+     "t": 8.229166,
+     "d": 0.092583,
+     "disp": "on"
+    },
+    {
+     "w": "Solana",
+     "t": 8.333333,
+     "d": 0.474541,
+     "disp": "Solana."
+    }
+   ],
+   "dur": 9.168,
+   "start": 69.556
+  },
+  {
+   "id": "receipt",
+   "chapter": "05 \u00b7 THE RECEIPT",
+   "text": "Did the call age well? Oddshot flagged GTA 6 as early at 5:44 PM. Seven hours later, it's up twenty percent, and reverse mode shows the odds kept climbing.",
+   "words": [
+    {
+     "w": "Did",
+     "t": 0.092583,
+     "d": 0.069458,
+     "disp": "Did"
+    },
+    {
+     "w": "the",
+     "t": 0.173625,
+     "d": 0.057875,
+     "disp": "the"
+    },
+    {
+     "w": "call",
+     "t": 0.243041,
+     "d": 0.219916,
+     "disp": "call"
+    },
+    {
+     "w": "age",
+     "t": 0.474541,
+     "d": 0.162041,
+     "disp": "age"
+    },
+    {
+     "w": "well",
+     "t": 0.648166,
+     "d": 0.243041,
+     "disp": "well?"
+    },
+    {
+     "w": "Oddshot",
+     "t": 1.273166,
+     "d": 0.370375,
+     "disp": "Oddshot"
+    },
+    {
+     "w": "flagged",
+     "t": 1.655083,
+     "d": 0.370375,
+     "disp": "flagged"
+    },
+    {
+     "w": "GTA",
+     "t": 2.037041,
+     "d": 0.439833,
+     "disp": "GTA"
+    },
+    {
+     "w": "6",
+     "t": 2.488416,
+     "d": 0.370375,
+     "disp": "6"
+    },
+    {
+     "w": "as",
+     "t": 3.113416,
+     "d": 0.173625,
+     "disp": "as"
+    },
+    {
+     "w": "early",
+     "t": 3.368041,
+     "d": 0.289333,
+     "disp": "early"
+    },
+    {
+     "w": "at",
+     "t": 3.669,
+     "d": 0.069458,
+     "disp": "at"
+    },
+    {
+     "w": "5:44 PM",
+     "t": 3.75,
+     "d": 1.2384159,
+     "disp": "5:44 PM."
+    },
+    {
+     "w": "Seven",
+     "t": 5.381958,
+     "d": 0.266208,
+     "disp": "Seven"
+    },
+    {
+     "w": "hours",
+     "t": 5.659708,
+     "d": 0.266208,
+     "disp": "hours"
+    },
+    {
+     "w": "later",
+     "t": 5.9375,
+     "d": 0.324083,
+     "disp": "later,"
+    },
+    {
+     "w": "it's",
+     "t": 6.44675,
+     "d": 0.104166,
+     "disp": "it's"
+    },
+    {
+     "w": "up",
+     "t": 6.5625,
+     "d": 0.127333,
+     "disp": "up"
+    },
+    {
+     "w": "twenty",
+     "t": 6.701375,
+     "d": 0.266208,
+     "disp": "twenty"
+    },
+    {
+     "w": "percent",
+     "t": 6.979166,
+     "d": 0.439833,
+     "disp": "percent,"
+    },
+    {
+     "w": "and",
+     "t": 7.719916,
+     "d": 0.11575,
+     "disp": "and"
+    },
+    {
+     "w": "reverse",
+     "t": 7.847208,
+     "d": 0.370375,
+     "disp": "reverse"
+    },
+    {
+     "w": "mode",
+     "t": 8.229166,
+     "d": 0.289333,
+     "disp": "mode"
+    },
+    {
+     "w": "shows",
+     "t": 8.645833,
+     "d": 0.289333,
+     "disp": "shows"
+    },
+    {
+     "w": "the",
+     "t": 8.94675,
+     "d": 0.11575,
+     "disp": "the"
+    },
+    {
+     "w": "odds",
+     "t": 9.1435,
+     "d": 0.335666,
+     "disp": "odds"
+    },
+    {
+     "w": "kept",
+     "t": 9.49075,
+     "d": 0.243041,
+     "disp": "kept"
+    },
+    {
+     "w": "climbing",
+     "t": 9.745375,
+     "d": 0.42825,
+     "disp": "climbing."
+    }
+   ],
+   "dur": 10.512,
+   "start": 81.744
+  },
+  {
+   "id": "bags",
+   "chapter": "05 \u00b7 THE RECEIPT",
+   "text": "And bag check scans any wallet, flagging dead tokens to exit before they cost you.",
+   "words": [
+    {
+     "w": "And",
+     "t": 0.092583,
+     "d": 0.11575,
+     "disp": "And"
+    },
+    {
+     "w": "bag",
+     "t": 0.219916,
+     "d": 0.347208,
+     "disp": "bag"
+    },
+    {
+     "w": "check",
+     "t": 0.578708,
+     "d": 0.219916,
+     "disp": "check"
+    },
+    {
+     "w": "scans",
+     "t": 0.810166,
+     "d": 0.416666,
+     "disp": "scans"
+    },
+    {
+     "w": "any",
+     "t": 1.36575,
+     "d": 0.138875,
+     "disp": "any"
+    },
+    {
+     "w": "wallet",
+     "t": 1.516208,
+     "d": 0.416666,
+     "disp": "wallet,"
+    },
+    {
+     "w": "flagging",
+     "t": 2.280083,
+     "d": 0.462958,
+     "disp": "flagging"
+    },
+    {
+     "w": "dead",
+     "t": 2.754625,
+     "d": 0.324083,
+     "disp": "dead"
+    },
+    {
+     "w": "tokens",
+     "t": 3.159708,
+     "d": 0.381958,
+     "disp": "tokens"
+    },
+    {
+     "w": "to",
+     "t": 3.55325,
+     "d": 0.104166,
+     "disp": "to"
+    },
+    {
+     "w": "exit",
+     "t": 3.669,
+     "d": 0.324083,
+     "disp": "exit"
+    },
+    {
+     "w": "before",
+     "t": 4.004625,
+     "d": 0.254625,
+     "disp": "before"
+    },
+    {
+     "w": "they",
+     "t": 4.270833,
+     "d": 0.092583,
+     "disp": "they"
+    },
+    {
+     "w": "cost",
+     "t": 4.375,
+     "d": 0.324083,
+     "disp": "cost"
+    },
+    {
+     "w": "you",
+     "t": 4.710666,
+     "d": 0.173625,
+     "disp": "you."
+    }
+   ],
+   "dur": 5.232,
+   "start": 92.576
+  },
+  {
+   "id": "shipped",
+   "chapter": "06 \u00b7 SHIPPED",
+   "text": "Oddshot passed PayBox's hosted checks with all seven tools, and it's live in PayBox today.",
+   "words": [
+    {
+     "w": "Oddshot",
+     "t": 0.092583,
+     "d": 0.405083,
+     "disp": "Oddshot"
+    },
+    {
+     "w": "passed",
+     "t": 0.50925,
+     "d": 0.324083,
+     "disp": "passed"
+    },
+    {
+     "w": "PayBox's",
+     "t": 0.844916,
+     "d": 0.567125,
+     "disp": "PayBox's"
+    },
+    {
+     "w": "hosted",
+     "t": 1.423625,
+     "d": 0.416666,
+     "disp": "hosted"
+    },
+    {
+     "w": "checks",
+     "t": 1.851833,
+     "d": 0.3125,
+     "disp": "checks"
+    },
+    {
+     "w": "with",
+     "t": 2.175916,
+     "d": 0.150458,
+     "disp": "with"
+    },
+    {
+     "w": "all",
+     "t": 2.453708,
+     "d": 0.185166,
+     "disp": "all"
+    },
+    {
+     "w": "seven",
+     "t": 2.650458,
+     "d": 0.289333,
+     "disp": "seven"
+    },
+    {
+     "w": "tools",
+     "t": 2.951375,
+     "d": 0.405083,
+     "disp": "tools,"
+    },
+    {
+     "w": "and",
+     "t": 3.63425,
+     "d": 0.104166,
+     "disp": "and"
+    },
+    {
+     "w": "it's",
+     "t": 3.75,
+     "d": 0.11575,
+     "disp": "it's"
+    },
+    {
+     "w": "live",
+     "t": 3.877333,
+     "d": 0.300916,
+     "disp": "live"
+    },
+    {
+     "w": "in",
+     "t": 4.189833,
+     "d": 0.069458,
+     "disp": "in"
+    },
+    {
+     "w": "PayBox",
+     "t": 4.270833,
+     "d": 0.462958,
+     "disp": "PayBox"
+    },
+    {
+     "w": "today",
+     "t": 4.745375,
+     "d": 0.324083,
+     "disp": "today."
+    }
+   ],
+   "dur": 5.424,
+   "start": 98.628
+  },
+  {
+   "id": "outro",
+   "chapter": "06 \u00b7 SHIPPED",
+   "text": "Oddshot. The odds moved. The memes haven't. Yet.",
+   "words": [
+    {
+     "w": "Oddshot",
+     "t": 0.081,
+     "d": 0.439833,
+     "disp": "Oddshot."
+    },
+    {
+     "w": "The",
+     "t": 0.902791,
+     "d": 0.092583,
+     "disp": "The"
+    },
+    {
+     "w": "odds",
+     "t": 1.006958,
+     "d": 0.219916,
+     "disp": "odds"
+    },
+    {
+     "w": "moved",
+     "t": 1.238416,
+     "d": 0.3935,
+     "disp": "moved."
+    },
+    {
+     "w": "The",
+     "t": 2.025458,
+     "d": 0.0462909,
+     "disp": "The"
+    },
+    {
+     "w": "memes",
+     "t": 2.083333,
+     "d": 0.277791,
+     "disp": "memes"
+    },
+    {
+     "w": "haven't",
+     "t": 2.372666,
+     "d": 0.405083,
+     "disp": "haven't."
+    },
+    {
+     "w": "Yet",
+     "t": 3.171291,
+     "d": 0.254625,
+     "disp": "Yet."
+    }
+   ],
+   "dur": 3.768,
+   "start": 104.372
+  }
+ ]
+}

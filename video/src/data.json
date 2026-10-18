@@ -1,0 +1,430 @@
+{
+  "capturedAt": "2026-10-16T21:15:59.911Z",
+  "wallet": "9WzDXwBbmkg8ZTbNMqUxvQRAyrZzDsGYdLVL9zYtAWWM",
+  "play": {
+    "mover": {
+      "changePts": 29,
+      "direction": "up",
+      "event": "# of views of Grand Theft Auto VI Launch Trailer on week 1?",
+      "narrativeKeywords": [
+        "Grand Theft Auto",
+        "GTA VI",
+        "YouTube",
+        "Rockstar"
+      ],
+      "outcome": "Yes",
+      "probabilityPct": 67,
+      "question": "Will \"Grand Theft Auto VI Launch Trailer\" get between 40 and 60 million views on week 1?",
+      "url": "https://polymarket.com/event/of-views-of-grand-theft-auto-vi-launch-trailer-on-week-1",
+      "volume24hUsd": 11854
+    },
+    "narrative": "GTA VI",
+    "playScore": 49,
+    "storyHeat": "heating",
+    "thesis": "Crowd piling into \"Will \"Grand Theft Auto VI Launch Trailer\" get between 40 and 60 million views on week 1?\" (+29 pts \u2192 67%). $GTA6 hasn't moved yet (-5.1% 6h). The window is open.",
+    "timing": "EARLY",
+    "token": {
+      "ageHours": 1712.1,
+      "buys1h": 0,
+      "change1hPct": null,
+      "change24hPct": 40.65,
+      "change6hPct": -5.12,
+      "liquidityUsd": 140672.22,
+      "lpLockedPct": 64.5,
+      "marketCapUsd": 1154939,
+      "mint": "4kjruqGHDsSqkMdFfCjV7Vb62HPFhtXyWc2t6JpQzDnz",
+      "momentumScore": 24,
+      "name": "GTA VI",
+      "oddshotScore": 14,
+      "priceUsd": 0.001154,
+      "reasons": [
+        "Serial deployer: the dev has launched 8483 tokens."
+      ],
+      "rugcheckScore": 1,
+      "sells1h": 0,
+      "sources": [
+        "DexScreener",
+        "RugCheck",
+        "Jupiter"
+      ],
+      "symbol": "GTA6",
+      "url": "https://dexscreener.com/solana/fdamuzyiea7cq1vniqcbhuhpfcmmcjfga6dwqq1hhld2",
+      "verdict": "YELLOW",
+      "volume24hUsd": 101181.31
+    }
+  },
+  "board": {
+    "isError": false,
+    "text": "\ud83c\udfaf ODDSHOT BOARD: 24h odds moves \u2192 memes\n1. EARLY \ud83d\udfe1 $GTA6 \u2190 \"GTA VI\" \u00b7 play 49\n   Crowd piling into \"Will \"Grand Theft Auto VI Launch Trailer\" get between 40 and 60 million views on week 1?\" (+29 pts \u2192 67%). $GTA6 hasn't moved yet (-5.1% 6h). The window is open.\n   mint 4kjruqGHDsSqkMdFfCjV7Vb62HPFhtXyWc2t6JpQzDnz\n2. NO_MEME\n   Crowd backing off \"Will Trump say \"Laken Riley Act\" during his Midterm Rally in Georgia?\" (-17.5 pts \u2192 60%). Every \"Trump\" meme failed the seatbelt.\n3. NO_MEME\n   Crowd piling into \"Will SpaceX have the highest IPO Market Cap 2026?\" (+13.5 pts \u2192 65%). Every \"SpaceX\" meme failed the seatbelt.\nNext: check_token for the full seatbelt report, or ape with a mint and an amount. PayBox asks you to approve.",
+    "data": {
+      "plays": [
+        {
+          "mover": {
+            "changePts": 29,
+            "direction": "up",
+            "event": "# of views of Grand Theft Auto VI Launch Trailer on week 1?",
+            "narrativeKeywords": [
+              "Grand Theft Auto",
+              "GTA VI",
+              "YouTube",
+              "Rockstar"
+            ],
+            "outcome": "Yes",
+            "probabilityPct": 67,
+            "question": "Will \"Grand Theft Auto VI Launch Trailer\" get between 40 and 60 million views on week 1?",
+            "url": "https://polymarket.com/event/of-views-of-grand-theft-auto-vi-launch-trailer-on-week-1",
+            "volume24hUsd": 11854
+          },
+          "narrative": "GTA VI",
+          "playScore": 49,
+          "storyHeat": "heating",
+          "thesis": "Crowd piling into \"Will \"Grand Theft Auto VI Launch Trailer\" get between 40 and 60 million views on week 1?\" (+29 pts \u2192 67%). $GTA6 hasn't moved yet (-5.1% 6h). The window is open.",
+          "timing": "EARLY",
+          "token": {
+            "ageHours": 1712.1,
+            "buys1h": 0,
+            "change1hPct": null,
+            "change24hPct": 40.65,
+            "change6hPct": -5.12,
+            "liquidityUsd": 140672.22,
+            "lpLockedPct": 64.5,
+            "marketCapUsd": 1154939,
+            "mint": "4kjruqGHDsSqkMdFfCjV7Vb62HPFhtXyWc2t6JpQzDnz",
+            "momentumScore": 24,
+            "name": "GTA VI",
+            "oddshotScore": 14,
+            "priceUsd": 0.001154,
+            "reasons": [
+              "Serial deployer: the dev has launched 8483 tokens."
+            ],
+            "rugcheckScore": 1,
+            "sells1h": 0,
+            "sources": [
+              "DexScreener",
+              "RugCheck",
+              "Jupiter"
+            ],
+            "symbol": "GTA6",
+            "url": "https://dexscreener.com/solana/fdamuzyiea7cq1vniqcbhuhpfcmmcjfga6dwqq1hhld2",
+            "verdict": "YELLOW",
+            "volume24hUsd": 101181.31
+          }
+        },
+        {
+          "mover": {
+            "changePts": -17.5,
+            "direction": "down",
+            "event": "What will Trump say during his Midterm Rally in Georgia?",
+            "narrativeKeywords": [
+              "Laken Riley Act",
+              "Trump",
+              "Midterm",
+              "Georgia"
+            ],
+            "outcome": "Yes",
+            "probabilityPct": 60,
+            "question": "Will Trump say \"Laken Riley Act\" during his Midterm Rally in Georgia?",
+            "url": "https://polymarket.com/event/what-will-trump-say-during-his-midterm-rally-in-georgia-october-16",
+            "volume24hUsd": 6315
+          },
+          "narrative": "Trump",
+          "playScore": 0,
+          "storyHeat": "cooling",
+          "thesis": "Crowd backing off \"Will Trump say \"Laken Riley Act\" during his Midterm Rally in Georgia?\" (-17.5 pts \u2192 60%). Every \"Trump\" meme failed the seatbelt.",
+          "timing": "NO_MEME",
+          "token": null
+        },
+        {
+          "mover": {
+            "changePts": 13.5,
+            "direction": "up",
+            "event": "Largest IPO by market cap in 2026?",
+            "narrativeKeywords": [
+              "SpaceX",
+              "Largest IPO",
+              "Elon Musk",
+              "OpenAI"
+            ],
+            "outcome": "Yes",
+            "probabilityPct": 65,
+            "question": "Will SpaceX have the highest IPO Market Cap 2026?",
+            "url": "https://polymarket.com/event/largest-ipo-by-market-cap-in-2026-287",
+            "volume24hUsd": 57187
+          },
+          "narrative": "SpaceX",
+          "playScore": 0,
+          "storyHeat": "heating",
+          "thesis": "Crowd piling into \"Will SpaceX have the highest IPO Market Cap 2026?\" (+13.5 pts \u2192 65%). Every \"SpaceX\" meme failed the seatbelt.",
+          "timing": "NO_MEME",
+          "token": null
+        }
+      ],
+      "window": "24h"
+    }
+  },
+  "check": {
+    "isError": false,
+    "text": "\ud83d\udfe1 YELLOW: $GTA6 (GTA VI)\n- Serial deployer: the dev has launched 8483 tokens.\nLiquidity $140.7K \u00b7 24h +40.6% \u00b7 LP locked 64.5% \u00b7 organic 63/100\n\ud83d\udee1 Checked: DexScreener \u00b7 RugCheck \u00b7 Jupiter",
+    "data": {
+      "holderCount": 12200,
+      "lpLockedPct": 64.5,
+      "organicScore": 63,
+      "reasons": [
+        "Serial deployer: the dev has launched 8483 tokens."
+      ],
+      "rugcheckScore": 1,
+      "sources": [
+        "DexScreener",
+        "RugCheck",
+        "Jupiter"
+      ],
+      "token": {
+        "ageHours": 1712.2,
+        "buys1h": 0,
+        "change1hPct": null,
+        "change24hPct": 40.65,
+        "change6hPct": -5.12,
+        "liquidityUsd": 140672.22,
+        "marketCapUsd": 1154939,
+        "mint": "4kjruqGHDsSqkMdFfCjV7Vb62HPFhtXyWc2t6JpQzDnz",
+        "name": "GTA VI",
+        "priceUsd": 0.001154,
+        "sells1h": 0,
+        "symbol": "GTA6",
+        "url": "https://dexscreener.com/solana/fdamuzyiea7cq1vniqcbhuhpfcmmcjfga6dwqq1hhld2",
+        "volume24hUsd": 101181.31
+      },
+      "verdict": "YELLOW"
+    }
+  },
+  "red": {
+    "args": {
+      "sender": "9WzDXwBbmkg8ZTbNMqUxvQRAyrZzDsGYdLVL9zYtAWWM",
+      "mint": "Pren1FvFX6J3E4kXhJuCiAD5aDmGEb7qJRncwA8Lkhw",
+      "amount": "1"
+    },
+    "isError": true,
+    "text": "Seatbelt engaged: $ANTHROPIC is RED. Top 10 holders own 39% of supply.; Mint Authority still enabled; Permanent Control Enabled",
+    "data": null
+  },
+  "ape": {
+    "args": {
+      "sender": "9WzDXwBbmkg8ZTbNMqUxvQRAyrZzDsGYdLVL9zYtAWWM",
+      "mint": "4kjruqGHDsSqkMdFfCjV7Vb62HPFhtXyWc2t6JpQzDnz",
+      "amount": "0.005",
+      "payWith": "SOL"
+    },
+    "isError": false,
+    "text": "\ud83c\udfaf Oddshot buy: \u2248443.416 $GTA6 for 0.00500000 SOL (min 430.114)\nSlippage cap 3% \u00b7 price impact 0.10%\n\ud83d\udee1 Seatbelt \ud83d\udfe1 YELLOW: Serial deployer: the dev has launched 8483 tokens. (DexScreener \u00b7 RugCheck \u00b7 Jupiter)\nUnsigned proposal: approve it in PayBox. Nothing has been signed or sent.",
+    "data": {
+      "io.paybox/transactionProposal": {
+        "version": "1",
+        "expiresAt": "2026-10-16T21:19:59Z",
+        "kind": "solana",
+        "chain": "solana:mainnet",
+        "transaction": {
+          "transactionBase64": "AQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAQAGCn6MCIdgv94d3c8ywX8gm4JC7lKq8TH6zYjQ6ixtCwbyLmWdnvVLeJwa0WTa2Hi0y8TwDXYvMLy//Tx9kAoX31REyQkdNYi35wSWIU0ih66IhDKSXV8fXXxEDfesNNGbtW0P33zfPSjM0tZqCq98Q/nmi4xSw/d1Lu/+nwgoaEVvAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADBkZv5SEXMv/srbpyw5vnvIzlu8X3EmssQ5s6QAAAAAR51VvyMcBu7nTFbs5oFQf9sbLeo/SOUQKxzaJWvBOPBt324ddloZPZy+FGzut5rBy0he1fWzeROoz1hX7/AKmMlyWPTiSJ8bs9ECkUjg2DC1oTmdr/EIQEjnvY2+n4WbQ/+if11/ZKdMCbHylYed5LCas238ndUUsyGqezjOXo4fvxK8yYRRJv013XJ7KIfoNaOTJcUh2LXQv1fJ3G7IQHBQAFAi4EAQAFAAkDX2UGAAAAAAAEAgADDAIAAABAS0wAAAAAAAcBAwERCAYAAgASBAcBAQYdBwADAgYSBgkGCgwKCw8DAhIRDgoABwcTCg0QAQYj5RfLl3rjrSoBAAAAJmQAAUBLTAAAAAAAb9KsPWcAAAAsAQAHAwMAAAEJAUTgm7UF6NzpSCoko4DA3G/C+2zb+/EA9+otfrHzzVVgB5CYl5uSmpQDLZaR"
+        }
+      }
+    }
+  },
+  "via": "agent \u25b8 paybox \u25b8 oddshot",
+  "apeVia": "oddshot \u25b8 ape \u00b7 unsigned proposal preview",
+  "why": {
+    "text": "$GTA6 is +70.3% in 24h. The crowd's odds on \"Will \"Grand Theft Auto VI Launch Trailer\" get between 40 and 60 million views on week 1?\" moved +37 pts to 81.5%.\nRelated markets:\n\u25b2 +37 pts \u2192 81.5% \"Will \"Grand Theft Auto VI Launch Trailer\" get between 40 and 60 million views on week 1?\" ($14.6K 24h vol)\n\u25bc -26.5 pts \u2192 32.5% \"Will \"Sicko Mode\" by Travis Scott be on the radio in GTA VI at launch?\" ($18 24h vol)\n\u25b2 +5 pts \u2192 24.5% \"Will Kendrick Lamar be featured on GTA VI: The Album?\" ($132 24h vol)\n\u25b2 +8.5 pts \u2192 77% \"Will \"GTA VI: The Album\" first week sales be at least 50k?\" ($0.00 24h vol)\n\u25bc -0.5 pts \u2192 3.3% \"GTA 6 launch postponed again?\" ($7.7K 24h vol)",
+    "data": {
+      "catalysts": [
+        {
+          "changePts": 37,
+          "direction": "up",
+          "event": "# of views of Grand Theft Auto VI Launch Trailer on week 1?",
+          "narrativeKeywords": [
+            "Grand Theft Auto",
+            "GTA VI",
+            "YouTube",
+            "Rockstar"
+          ],
+          "outcome": "Yes",
+          "probabilityPct": 81.5,
+          "question": "Will \"Grand Theft Auto VI Launch Trailer\" get between 40 and 60 million views on week 1?",
+          "url": "https://polymarket.com/event/of-views-of-grand-theft-auto-vi-launch-trailer-on-week-1",
+          "volume24hUsd": 14614
+        },
+        {
+          "changePts": -26.5,
+          "direction": "down",
+          "event": "Songs on GTA VI Radio at Launch?",
+          "narrativeKeywords": [
+            "Sicko Mode",
+            "Songs",
+            "GTA VI Radio",
+            "GTA VI"
+          ],
+          "outcome": "Yes",
+          "probabilityPct": 32.5,
+          "question": "Will \"Sicko Mode\" by Travis Scott be on the radio in GTA VI at launch?",
+          "url": "https://polymarket.com/event/songs-on-gta-vi-radio-at-launch",
+          "volume24hUsd": 18
+        },
+        {
+          "changePts": 5,
+          "direction": "up",
+          "event": "Who will be featured on GTA VI: The Album?",
+          "narrativeKeywords": [
+            "Kendrick Lamar",
+            "GTA VI",
+            "Album",
+            "Rockstar"
+          ],
+          "outcome": "Yes",
+          "probabilityPct": 24.5,
+          "question": "Will Kendrick Lamar be featured on GTA VI: The Album?",
+          "url": "https://polymarket.com/event/who-will-be-featured-on-gta-vi-the-album",
+          "volume24hUsd": 132
+        },
+        {
+          "changePts": 8.5,
+          "direction": "up",
+          "event": "'GTA VI: The Album' First Week Sales?",
+          "narrativeKeywords": [
+            "GTA VI",
+            "Album' First Week",
+            "Rockstar",
+            "Celebrities"
+          ],
+          "outcome": "Yes",
+          "probabilityPct": 77,
+          "question": "Will \"GTA VI: The Album\" first week sales be at least 50k?",
+          "url": "https://polymarket.com/event/gta-vi-the-album-first-week-sales",
+          "volume24hUsd": 0
+        },
+        {
+          "changePts": -0.5,
+          "direction": "down",
+          "event": "GTA 6 launch postponed again?",
+          "narrativeKeywords": [
+            "GTA",
+            "GTA VI"
+          ],
+          "outcome": "Yes",
+          "probabilityPct": 3.3,
+          "question": "GTA 6 launch postponed again?",
+          "url": "https://polymarket.com/event/gta-6-launch-postponed-again",
+          "volume24hUsd": 7704
+        }
+      ],
+      "summary": "$GTA6 is +70.3% in 24h. The crowd's odds on \"Will \"Grand Theft Auto VI Launch Trailer\" get between 40 and 60 million views on week 1?\" moved +37 pts to 81.5%.",
+      "token": {
+        "ageHours": 1719.5,
+        "buys1h": 39,
+        "change1hPct": 18.41,
+        "change24hPct": 70.28,
+        "change6hPct": 22.22,
+        "liquidityUsd": 153957.57,
+        "marketCapUsd": 1383139,
+        "mint": "4kjruqGHDsSqkMdFfCjV7Vb62HPFhtXyWc2t6JpQzDnz",
+        "name": "GTA VI",
+        "priceUsd": 0.001383,
+        "sells1h": 0,
+        "symbol": "GTA6",
+        "url": "https://dexscreener.com/solana/fdamuzyiea7cq1vniqcbhuhpfcmmcjfga6dwqq1hhld2",
+        "volume24hUsd": 107402.32
+      }
+    }
+  },
+  "bags": {
+    "text": "\ud83d\udc5c Bag check for 7zs3\u2026p9k7 \u00b7 total $21.9K (SOL 0, USDC 136.97)\n1. \ud83d\udfe1 $GTA6 $21.8K (+76.2% 24h) \u00b7 Serial deployer: the dev has launched 8483 tokens.\n2. \ud83d\udd34 $\ud83d\udc9b\ud83d\udc08 $3.35 (? 24h) \u00b7 Liquidity is only $1.31.\n   \u2192 Consider exiting: ape side \"sell\", percent 100.\n3. \ud83d\udd34 $BALLS $0.62 (? 24h) \u00b7 Liquidity is only $11.\n   \u2192 Consider exiting: ape side \"sell\", percent 100.",
+    "data": {
+      "owner": "7zs3Cda5C8XWadmFKKfuPyXpo78F5AFY6RXQ3Ec5p9k7",
+      "positions": [
+        {
+          "amount": 15234594.7109397,
+          "change24hPct": 76.2,
+          "lpLockedPct": 68.6,
+          "mint": "4kjruqGHDsSqkMdFfCjV7Vb62HPFhtXyWc2t6JpQzDnz",
+          "name": "GTA VI",
+          "reasons": [
+            "Serial deployer: the dev has launched 8483 tokens."
+          ],
+          "rugcheckScore": 1,
+          "sources": [
+            "Jupiter",
+            "RugCheck"
+          ],
+          "symbol": "GTA6",
+          "valueUsd": 21750.85,
+          "verdict": "YELLOW"
+        },
+        {
+          "amount": 376347.31509742,
+          "change24hPct": null,
+          "lpLockedPct": 0,
+          "mint": "FkmeYvJWetRscrMrm8RKqcmySy8rh9BadUv8rKjCNRfo",
+          "name": "Cate Army",
+          "reasons": [
+            "Liquidity is only $1.31.",
+            "Serial deployer: the dev has launched 8483 tokens.",
+            "Mostly bot volume (organic score 0/100)."
+          ],
+          "rugcheckScore": 1,
+          "sources": [
+            "Jupiter",
+            "RugCheck"
+          ],
+          "symbol": "\ud83d\udc9b\ud83d\udc08",
+          "valueUsd": 3.35,
+          "verdict": "RED"
+        },
+        {
+          "amount": 366147.569026577,
+          "change24hPct": null,
+          "lpLockedPct": 0,
+          "mint": "HfhGkEjEuHDtf1fWjqsekrPg87uDtGSR4VCmCBh5m3Yh",
+          "name": "BallsOnTable",
+          "reasons": [
+            "Liquidity is only $11.",
+            "Serial deployer: the dev has launched 8483 tokens.",
+            "Mostly bot volume (organic score 0/100).",
+            "Low Liquidity ($298.45)"
+          ],
+          "rugcheckScore": 32,
+          "sources": [
+            "Jupiter",
+            "RugCheck"
+          ],
+          "symbol": "BALLS",
+          "valueUsd": 0.62,
+          "verdict": "RED"
+        }
+      ],
+      "solBalance": 0,
+      "totalUsd": 21891.79,
+      "usdcBalance": 136.971273
+    }
+  },
+  "receipt": {
+    "calledAt": "Fri 5:44 PM EDT",
+    "calledPrice": 0.001154,
+    "calledOdds": 67,
+    "called6h": -5.1,
+    "nowAt": "Sat 1:06 AM EDT",
+    "nowPrice": 0.001383,
+    "nowOdds": 81.5,
+    "sinceCall": 19.8
+  },
+  "tx": "6GSfKKTcMDEK3ksCEiJQnsvMidkn4TbZrfVPHBygPhTcAYz1tG69P9DDC5Jmhg1STSqvNUdf53cLPWpn5ESCoxq",
+  "txDetail": {
+    "sol": 0.01,
+    "got": 676.03,
+    "symbol": "GTA6",
+    "wallet": "14dwppGv5KgUztwnoKydqRA3ruEGRzE1DgjtN7sBNuDX"
+  },
+  "swarm": {
+    "narrative": "GTA VI",
+    "og": "GTA6",
+    "size": 35,
+    "copycats": 22,
+    "launched24h": 11,
+    "capturedAt": "Sat 3:10 AM EDT"
+  }
+}

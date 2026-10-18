@@ -1,0 +1,16 @@
+node_modules/
+dist/
+.env
+.claude/
+.vscode/
+
+# Large media and other projects' sample videos
+*.mp4
+/injection-judge-thumbnail.png
+
+# Video pipeline: renders, raw recordings, generated audio, live PayBox session output (contains tokens)
+video/out/
+video/raw/
+video/paybox-run/
+video/demo/build/
+video/demo/vo/

@@ -1,0 +1,20 @@
+{
+  "name": "oddshot-video",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "studio": "remotion studio",
+    "render": "remotion render Oddshot out/oddshot.mp4"
+  },
+  "dependencies": {
+    "@remotion/cli": "4.0.531",
+    "@remotion/google-fonts": "^4.0.531",
+    "react": "18.3.1",
+    "react-dom": "18.3.1",
+    "remotion": "4.0.531"
+  },
+  "devDependencies": {
+    "@types/react": "18.3.12",
+    "typescript": "5.9.3"
+  }
+}
