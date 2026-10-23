@@ -52,6 +52,11 @@ const narrativeSchema = z.object({
   symbols: z.array(z.string()), volume1hUsd: z.number(), change1hPct: num,
   leader: tokenSchema.extend(safetyShape), crowd: moverSchema.nullable(),
 });
+const lagSchema = z.object({
+  question: z.string(), symbol: z.string(), jumpPts: z.number(), from: z.string(), to: z.string(),
+  oddsBefore: z.number(), oddsAfter: z.number(), memeDuringPct: num, meme1hPct: num, meme6hPct: num, meme24hPct: num,
+  verdict: z.enum(["MEMES FOLLOWED", "MEMES LED", "NO REACTION", "MEMES FADED"]), summary: z.string(),
+});
 const oddsReceiptSchema = z.object({ question: z.string(), atCallPct: z.number(), nowPct: z.number(), changePts: z.number(), resolved: z.boolean() });
 const receiptSchema = z.object({
   mint: z.string(), symbol: z.string(), calledAt: z.string(), priceAtCall: z.number(), priceNow: z.number(),
@@ -347,12 +352,49 @@ async function pairsByMint(mint: string, ms = 3500): Promise<any[]> {
     .sort((a: any, b: any) => (n(b?.liquidity?.usd) ?? 0) - (n(a?.liquidity?.usd) ?? 0));
 }
 
-/** The Polymarket market that best matches the story words, and its odds at the call versus now. */
-async function storyOdds(story: string, atS: number) {
+/** The Polymarket market (open or resolved) whose question best matches the story words. */
+async function findMarket(story: string, ms = 3500): Promise<any> {
   const words = story.toLowerCase().split(/[^a-z0-9]+/).filter((w) => w.length >= 2 && !STOP.has(w));
-  const r = await getJson(`https://gamma-api.polymarket.com/public-search?q=${encodeURIComponent(story)}&limit_per_type=8&events_status=all`, 3500);
+  const r = await getJson(`https://gamma-api.polymarket.com/public-search?q=${encodeURIComponent(story)}&limit_per_type=8&events_status=all`, ms);
   const fit = (m: any) => { const q = String(m?.question ?? "").toLowerCase(); return words.filter((w) => q.includes(w)).length + Math.log10((n(m?.volume) ?? 0) + 10) / 10; };
-  const market = (r?.events ?? []).flatMap((e: any) => e.markets ?? []).sort((a: any, b: any) => fit(b) - fit(a))[0];
+  return (r?.events ?? []).flatMap((e: any) => e.markets ?? []).sort((a: any, b: any) => fit(b) - fit(a))[0] ?? null;
+}
+
+/** Hourly Polymarket odds for a market's first outcome, oldest first. */
+async function oddsHistory(market: any, fromS: number, toS: number, ms = 3500): Promise<{ t: number; p: number }[]> {
+  const tokenId = list(market?.clobTokenIds)[0];
+  if (!tokenId) return [];
+  const h = await getJson(`https://clob.polymarket.com/prices-history?market=${tokenId}&startTs=${fromS}&endTs=${toS}&fidelity=60`, ms);
+  return ((h?.history ?? []) as { t: number; p: number }[]).filter((x) => Number.isFinite(x?.t) && Number.isFinite(x?.p)).sort((a, b) => a.t - b.t);
+}
+
+/** Hourly candles [t, open, high, low, close, volume] for a token in one pool, priced in the token itself, oldest first. */
+async function candlesFor(pool: string, mint: string, limit = 1000, ms = 4500): Promise<number[][]> {
+  const o = await getJson(`${GECKO}/pools/${pool}/ohlcv/hour?aggregate=1&limit=${limit}&currency=usd&token=${mint}`, ms).catch(() => null);
+  return ((o?.data?.attributes?.ohlcv_list ?? []) as unknown[][])
+    .map((c) => c.map(Number)).filter((c) => c.length >= 5 && c.every(Number.isFinite)).sort((a, b) => a[0]! - b[0]!);
+}
+
+/** Price at a moment: interpolated inside its candle, or the last close carried across quiet hours (up to 6h). */
+function priceAt(candles: number[][], ts: number): number | null {
+  const k = candles.reduce((last, c, i) => (c[0]! <= ts ? i : last), -1);
+  if (k < 0 || ts - candles[k]![0]! >= 6 * 3600) return null;
+  const c = candles[k]!;
+  return ts < c[0]! + 3600 ? c[1]! + (c[4]! - c[1]!) * ((ts - c[0]!) / 3600) : c[4]!;
+}
+
+/** Volatility-scaled exit plan from the last day of hourly ranges: stop at 3× the average hourly range (10–50%), targets at 2× and 4× the stop. */
+function exitPlan(candles: number[][], entry: number | null) {
+  const day = candles.slice(-24);
+  if (!entry || day.length < 6) return null;
+  const range = (day.reduce((a, c) => a + (c[2]! - c[3]!) / c[4]!, 0) / day.length) * 100;
+  const stop = clamp(Math.round(3 * range), 10, 50);
+  return { stop, tp1: 2 * stop, tp2: 4 * stop, stopPrice: entry * (1 - stop / 100), tp1Price: entry * (1 + (2 * stop) / 100), tp2Price: entry * (1 + (4 * stop) / 100) };
+}
+
+/** The market's odds at the call versus now. */
+async function storyOdds(story: string, atS: number) {
+  const market = await findMarket(story);
   const tokenId = list(market?.clobTokenIds)[0];
   if (!market || !tokenId) return null;
   const h = await getJson(`https://clob.polymarket.com/prices-history?market=${tokenId}&startTs=${atS - 7200}&endTs=${Math.floor(Date.now() / 1000)}&fidelity=60`, 3500);
@@ -531,7 +573,7 @@ function toPlay(narrative: string, mover: Mover, candidates: Scored[], window: "
 
 function createServer() {
   const server = new McpServer(
-    { name: "oddshot", version: "1.2.0" },
+    { name: "oddshot", version: "1.3.0" },
     { supportedProtocolVersions: [PROTOCOL_VERSION] },
   );
   const read = { readOnlyHint: true, destructiveHint: false, idempotentHint: false, openWorldHint: true };
@@ -716,7 +758,7 @@ function createServer() {
       title: "Seatbelt check",
       description: "Full seatbelt report for any Solana token mint. Cross-checks three sources: live market data (liquidity, age, price action), RugCheck (LP lock, insider and holder risks) and Jupiter's audit (mint/freeze authority, top-holder share, suspicious flag, serial-deployer history, organic volume). Returns GREEN, YELLOW or RED with every reason; three warnings stack to RED.",
       inputSchema: z.object({ mint: address }).strict(),
-      outputSchema: z.object({ token: tokenSchema.nullable(), organicScore: num, holderCount: num, ...safetyShape }),
+      outputSchema: z.object({ token: tokenSchema.nullable(), organicScore: num, holderCount: num, sizeFor1pctUsd: num, ...safetyShape }),
       annotations: read,
     },
     async ({ mint }) => {
@@ -726,9 +768,11 @@ function createServer() {
       const s = safety(token, rc, j, dex ? "DexScreener" : "Jupiter");
       const name = token ? `$${token.symbol} (${token.name})` : mint;
       const organicScore = round(n(j?.organicScore), 0);
+      // In a constant-product pool, a buy moves price by roughly its size over the pool's one-sided depth: ~0.5% of total liquidity ≈ 1% impact.
+      const sizeFor1pctUsd = token?.liquidityUsd ? Math.round(token.liquidityUsd * 0.005) : null;
       return {
-        content: text(`${light(s.verdict)} ${s.verdict}: ${name}\n- ${s.reasons.join("\n- ")}${token ? `\nLiquidity ${usd(token.liquidityUsd)} · 24h ${pct(token.change24hPct)} · LP locked ${s.lpLockedPct ?? "?"}% · organic ${organicScore ?? "?"}/100` : ""}\n🛡 Checked: ${s.sources.join(" · ")}`),
-        structuredContent: { token, organicScore, holderCount: n(j?.holderCount), ...s },
+        content: text(`${light(s.verdict)} ${s.verdict}: ${name}\n- ${s.reasons.join("\n- ")}${token ? `\nLiquidity ${usd(token.liquidityUsd)} · 24h ${pct(token.change24hPct)} · LP locked ${s.lpLockedPct ?? "?"}% · organic ${organicScore ?? "?"}/100` : ""}${sizeFor1pctUsd ? `\n📏 Pool depth: buys under ~${usd(sizeFor1pctUsd)} move this pool about 1%; ape shows the actual route's impact before you approve.` : ""}\n🛡 Checked: ${s.sources.join(" · ")}`),
+        structuredContent: { token, organicScore, holderCount: n(j?.holderCount), sizeFor1pctUsd, ...s },
       };
     },
   );
@@ -762,6 +806,65 @@ function createServer() {
       return {
         content: text(`${summary}${catalysts.length ? `\nRelated markets:\n${catalysts.map(moverLine).join("\n")}` : ""}`),
         structuredContent: { token, catalysts, summary },
+      };
+    },
+  );
+
+  server.registerTool(
+    "lag_check",
+    {
+      title: "Lag check: do the memes follow the odds?",
+      description: "Tests Oddshot's thesis on a real story. Finds the biggest 6-hour odds swing in the Polymarket market behind the story, then measures what the meme did during the swing and 1h, 6h and 24h after it. Verdicts: MEMES FOLLOWED (+10% or more after), MEMES LED (+20% or more during, so already priced in), MEMES FADED (-10% or worse after) or NO REACTION.",
+      inputSchema: z.object({
+        mint: address.describe("The story's meme token, e.g. its OG from narrative_tokens."),
+        story: z.string().trim().min(3).max(160).describe("Words from the Polymarket question behind the story."),
+        days: z.number().int().min(1).max(30).default(10).describe("How far back to look for the swing."),
+      }).strict(),
+      outputSchema: lagSchema,
+      annotations: read,
+    },
+    async ({ mint, story, days }) => {
+      const nowS = Math.floor(Date.now() / 1000);
+      const [market, pairs] = await Promise.all([findMarket(story), pairsByMint(mint)]);
+      if (!market) throw new Error("No Polymarket market matches that story.");
+      if (!pairs.length) throw new Error("No Solana pool found for this mint.");
+      const [pts, histories] = await Promise.all([
+        oddsHistory(market, nowS - days * 86400, nowS),
+        Promise.all(pairs.slice(0, 3).map((pr) => candlesFor(pr.pairAddress, mint, 1000, 4000))),
+      ]);
+      if (pts.length < 8) throw new Error("Not enough odds history for that market.");
+      // Biggest move across any 6-hour stretch (two pointers over the hourly series).
+      let best = { i: 0, k: 0, d: 0 };
+      for (let i = 0, k = 0; i < pts.length; i++) {
+        while (k < i && pts[k + 1]!.t <= pts[i]!.t - 6 * 3600) k++;
+        const d = pts[i]!.p - pts[k]!.p;
+        if (Math.abs(d) > Math.abs(best.d)) best = { i, k, d };
+      }
+      const t0 = pts[best.k]!.t;
+      const t1 = pts[best.i]!.t;
+      const candles = histories.find((c) => priceAt(c, t0) !== null) ?? [];
+      const p0 = priceAt(candles, t0);
+      const p1 = priceAt(candles, t1);
+      if (p0 === null || p1 === null) throw new Error("No meme price history around the odds swing (the token may be newer than the story).");
+      const after = (h: number) => {
+        if (t1 + h * 3600 > nowS) return null;
+        const p = priceAt(candles, t1 + h * 3600);
+        return p === null ? null : round((p / p1 - 1) * 100, 1);
+      };
+      const during = round((p1 / p0 - 1) * 100, 1);
+      const [a1, a6, a24] = [after(1), after(6), after(24)];
+      const bestAfter = Math.max(a1 ?? -Infinity, a6 ?? -Infinity, a24 ?? -Infinity);
+      const verdict = (during ?? 0) >= 20 ? "MEMES LED" as const : bestAfter >= 10 ? "MEMES FOLLOWED" as const
+        : (a24 ?? a6 ?? 0) <= -10 ? "MEMES FADED" as const : "NO REACTION" as const;
+      const iso = (t: number) => new Date(t * 1000).toISOString().replace(/:\d{2}\.\d{3}Z$/, "Z");
+      const symbol = String(pairs[0]!.baseToken?.symbol ?? short(mint));
+      const jump = round(best.d * 100, 1)!;
+      const summary = `${verdict}: odds on "${market.question}" swung ${jump > 0 ? "+" : ""}${jump} pts (${round(pts[best.k]!.p * 100, 1)}% → ${round(pts[best.i]!.p * 100, 1)}%) between ${iso(t0)} and ${iso(t1)}. $${symbol} moved ${pct(during)} during the swing, then ${pct(a1)} after 1h, ${pct(a6)} after 6h, ${pct(a24)} after 24h.`;
+      return {
+        content: text(`⏱ LAG CHECK · ${summary}\nOne story is one data point; run it across stories to judge the pattern.`),
+        structuredContent: { question: String(market.question), symbol, jumpPts: jump, from: iso(t0), to: iso(t1),
+          oddsBefore: round(pts[best.k]!.p * 100, 1)!, oddsAfter: round(pts[best.i]!.p * 100, 1)!,
+          memeDuringPct: during, meme1hPct: a1, meme6hPct: a6, meme24hPct: a24, verdict, summary },
       };
     },
   );
@@ -886,13 +989,14 @@ function createServer() {
       if (side === "buy" && (amount === undefined || percent !== undefined)) throw new Error("To buy, give an amount to spend.");
       if (side === "sell" && (amount === undefined) === (percent === undefined)) throw new Error("To sell, give either amount or percent.");
       // Jupiter's keyless quota is 5 requests per 10s, so sells skip its token lookup: exits need no seatbelt.
-      const [dex, rc, jup, held, chainDecimals] = await Promise.all([
-        tokenByMint(mint, 3000), rugcheck(mint, 3000),
+      const [pools, rc, jup, held, chainDecimals] = await Promise.all([
+        pairsByMint(mint, 3000), rugcheck(mint, 3000),
         side === "buy" ? jupTokens([mint], 3000) : new Map<string, any>(),
         percent === undefined ? null : mintBalance(sender, mint).catch(() => null),
         side === "sell" ? mintDecimals(mint) : null,
       ]);
       const j = jup.get(mint);
+      const dex = pools[0] ? toToken(pools[0]) : null;
       const s = safety(dex ?? (j ? fromJupiter(j) : null), rc, j, dex ? "DexScreener" : "Jupiter");
       const symbol = `$${dex?.symbol ?? j?.symbol ?? short(mint)}`;
       if (side === "buy" && s.verdict === "RED") throw new Error(`Seatbelt engaged: ${symbol} is RED. ${s.reasons.slice(0, 3).join("; ")}`);
@@ -908,7 +1012,12 @@ function createServer() {
         atomic = ((held * BigInt(Math.round(percent * 100))) / 10000n).toString();
       } else atomic = atomicAmount(amount!, inDec);
       if (atomic === "0") throw new Error("Amount must be greater than zero.");
-      const quote = await getJson(`${JUP}/swap/v1/quote?inputMint=${inputMint}&outputMint=${outputMint}&amount=${atomic}&slippageBps=${slippageBps}&restrictIntermediateTokens=true`, 2500);
+      // Buys also get an exit plan; its candles load alongside the quote, so it costs no extra time.
+      const [quote, candles] = await Promise.all([
+        getJson(`${JUP}/swap/v1/quote?inputMint=${inputMint}&outputMint=${outputMint}&amount=${atomic}&slippageBps=${slippageBps}&restrictIntermediateTokens=true`, 2500),
+        side === "buy" && pools[0]?.pairAddress ? candlesFor(pools[0].pairAddress, mint, 48, 2500) : Promise.resolve([] as number[][]),
+      ]);
+      const plan = side === "buy" ? exitPlan(candles, dex?.priceUsd ?? null) : null;
       const impact = (n(quote?.priceImpactPct) ?? 0) * 100;
       const maxImpact = side === "buy" ? 5 : 15;
       if (impact > maxImpact) throw new Error(`Seatbelt engaged: price impact is ${impact.toFixed(2)}% (limit ${maxImpact}%). Try a smaller size.`);
@@ -923,7 +1032,7 @@ function createServer() {
       const [inLabel, outLabel] = side === "buy" ? [payWith, symbol] : [symbol, payWith];
       return {
         ...proposeSolana({ transactionBase64: swap.swapTransaction }),
-        content: text(`🎯 Oddshot ${side}: ≈${out.toPrecision(6)} ${outLabel} for ${spent.toPrecision(6)} ${inLabel} (min ${minOut.toPrecision(6)})\nSlippage cap ${slippageBps / 100}% · price impact ${impact.toFixed(2)}%\n🛡 Seatbelt ${light(s.verdict)} ${s.verdict}${s.verdict === "GREEN" ? "" : `: ${s.reasons[0]}`} (${s.sources.join(" · ")})\nUnsigned proposal: approve it in PayBox. Nothing has been signed or sent.`),
+        content: text(`🎯 Oddshot ${side}: ≈${out.toPrecision(6)} ${outLabel} for ${spent.toPrecision(6)} ${inLabel} (min ${minOut.toPrecision(6)})\nSlippage cap ${slippageBps / 100}% · price impact ${impact.toFixed(2)}%\n🛡 Seatbelt ${light(s.verdict)} ${s.verdict}${s.verdict === "GREEN" ? "" : `: ${s.reasons[0]}`} (${s.sources.join(" · ")})${plan ? `\n🧭 Exit plan (from this token's own volatility): take 50% at +${plan.tp1}% ($${plan.tp1Price.toPrecision(3)}), the rest at +${plan.tp2}% ($${plan.tp2Price.toPrecision(3)}); bail below -${plan.stop}% ($${plan.stopPrice.toPrecision(3)}). When a level hits, ape side "sell" with percent 50 or 100.` : ""}\nUnsigned proposal: approve it in PayBox. Nothing has been signed or sent.`),
       };
     },
   );

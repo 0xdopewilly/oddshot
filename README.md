@@ -18,13 +18,19 @@ Built by **Dappest Dev** ([@sentinel_dapper](https://x.com/sentinel_dapper)) for
 |---|---|
 | `oddshot_play` | The one-shot board: biggest odds swings → the meme riding each story → seatbelt verdict → timing (`EARLY`, `RUNNING`, `LATE`, `FADING`). |
 | `hot_narratives` | Radar: clusters trending Solana pools into stories (names, tickers, even the token they're paired against), matches each to the Polymarket market that names it, and labels it **BOTH CROWDS** or **ON-CHAIN ONLY**. |
+| `lag_check` | Tests the thesis on a real story: finds the biggest 6-hour odds swing in its Polymarket market and measures the meme during it and 1h, 6h and 24h after. **MEMES FOLLOWED**, **MEMES LED**, **MEMES FADED** or **NO REACTION**. |
 | `receipt` | Grades a past call with real price and odds history: price at the call vs now, peak, drawdown, odds then vs now. **HIT**, **MISS** or **FLAT**, misses included. |
 | `odds_movers` | Polymarket markets whose odds moved most in 1h or 24h, with story keywords. Skips sports, weather and price ladders. |
 | `narrative_tokens` | Maps the swarm of Solana tokens riding a narrative: crowns the OG, tags copycats, flags copycat frenzies, then ranks and safety-checks the rest. |
-| `check_token` | Full seatbelt report for any mint: GREEN, YELLOW or RED with every reason. |
+| `check_token` | Full seatbelt report for any mint: GREEN, YELLOW or RED with every reason, plus how big a buy the pool can absorb at about 1% impact. |
 | `why_pumping` | Reverse mode: give a memecoin, get the prediction-market story behind it. |
 | `my_bags` | Values a wallet's positions and runs the seatbelt on each, so the agent can flag what to exit. |
-| `ape` | Unsigned Jupiter swap for the user's PayBox wallet. Buy with an amount, sell with an amount or a percent. |
+| `ape` | Unsigned Jupiter swap for the user's PayBox wallet. Buy with an amount, sell with an amount or a percent. Buys come with an exit plan scaled to the token's own volatility: two take-profit levels and a stop. |
+
+## Proof, not promises (v1.2–v1.3)
+
+- **Lag check.** The thesis is that odds move first and memes follow. `lag_check` measures it per story instead of asserting it, and reports NO REACTION when that's what happened.
+- **Size, entry, exit.** `check_token` reports how much the pool can absorb; `ape` returns the swap plus an exit plan (take 50% at +2× the stop, the rest at +4×, stop at 3× the token's average hourly range, clamped to 10–50%).
 
 ## Two crowds and receipts (v1.2)
 
