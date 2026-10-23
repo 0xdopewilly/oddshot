@@ -356,7 +356,9 @@ async function pairsByMint(mint: string, ms = 3500): Promise<any[]> {
 async function findMarket(story: string, ms = 3500): Promise<any> {
   const words = story.toLowerCase().split(/[^a-z0-9]+/).filter((w) => w.length >= 2 && !STOP.has(w));
   const r = await getJson(`https://gamma-api.polymarket.com/public-search?q=${encodeURIComponent(story)}&limit_per_type=8&events_status=all`, ms);
-  const fit = (m: any) => { const q = String(m?.question ?? "").toLowerCase(); return words.filter((w) => q.includes(w)).length + Math.log10((n(m?.volume) ?? 0) + 10) / 10; };
+  // Whole-word matches only, so "ANT" does not match "ANTH"; volume breaks ties.
+  const res = words.map((w) => new RegExp(`\\b${w}\\b`, "i"));
+  const fit = (m: any) => { const q = String(m?.question ?? ""); return res.filter((re) => re.test(q)).length + Math.log10((n(m?.volume) ?? 0) + 10) / 10; };
   return (r?.events ?? []).flatMap((e: any) => e.markets ?? []).sort((a: any, b: any) => fit(b) - fit(a))[0] ?? null;
 }
 
@@ -573,7 +575,7 @@ function toPlay(narrative: string, mover: Mover, candidates: Scored[], window: "
 
 function createServer() {
   const server = new McpServer(
-    { name: "oddshot", version: "1.3.0" },
+    { name: "oddshot", version: "1.3.1" },
     { supportedProtocolVersions: [PROTOCOL_VERSION] },
   );
   const read = { readOnlyHint: true, destructiveHint: false, idempotentHint: false, openWorldHint: true };
@@ -744,7 +746,9 @@ function createServer() {
         : `Solana tokens riding "${narrative}":`;
       const body = tokens.length
         ? tokens.map((t, i) => `${i + 1}. ${light(t.verdict)} [${t.role}] $${t.symbol} (${t.name}) score ${t.oddshotScore}/100 · 1h ${pct(t.change1hPct)} · 24h ${pct(t.change24hPct)} · vol ${usd(t.volume24hUsd)} · liq ${usd(t.liquidityUsd)}\n   mint ${t.mint}${t.verdict === "GREEN" ? "" : `\n   ⚠ ${t.reasons.slice(0, 2).join("; ")}`}`).join("\n")
-        : "No liquid Solana tokens are riding this narrative yet. That can be the early signal, or a dead end.";
+        : cluster.size > 0
+          ? `All ${cluster.size} are thin launches below the floor ($${minLiquidityUsd.toLocaleString("en-US")} liquidity, $${minVolume24hUsd.toLocaleString("en-US")} 24h volume), so none is a pick. Lower the floor only if you accept the risk.`
+          : "No Solana tokens are riding this narrative yet. That can be the early signal, or a dead end.";
       return {
         content: text(`${head}\n${body}${tokens.length ? "\nNext: check_token for detail, or ape with a mint and amount." : ""}`),
         structuredContent: { narrative, cluster, tokens },
