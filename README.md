@@ -17,12 +17,19 @@ Built by **Dappest Dev** ([@sentinel_dapper](https://x.com/sentinel_dapper)) for
 | Tool | What it does |
 |---|---|
 | `oddshot_play` | The one-shot board: biggest odds swings → the meme riding each story → seatbelt verdict → timing (`EARLY`, `RUNNING`, `LATE`, `FADING`). |
+| `hot_narratives` | Radar: clusters trending Solana pools into stories (names, tickers, even the token they're paired against), matches each to the Polymarket market that names it, and labels it **BOTH CROWDS** or **ON-CHAIN ONLY**. |
+| `receipt` | Grades a past call with real price and odds history: price at the call vs now, peak, drawdown, odds then vs now. **HIT**, **MISS** or **FLAT**, misses included. |
 | `odds_movers` | Polymarket markets whose odds moved most in 1h or 24h, with story keywords. Skips sports, weather and price ladders. |
 | `narrative_tokens` | Maps the swarm of Solana tokens riding a narrative: crowns the OG, tags copycats, flags copycat frenzies, then ranks and safety-checks the rest. |
 | `check_token` | Full seatbelt report for any mint: GREEN, YELLOW or RED with every reason. |
 | `why_pumping` | Reverse mode: give a memecoin, get the prediction-market story behind it. |
 | `my_bags` | Values a wallet's positions and runs the seatbelt on each, so the agent can flag what to exit. |
 | `ape` | Unsigned Jupiter swap for the user's PayBox wallet. Buy with an amount, sell with an amount or a percent. |
+
+## Two crowds and receipts (v1.2)
+
+- **Hot narratives radar.** On-chain traders and prediction-market traders are two different crowds. When both heat up on the same story, the signal is stronger. `hot_narratives` merges ticker families into one story (DJT, MAGA and TRUMP are Trump; TTWO is GTA VI), and the board marks plays whose OG is trending on-chain with 🔥.
+- **Receipts.** `receipt` grades any past call from hourly price history and Polymarket odds history. Live examples: the original board call on $GTA6 graded **HIT, +158% since the call**; an $ELON token the seatbelt had flagged as a serial-deployer launch graded **MISS, -74%**.
 
 ## Narrative clusters: the OG, not the copycats
 
@@ -54,6 +61,8 @@ api.dexscreener.com
 api.rugcheck.xyz
 lite-api.jup.ag
 api.mainnet-beta.solana.com
+api.geckoterminal.com
+clob.polymarket.com
 ```
 
 No secrets are required. Jupiter's keyless API allows about 5 requests per 10 seconds per IP. For a dedicated quota, create a free key at [portal.jup.ag](https://portal.jup.ag), then add:

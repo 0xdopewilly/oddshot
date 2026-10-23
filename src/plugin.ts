@@ -17,7 +17,7 @@ const STOP = new Set(("will the who what which when how does did before after th
   "weekend box office trailer views week million billion say says during rally first second third round top most least " +
   "his her their its get gets any all record day days year years today tomorrow live president presidential nomination " +
   "party senate house government minister prime rate rates interest meeting military map deal movies movie film films " +
-  "music tv awards").split(" "));
+  "music tv awards season episode series show chart album song video").split(" "));
 
 // ---------- Schemas ----------
 
@@ -45,6 +45,18 @@ const timingSchema = z.enum(["EARLY", "RUNNING", "LATE", "FADING", "NO_MEME"]);
 const playSchema = z.object({
   narrative: z.string(), mover: moverSchema, token: scoredSchema.nullable(), timing: timingSchema,
   storyHeat: z.enum(["heating", "cooling"]), playScore: z.number(), thesis: z.string(), cluster: clusterSchema,
+  trending: z.boolean(),
+});
+const narrativeSchema = z.object({
+  narrative: z.string(), signal: z.enum(["BOTH CROWDS", "ON-CHAIN ONLY"]), heat: z.number(), pools: z.number(),
+  symbols: z.array(z.string()), volume1hUsd: z.number(), change1hPct: num,
+  leader: tokenSchema.extend(safetyShape), crowd: moverSchema.nullable(),
+});
+const oddsReceiptSchema = z.object({ question: z.string(), atCallPct: z.number(), nowPct: z.number(), changePts: z.number(), resolved: z.boolean() });
+const receiptSchema = z.object({
+  mint: z.string(), symbol: z.string(), calledAt: z.string(), priceAtCall: z.number(), priceNow: z.number(),
+  changePct: z.number(), peakPct: z.number(), troughPct: z.number(), grade: z.enum(["HIT", "MISS", "FLAT"]),
+  odds: oddsReceiptSchema.nullable(), summary: z.string(),
 });
 const positionSchema = z.object({
   mint: z.string(), symbol: z.string(), name: z.string(), amount: z.number(), valueUsd: num, change24hPct: num, ...safetyShape,
@@ -94,7 +106,7 @@ const text = (t: string) => [{ type: "text" as const, text: t }];
 function keywords(...texts: (string | null | undefined)[]): string[] {
   const out: string[] = [];
   const clean = (phrase: string) => {
-    const w = phrase.split(/\s+/).filter(Boolean);
+    const w = phrase.split(/\s+/).map((x) => x.replace(/^[^\w$]+|[^\w]+$/g, "")).filter(Boolean);
     while (w.length && STOP.has(w[0]!.toLowerCase())) w.shift();
     while (w.length && STOP.has(w[w.length - 1]!.toLowerCase())) w.pop();
     return w.slice(0, 3).join(" ");
@@ -264,6 +276,94 @@ async function mintDecimals(mint: string): Promise<number | null> {
   return n(r?.value?.data?.parsed?.info?.decimals);
 }
 
+// ---------- On-chain heat and history: GeckoTerminal, Polymarket CLOB ----------
+
+const GECKO = "https://api.geckoterminal.com/api/v2/networks/solana";
+const NOISE = new Set([...STOP, "coin", "token", "the", "sol", "solana", "inu", "official", "meme", "wrapped", "usd", "usdc", "usdt",
+  "wsol", "finance", "protocol", "dao", "fun", "pump", "cto", "community", "xstock",
+  ..."you your me my mine our they them their its can could would should all one two just got buy sell hold moon money rich small little old good bad best real love life time world man men woman girl boy king queen lord god baby cute fat dumb smart crazy happy sad last only very much many some any every these those why yes not dont cant wont him her she his lol lmao wtf omg ser fren frens degen".split(" ")]);
+// Tickers that belong to one mega-narrative, so DJT, MAGA and TRUMP count as one Trump story and TTWO as GTA.
+const ALIAS: Record<string, string> = { djt: "trump", maga: "trump", donald: "trump", melania: "trump", barron: "trump",
+  ttwo: "gta", gta6: "gta", gtavi: "gta", rockstar: "gta" };
+const STORY_NAME: Record<string, string> = { trump: "Trump", gta: "GTA VI" };
+type Hot = { t: Token; quote: string; vol1h: number };
+
+function fromGecko(a: any, base: any): Token {
+  const created = Date.parse(a?.pool_created_at ?? "");
+  return {
+    mint: String(base?.address ?? ""), symbol: String(base?.symbol ?? "?"), name: String(base?.name ?? ""),
+    priceUsd: n(a?.base_token_price_usd), change1hPct: n(a?.price_change_percentage?.h1), change6hPct: n(a?.price_change_percentage?.h6),
+    change24hPct: n(a?.price_change_percentage?.h24), volume24hUsd: n(a?.volume_usd?.h24), liquidityUsd: n(a?.reserve_in_usd),
+    marketCapUsd: n(a?.market_cap_usd ?? a?.fdv_usd), buys1h: n(a?.transactions?.h1?.buys) ?? 0, sells1h: n(a?.transactions?.h1?.sells) ?? 0,
+    ageHours: Number.isFinite(created) ? round((Date.now() - created) / 3_600_000, 1) : null,
+    url: `https://www.geckoterminal.com/solana/pools/${a?.address ?? ""}`,
+  };
+}
+
+/** Trending Solana pools (deepest pool per token), with the quote token kept: the pairing often names the narrative. */
+async function geckoTrending(duration: "5m" | "1h" | "6h" | "24h", pages: number, ms = 3500): Promise<Hot[]> {
+  const res = await Promise.all(Array.from({ length: pages }, (_, i) =>
+    getJson(`${GECKO}/trending_pools?include=base_token,quote_token&duration=${duration}&page=${i + 1}`, ms).catch(() => null)));
+  const byMint = new Map<string, Hot>();
+  for (const r of res) {
+    const inc = new Map<string, any>((r?.included ?? []).map((x: any) => [String(x?.id), x?.attributes] as [string, any]));
+    for (const p of r?.data ?? []) {
+      const base = inc.get(String(p?.relationships?.base_token?.data?.id));
+      const quote = inc.get(String(p?.relationships?.quote_token?.data?.id));
+      if (!base?.address || QUOTE_MINTS.has(base.address)) continue;
+      const hot = { t: fromGecko(p.attributes, base), quote: String(quote?.symbol ?? ""), vol1h: n(p?.attributes?.volume_usd?.h1) ?? 0 };
+      const prev = byMint.get(hot.t.mint);
+      if (!prev || hot.vol1h > prev.vol1h) byMint.set(hot.t.mint, hot);
+    }
+  }
+  return [...byMint.values()];
+}
+
+const narrativeWords = (h: Hot) => {
+  const ws = `${h.t.symbol} ${h.t.name}`.toLowerCase().split(/[^a-z0-9]+/).filter((w) => w.length >= 3 && !NOISE.has(w));
+  const q = h.quote.toLowerCase();
+  if (q.length >= 3 && !NOISE.has(q)) ws.push(q);
+  return [...new Set(ws.map((w) => ALIAS[w] ?? w))];
+};
+
+/** Best active Polymarket market whose question actually names the word. */
+async function crowdFor(word: string, ms = 3000): Promise<Mover | null> {
+  const r = await getJson(`https://gamma-api.polymarket.com/public-search?q=${encodeURIComponent(word)}&limit_per_type=6&events_status=active`, ms).catch(() => null);
+  const re = new RegExp(`\\b${word.split(" ")[0]!.replace(/[^a-z0-9]/gi, "")}`, "i");
+  return (r?.events ?? [])
+    .flatMap((e: any) => {
+      const named = { ...e, markets: (e.markets ?? []).filter((m: any) => re.test(`${m.question ?? ""} ${e.title ?? ""}`)) };
+      const b = bestMarket(named, "24h", 1000);
+      return b ? [toMover(e, b)] : [];
+    })
+    .sort((a: Mover, b: Mover) => Math.abs(b.changePts) * Math.log10(b.volume24hUsd + 10) - Math.abs(a.changePts) * Math.log10(a.volume24hUsd + 10))[0] ?? null;
+}
+
+/** The token's Solana pools on DexScreener, deepest first. */
+async function pairsByMint(mint: string, ms = 3500): Promise<any[]> {
+  const pairs = await getJson(`https://api.dexscreener.com/tokens/v1/solana/${mint}`, ms).catch(() => null);
+  return (Array.isArray(pairs) ? pairs : [])
+    .filter((p: any) => p?.chainId === "solana" && p?.baseToken?.address === mint && p?.pairAddress)
+    .sort((a: any, b: any) => (n(b?.liquidity?.usd) ?? 0) - (n(a?.liquidity?.usd) ?? 0));
+}
+
+/** The Polymarket market that best matches the story words, and its odds at the call versus now. */
+async function storyOdds(story: string, atS: number) {
+  const words = story.toLowerCase().split(/[^a-z0-9]+/).filter((w) => w.length >= 2 && !STOP.has(w));
+  const r = await getJson(`https://gamma-api.polymarket.com/public-search?q=${encodeURIComponent(story)}&limit_per_type=8&events_status=all`, 3500);
+  const fit = (m: any) => { const q = String(m?.question ?? "").toLowerCase(); return words.filter((w) => q.includes(w)).length + Math.log10((n(m?.volume) ?? 0) + 10) / 10; };
+  const market = (r?.events ?? []).flatMap((e: any) => e.markets ?? []).sort((a: any, b: any) => fit(b) - fit(a))[0];
+  const tokenId = list(market?.clobTokenIds)[0];
+  if (!market || !tokenId) return null;
+  const h = await getJson(`https://clob.polymarket.com/prices-history?market=${tokenId}&startTs=${atS - 7200}&endTs=${Math.floor(Date.now() / 1000)}&fidelity=60`, 3500);
+  const pts = ((h?.history ?? []) as { t: number; p: number }[]).filter((x) => Number.isFinite(x?.t) && Number.isFinite(x?.p));
+  if (!pts.length) return null;
+  const first = pts.reduce((best, x) => (Math.abs(x.t - atS) < Math.abs(best.t - atS) ? x : best), pts[0]!);
+  const last = pts[pts.length - 1]!;
+  return { question: String(market.question), atCallPct: round(first.p * 100, 1)!, nowPct: round(last.p * 100, 1)!,
+    changePts: round((last.p - first.p) * 100, 1)!, resolved: Boolean(market.closed) };
+}
+
 function momentum(t: Token): number {
   const move = clamp(20 * Math.tanh((t.change1hPct ?? 0) / 25) + 20 * Math.tanh((t.change6hPct ?? 0) / 60), 0, 40);
   const activity = clamp((Math.log10((t.volume24hUsd ?? 0) + 1) - 3) * 7.5, 0, 30);
@@ -398,7 +498,7 @@ async function scoreGroups(groups: Group[], limit: number, ms = 3500): Promise<{
 
 const TIMING_BONUS: Record<Timing, number> = { EARLY: 15, RUNNING: 5, LATE: -10, FADING: -15, NO_MEME: 0 };
 
-function toPlay(narrative: string, mover: Mover, candidates: Scored[], window: "1h" | "24h", cluster: Cluster): z.infer<typeof playSchema> {
+function toPlay(narrative: string, mover: Mover, candidates: Scored[], window: "1h" | "24h", cluster: Cluster, hot: Set<string>): z.infer<typeof playSchema> {
   // Copycats are never the pick, whatever their momentum.
   const token = candidates.find((t) => t.verdict !== "RED" && t.role !== "COPYCAT") ?? null;
   const run = token ? (window === "1h" ? token.change1hPct : token.change6hPct) ?? 0 : 0;
@@ -420,7 +520,7 @@ function toPlay(narrative: string, mover: Mover, candidates: Scored[], window: "
     : "";
   const late = frenzy ? ` Copycat frenzy: ${cluster.launched24h} launched in 24h, so this may be late.` : "";
   return {
-    narrative, mover, token, timing, storyHeat, cluster,
+    narrative, mover, token, timing, storyHeat, cluster, trending: !!token && hot.has(token.mint),
     playScore: token ? Math.max(0, Math.round(token.oddshotScore + Math.min(Math.abs(mover.changePts), 30) / 2 + TIMING_BONUS[timing] + (storyHeat === "heating" ? 5 : 0) - (frenzy ? 8 : 0))) : 0,
     thesis: token ? `${crowd} $${token.symbol} ${memeLine[timing]}${swarm}${late}`
       : `${crowd} ${blocked ? `Every "${narrative}" meme failed the seatbelt.` : `No liquid "${narrative}" meme yet.`}`,
@@ -431,7 +531,7 @@ function toPlay(narrative: string, mover: Mover, candidates: Scored[], window: "
 
 function createServer() {
   const server = new McpServer(
-    { name: "oddshot", version: "1.1.0" },
+    { name: "oddshot", version: "1.2.0" },
     { supportedProtocolVersions: [PROTOCOL_VERSION] },
   );
   const read = { readOnlyHint: true, destructiveHint: false, idempotentHint: false, openWorldHint: true };
@@ -454,7 +554,9 @@ function createServer() {
       // Each story gets up to two keywords nobody else claimed; every keyword is searched in parallel.
       const used = new Set<string>();
       const picked: { keys: string[]; mover: Mover }[] = [];
-      for (const mover of await fetchMovers(window, 20, 5000, 3500)) {
+      const [movers, trend] = await Promise.all([fetchMovers(window, 20, 5000, 3500), geckoTrending("1h", 1, 3000).catch(() => [] as Hot[])]);
+      const hot = new Set(trend.map((h) => h.t.mint));
+      for (const mover of movers) {
         const keys = mover.narrativeKeywords.filter((k) => !used.has(k.toLowerCase())).slice(0, 2);
         if (!keys.length) continue;
         keys.forEach((k) => used.add(k.toLowerCase()));
@@ -476,16 +578,80 @@ function createServer() {
       const withMemes = found.filter((f) => f.group.cands.length).slice(0, 6);
       const scored = await scoreGroups(withMemes.map((f) => f.group), 2, 2500);
       const plays = [
-        ...withMemes.map((f, i) => toPlay(f.narrative, f.mover, scored[i]?.picks ?? [], window, scored[i]?.cluster ?? clusterOf(f.group.all, new Map()).cluster))
+        ...withMemes.map((f, i) => toPlay(f.narrative, f.mover, scored[i]?.picks ?? [], window, scored[i]?.cluster ?? clusterOf(f.group.all, new Map()).cluster, hot))
           .sort((a, b) => b.playScore - a.playScore),
-        ...found.filter((f) => !f.group.cands.length).map((f) => toPlay(f.narrative, f.mover, [], window, clusterOf(f.group.all, new Map()).cluster)),
+        ...found.filter((f) => !f.group.cands.length).map((f) => toPlay(f.narrative, f.mover, [], window, clusterOf(f.group.all, new Map()).cluster, hot)),
       ].slice(0, stories);
       const body = plays.length
-        ? plays.map((p, i) => `${i + 1}. ${p.timing}${p.token ? ` ${light(p.token.verdict)} $${p.token.symbol}${p.cluster.size > 1 ? ` [${p.token.role} of ${p.cluster.size}]` : ""} ← "${p.narrative}" · play ${p.playScore}` : ""}\n   ${p.thesis}${p.token ? `\n   mint ${p.token.mint}` : ""}`).join("\n")
+        ? plays.map((p, i) => `${i + 1}. ${p.timing}${p.token ? ` ${light(p.token.verdict)} $${p.token.symbol}${p.cluster.size > 1 ? ` [${p.token.role} of ${p.cluster.size}]` : ""} ← "${p.narrative}" · play ${p.playScore}${p.trending ? " · 🔥 trending on-chain" : ""}` : ""}\n   ${p.thesis}${p.token ? `\n   mint ${p.token.mint}` : ""}`).join("\n")
         : "No qualifying odds moves right now.";
       return {
         content: text(`🎯 ODDSHOT BOARD: ${window} odds moves → memes\n${body}${plays.some((p) => p.token) ? "\nNext: check_token for the full seatbelt report, or ape with a mint and an amount. PayBox asks you to approve." : ""}`),
         structuredContent: { window, plays },
+      };
+    },
+  );
+
+  server.registerTool(
+    "hot_narratives",
+    {
+      title: "Hot narratives radar",
+      description: "Radar for the stories the market is trading right now. Pulls trending Solana pools, clusters them into narratives (names, tickers and the token they are paired against), matches each narrative to the Polymarket market that names it, and labels it BOTH CROWDS (on-chain traders and prediction markets heating together, the strongest signal) or ON-CHAIN ONLY. Each narrative's lead token gets a seatbelt verdict. Follow up with narrative_tokens for the full swarm.",
+      inputSchema: z.object({
+        window: z.enum(["5m", "1h", "6h", "24h"]).default("1h").describe("Trending window for on-chain heat."),
+        limit: z.number().int().min(1).max(8).default(5),
+      }).strict(),
+      outputSchema: z.object({ window: z.string(), narratives: z.array(narrativeSchema) }),
+      annotations: read,
+    },
+    async ({ window, limit }) => {
+      const hot = await geckoTrending(window, 2, 3500);
+      const byWord = new Map<string, Hot[]>();
+      for (const h of hot) for (const w of narrativeWords(h)) byWord.set(w, [...(byWord.get(w) ?? []), h]);
+      const ranked = [...byWord.entries()]
+        .map(([w, hs]) => ({ w, hs, score: hs.reduce((a, h) => a + Math.log10(h.vol1h + 10), 0) + 2 * (hs.length - 1) }))
+        .sort((a, b) => b.score - a.score);
+      // Greedy: each pool belongs to its strongest story; keep up to eight candidate stories.
+      const used = new Set<string>();
+      const stories: { w: string; hs: Hot[]; score: number }[] = [];
+      for (const r of ranked) {
+        const fresh = r.hs.filter((h) => !used.has(h.t.mint));
+        if (!fresh.length) continue;
+        r.hs.forEach((h) => used.add(h.t.mint));
+        stories.push(r);
+        if (stories.length === 8) break;
+      }
+      const [crowds, jup] = await Promise.all([
+        Promise.all(stories.map((x) => crowdFor(STORY_NAME[x.w] ?? x.w, 3000))),
+        jupTokens(stories.map((x) => [...x.hs].sort((a, b) => b.vol1h - a.vol1h)[0]!.t.mint), 3000),
+      ]);
+      const narratives = stories
+        .map((x, i) => {
+          const lead = x.hs.filter((h) => !stories.slice(0, i).some((o) => o.hs.includes(h))).sort((a, b) => b.vol1h - a.vol1h)[0] ?? x.hs[0]!;
+          const vol = x.hs.reduce((a, h) => a + h.vol1h, 0);
+          const crowd = crowds[i] ?? null;
+          const symbolHit = x.hs.find((h) => h.t.symbol.toLowerCase() === x.w);
+          return {
+            narrative: STORY_NAME[x.w] ?? (symbolHit ? symbolHit.t.symbol : x.w.length <= 4 ? x.w.toUpperCase() : x.w[0]!.toUpperCase() + x.w.slice(1)),
+            signal: crowd ? "BOTH CROWDS" as const : "ON-CHAIN ONLY" as const,
+            heat: Math.round(x.score + (crowd ? 5 + Math.min(Math.abs(crowd.changePts), 30) / 3 : 0)),
+            pools: x.hs.length, symbols: x.hs.map((h) => h.t.symbol).slice(0, 6), volume1hUsd: Math.round(vol),
+            change1hPct: vol > 0 ? round(x.hs.reduce((a, h) => a + (h.t.change1hPct ?? 0) * h.vol1h, 0) / vol, 1) : null,
+            leader: { ...lead.t, ...safety(lead.t, null, jup.get(lead.t.mint), "GeckoTerminal") },
+            crowd,
+          };
+        })
+        .filter((x) => x.pools >= 2 || x.crowd)
+        .sort((a, b) => b.heat - a.heat)
+        .slice(0, limit);
+      const body = narratives.length
+        ? narratives.map((x, i) => `${i + 1}. ${x.signal === "BOTH CROWDS" ? "🔥🔥" : "🔥"} "${x.narrative}" · ${x.signal} · ${x.pools} pool${x.pools > 1 ? "s" : ""} · ${usd(x.volume1hUsd)} vol 1h · ${pct(x.change1hPct)}` +
+          `\n   chain: ${light(x.leader.verdict)} $${x.leader.symbol} leads (${pct(x.leader.change1hPct)} 1h, liq ${usd(x.leader.liquidityUsd)})${x.pools > 1 ? ` · also ${x.symbols.filter((s) => s !== x.leader.symbol).slice(0, 3).map((s) => `$${s}`).join(", ")}` : ""}` +
+          (x.crowd ? `\n   crowd: ${moverLine(x.crowd)}` : "") + `\n   mint ${x.leader.mint}`).join("\n")
+        : "No clustered narratives in the trending set right now.";
+      return {
+        content: text(`📡 HOT NARRATIVES (${window} on-chain × prediction markets)\n${body}\nNext: narrative_tokens to map a story's full swarm and its OG, or check_token for the full seatbelt.`),
+        structuredContent: { window, narratives },
       };
     },
   );
@@ -596,6 +762,61 @@ function createServer() {
       return {
         content: text(`${summary}${catalysts.length ? `\nRelated markets:\n${catalysts.map(moverLine).join("\n")}` : ""}`),
         structuredContent: { token, catalysts, summary },
+      };
+    },
+  );
+
+  server.registerTool(
+    "receipt",
+    {
+      title: "Receipt: grade a past call",
+      description: "Grades a past call with real price and odds history: the token's price at the call versus now, the peak and the drawdown since, and, given the story, how the Polymarket odds behind it moved. Returns HIT (+10% or more), MISS (-10% or worse) or FLAT. Misses count as much as hits.",
+      inputSchema: z.object({
+        mint: address,
+        calledAt: z.string().max(40).optional().describe("UTC time of the call, e.g. 2026-10-16T21:44:00Z."),
+        hoursAgo: z.number().min(1).max(960).optional().describe("Alternative to calledAt."),
+        story: z.string().trim().min(3).max(160).optional().describe("Words from the Polymarket question behind the call, to grade the odds too."),
+      }).strict(),
+      outputSchema: receiptSchema,
+      annotations: read,
+    },
+    async ({ mint, calledAt, hoursAgo, story }) => {
+      const at = calledAt ? Date.parse(calledAt) : Date.now() - (hoursAgo ?? 24) * 3_600_000;
+      if (!Number.isFinite(at) || at > Date.now() - 3_600_000) throw new Error("Give a call time at least an hour in the past (calledAt or hoursAgo).");
+      const atS = Math.floor(at / 1000);
+      const pairs = (await pairsByMint(mint)).slice(0, 3);
+      if (!pairs.length) throw new Error("No Solana pool found for this mint.");
+      // A token can gain a newer, deeper pool after the call; use the deepest pool whose history covers the call time.
+      const [histories, odds] = await Promise.all([
+        Promise.all(pairs.map((pr) => getJson(`${GECKO}/pools/${pr.pairAddress}/ohlcv/hour?aggregate=1&limit=1000&currency=usd&token=${mint}`, 4500)
+          .then((o) => ((o?.data?.attributes?.ohlcv_list ?? []) as unknown[][])
+            .map((c) => c.map(Number)).filter((c) => c.length >= 5 && c.every(Number.isFinite)).sort((a, b) => a[0]! - b[0]!))
+          .catch(() => [] as number[][]))),
+        story ? storyOdds(story, atS).catch(() => null) : Promise.resolve(null),
+      ]);
+      // Hourly feeds skip quiet hours: use the last candle at or before the call (within 6h) and carry its close across any gap.
+      const pick = histories
+        .map((candles) => ({ candles, i: candles.reduce((last, c, k) => (c[0]! <= atS ? k : last), -1) }))
+        .find((h) => h.i >= 0 && atS - h.candles[h.i]![0]! < 6 * 3600);
+      if (!pick) throw new Error("No hourly price history covers that time (history reaches back about 40 days).");
+      const { candles, i } = pick;
+      const pair = pairs[0]!;
+      const c0 = candles[i]!;
+      const p0 = atS < c0[0]! + 3600 ? c0[1]! + (c0[4]! - c0[1]!) * ((atS - c0[0]!) / 3600) : c0[4]!;
+      const after = candles.slice(i);
+      const pNow = n(pair.priceUsd) ?? after[after.length - 1]![4]!;
+      const change = (pNow / p0 - 1) * 100;
+      const peak = Math.max((Math.max(...after.map((c) => c[2]!)) / p0 - 1) * 100, change);
+      const trough = Math.min((Math.min(...after.map((c) => c[3]!)) / p0 - 1) * 100, change);
+      const grade = change >= 10 ? "HIT" as const : change <= -10 ? "MISS" as const : "FLAT" as const;
+      const symbol = String(pair.baseToken?.symbol ?? short(mint));
+      const when = new Date(atS * 1000).toISOString().replace(/:\d{2}\.\d{3}Z$/, "Z");
+      const summary = `${grade}: $${symbol} ${pct(change)} since the call (${when}), peak ${pct(peak)}, worst ${pct(trough)}.` +
+        (odds ? ` Odds on "${odds.question}" went ${odds.atCallPct}% → ${odds.nowPct}%${odds.resolved ? " (resolved)" : ""}.` : "");
+      return {
+        content: text(`🧾 RECEIPT · ${grade === "HIT" ? "✅" : grade === "MISS" ? "❌" : "➖"} ${summary}\nPrice at call $${p0.toPrecision(4)} → now $${pNow.toPrecision(4)}. One call is one data point, not a track record or financial advice.`),
+        structuredContent: { mint, symbol, calledAt: when, priceAtCall: Number(p0.toPrecision(6)), priceNow: Number(pNow.toPrecision(6)),
+          changePct: round(change, 1)!, peakPct: round(peak, 1)!, troughPct: round(trough, 1)!, grade, odds, summary },
       };
     },
   );
