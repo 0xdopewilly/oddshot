@@ -582,6 +582,18 @@ function createServer() {
     { supportedProtocolVersions: [PROTOCOL_VERSION] },
   );
   const read = { readOnlyHint: true, destructiveHint: false, idempotentHint: false, openWorldHint: true };
+  // PayBox rejects any result without structured output, even an error, so failures carry the reason there too
+  // and the agent sees "wait about 10 seconds" instead of an opaque protocol error.
+  const register = server.registerTool.bind(server);
+  server.registerTool = ((name: string, config: any, handler: (...a: any[]) => any) =>
+    register(name, config, async (...a: any[]) => {
+      try {
+        return await handler(...a);
+      } catch (e) {
+        const error = e instanceof Error ? e.message : String(e);
+        return { content: text(error), structuredContent: { error }, isError: true };
+      }
+    })) as typeof server.registerTool;
 
   server.registerTool(
     "oddshot_play",
