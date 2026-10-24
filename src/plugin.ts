@@ -545,10 +545,13 @@ const TIMING_BONUS: Record<Timing, number> = { EARLY: 15, RUNNING: 5, LATE: -10,
 function toPlay(narrative: string, mover: Mover, candidates: Scored[], window: "1h" | "24h", cluster: Cluster, hot: Set<string>): z.infer<typeof playSchema> {
   // Copycats are never the pick, whatever their momentum.
   const token = candidates.find((t) => t.verdict !== "RED" && t.role !== "COPYCAT") ?? null;
-  const run = token ? (window === "1h" ? token.change1hPct : token.change6hPct) ?? 0 : 0;
+  // A 24h odds move is judged against the meme's bigger move over 6h or the full 24h, so a meme that ripped
+  // and went quiet hours ago does not read as EARLY.
+  const r6 = token?.change6hPct ?? 0, r24 = token?.change24hPct ?? r6;
+  const run = !token ? 0 : window === "1h" ? token.change1hPct ?? 0 : Math.abs(r24) > Math.abs(r6) ? r24 : r6;
   const timing: Timing = !token ? "NO_MEME" : run < -20 ? "FADING" : run <= 15 ? "EARLY" : run <= 100 ? "RUNNING" : "LATE";
   const storyHeat = mover.direction === "up" ? "heating" : "cooling";
-  const span = window === "1h" ? "1h" : "6h";
+  const span = window === "1h" ? "1h" : run === r24 && r24 !== r6 ? "24h" : "6h";
   const crowd = `Crowd ${storyHeat === "heating" ? "piling into" : "backing off"} "${mover.question}" (${mover.changePts > 0 ? "+" : ""}${mover.changePts} pts → ${mover.probabilityPct}%).`;
   const memeLine: Record<Timing, string> = {
     EARLY: `hasn't moved yet (${pct(run)} ${span}). ${storyHeat === "heating" ? "The window is open." : "Watch for a fade."}`,
@@ -575,7 +578,7 @@ function toPlay(narrative: string, mover: Mover, candidates: Scored[], window: "
 
 function createServer() {
   const server = new McpServer(
-    { name: "oddshot", version: "1.3.1" },
+    { name: "oddshot", version: "1.3.2" },
     { supportedProtocolVersions: [PROTOCOL_VERSION] },
   );
   const read = { readOnlyHint: true, destructiveHint: false, idempotentHint: false, openWorldHint: true };
@@ -903,15 +906,15 @@ function createServer() {
       ]);
       // Hourly feeds skip quiet hours: use the last candle at or before the call (within 6h) and carry its close across any gap.
       const pick = histories
-        .map((candles) => ({ candles, i: candles.reduce((last, c, k) => (c[0]! <= atS ? k : last), -1) }))
+        .map((candles, k) => ({ candles, pair: pairs[k]!, i: candles.reduce((last, c, j) => (c[0]! <= atS ? j : last), -1) }))
         .find((h) => h.i >= 0 && atS - h.candles[h.i]![0]! < 6 * 3600);
       if (!pick) throw new Error("No hourly price history covers that time (history reaches back about 40 days).");
-      const { candles, i } = pick;
-      const pair = pairs[0]!;
+      const { candles, i, pair } = pick;
       const c0 = candles[i]!;
       const p0 = atS < c0[0]! + 3600 ? c0[1]! + (c0[4]! - c0[1]!) * ((atS - c0[0]!) / 3600) : c0[4]!;
       const after = candles.slice(i);
-      const pNow = n(pair.priceUsd) ?? after[after.length - 1]![4]!;
+      // Then and now come from the same pool's feed: sources can price an exotic quote token very differently.
+      const pNow = after[after.length - 1]![4]!;
       const change = (pNow / p0 - 1) * 100;
       const peak = Math.max((Math.max(...after.map((c) => c[2]!)) / p0 - 1) * 100, change);
       const trough = Math.min((Math.min(...after.map((c) => c[3]!)) / p0 - 1) * 100, change);

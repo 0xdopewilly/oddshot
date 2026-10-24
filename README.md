@@ -27,15 +27,16 @@ Built by **Dappest Dev** ([@sentinel_dapper](https://x.com/sentinel_dapper)) for
 | `my_bags` | Values a wallet's positions and runs the seatbelt on each, so the agent can flag what to exit. |
 | `ape` | Unsigned Jupiter swap for the user's PayBox wallet. Buy with an amount, sell with an amount or a percent. Buys come with an exit plan scaled to the token's own volatility: two take-profit levels and a stop. |
 
-## Proof, not promises (v1.2–v1.3)
+## Proof, not promises (v1.2–v1.3.2)
 
 - **Lag check.** The thesis is that odds move first and memes follow. `lag_check` measures it per story instead of asserting it, and reports NO REACTION when that's what happened.
+- **Honest timing.** A 24h odds move is judged against the meme's 6h and 24h moves, so a meme that ripped hours ago and went quiet does not read as EARLY (v1.3.2).
 - **Size, entry, exit.** `check_token` reports how much the pool can absorb; `ape` returns the swap plus an exit plan (take 50% at +2× the stop, the rest at +4×, stop at 3× the token's average hourly range, clamped to 10–50%).
 
 ## Two crowds and receipts (v1.2)
 
 - **Hot narratives radar.** On-chain traders and prediction-market traders are two different crowds. When both heat up on the same story, the signal is stronger. `hot_narratives` merges ticker families into one story (DJT, MAGA and TRUMP are Trump; TTWO is GTA VI), and the board marks plays whose OG is trending on-chain with 🔥.
-- **Receipts.** `receipt` grades any past call from hourly price history and Polymarket odds history. Live examples: the original board call on $GTA6 graded **HIT, +158% since the call**; an $ELON token the seatbelt had flagged as a serial-deployer launch graded **MISS, -74%**.
+- **Receipts.** `receipt` grades any past call from hourly price history and Polymarket odds history. Live examples: the original board call on $GTA6 graded **HIT, +154% since the call**; a later $ANT call, made after the meme had already moved, graded **FLAT**. Then-and-now prices come from the same pool's feed, because sources can price a token paired against an exotic quote very differently (fixed in v1.3.2).
 
 ## Narrative clusters: the OG, not the copycats
 
