@@ -182,10 +182,13 @@ const moverLine = (m: Mover) =>
 
 // ---------- Market data: DexScreener, RugCheck, Jupiter ----------
 
+/** Ticker without a leading "$" (some tokens put it in their symbol, which printed as "$$WIF"). */
+const sym = (s: unknown) => String(s ?? "").replace(/^\$+/, "").trim() || "?";
+
 function toToken(p: any): Token {
   const created = n(p.pairCreatedAt);
   return {
-    mint: String(p.baseToken?.address ?? ""), symbol: String(p.baseToken?.symbol ?? "?"), name: String(p.baseToken?.name ?? ""),
+    mint: String(p.baseToken?.address ?? ""), symbol: sym(p.baseToken?.symbol), name: String(p.baseToken?.name ?? ""),
     priceUsd: n(p.priceUsd), change1hPct: n(p.priceChange?.h1), change6hPct: n(p.priceChange?.h6), change24hPct: n(p.priceChange?.h24),
     volume24hUsd: n(p.volume?.h24), liquidityUsd: n(p.liquidity?.usd), marketCapUsd: n(p.marketCap ?? p.fdv),
     buys1h: n(p.txns?.h1?.buys) ?? 0, sells1h: n(p.txns?.h1?.sells) ?? 0,
@@ -199,7 +202,7 @@ function fromJupiter(j: any): Token {
   const created = Date.parse(j.firstPool?.createdAt ?? j.createdAt ?? "");
   const volume = (n(s24.buyVolume) ?? 0) + (n(s24.sellVolume) ?? 0);
   return {
-    mint: String(j.id ?? ""), symbol: String(j.symbol ?? "?"), name: String(j.name ?? ""), priceUsd: n(j.usdPrice),
+    mint: String(j.id ?? ""), symbol: sym(j.symbol), name: String(j.name ?? ""), priceUsd: n(j.usdPrice),
     change1hPct: n(s1.priceChange), change6hPct: n(j.stats6h?.priceChange), change24hPct: n(s24.priceChange),
     volume24hUsd: volume || null, liquidityUsd: n(j.liquidity), marketCapUsd: n(j.mcap ?? j.fdv),
     buys1h: n(s1.numBuys) ?? 0, sells1h: n(s1.numSells) ?? 0,
@@ -221,7 +224,7 @@ function bestPairs(pairs: any[]): Token[] {
 }
 
 async function tokenByMint(mint: string, ms = 3500): Promise<Token | null> {
-  const pairs = await getJson(`https://api.dexscreener.com/tokens/v1/solana/${mint}`, ms).catch(() => null);
+  const pairs = await getJson(`https://api.dexscreener.com/token-pairs/v1/solana/${mint}`, ms).catch(() => null);
   return bestPairs(Array.isArray(pairs) ? pairs : []).find((t) => t.mint === mint) ?? null;
 }
 
@@ -296,7 +299,7 @@ type Hot = { t: Token; quote: string; vol1h: number };
 function fromGecko(a: any, base: any): Token {
   const created = Date.parse(a?.pool_created_at ?? "");
   return {
-    mint: String(base?.address ?? ""), symbol: String(base?.symbol ?? "?"), name: String(base?.name ?? ""),
+    mint: String(base?.address ?? ""), symbol: sym(base?.symbol), name: String(base?.name ?? ""),
     priceUsd: n(a?.base_token_price_usd), change1hPct: n(a?.price_change_percentage?.h1), change6hPct: n(a?.price_change_percentage?.h6),
     change24hPct: n(a?.price_change_percentage?.h24), volume24hUsd: n(a?.volume_usd?.h24), liquidityUsd: n(a?.reserve_in_usd),
     marketCapUsd: n(a?.market_cap_usd ?? a?.fdv_usd), buys1h: n(a?.transactions?.h1?.buys) ?? 0, sells1h: n(a?.transactions?.h1?.sells) ?? 0,
@@ -346,7 +349,7 @@ async function crowdFor(word: string, ms = 3000): Promise<Mover | null> {
 
 /** The token's Solana pools on DexScreener, deepest first. */
 async function pairsByMint(mint: string, ms = 3500): Promise<any[]> {
-  const pairs = await getJson(`https://api.dexscreener.com/tokens/v1/solana/${mint}`, ms).catch(() => null);
+  const pairs = await getJson(`https://api.dexscreener.com/token-pairs/v1/solana/${mint}`, ms).catch(() => null);
   return (Array.isArray(pairs) ? pairs : [])
     .filter((p: any) => p?.chainId === "solana" && p?.baseToken?.address === mint && p?.pairAddress)
     .sort((a: any, b: any) => (n(b?.liquidity?.usd) ?? 0) - (n(a?.liquidity?.usd) ?? 0));
@@ -578,7 +581,7 @@ function toPlay(narrative: string, mover: Mover, candidates: Scored[], window: "
 
 function createServer() {
   const server = new McpServer(
-    { name: "oddshot", version: "1.3.2" },
+    { name: "oddshot", version: "1.3.3" },
     { supportedProtocolVersions: [PROTOCOL_VERSION] },
   );
   const read = { readOnlyHint: true, destructiveHint: false, idempotentHint: false, openWorldHint: true };
@@ -876,7 +879,7 @@ function createServer() {
       const verdict = (during ?? 0) >= 20 ? "MEMES LED" as const : bestAfter >= 10 ? "MEMES FOLLOWED" as const
         : (a24 ?? a6 ?? 0) <= -10 ? "MEMES FADED" as const : "NO REACTION" as const;
       const iso = (t: number) => new Date(t * 1000).toISOString().replace(/:\d{2}\.\d{3}Z$/, "Z");
-      const symbol = String(pairs[0]!.baseToken?.symbol ?? short(mint));
+      const symbol = pairs[0]!.baseToken?.symbol ? sym(pairs[0]!.baseToken.symbol) : short(mint);
       const jump = round(best.d * 100, 1)!;
       const summary = `${verdict}: odds on "${market.question}" swung ${jump > 0 ? "+" : ""}${jump} pts (${round(pts[best.k]!.p * 100, 1)}% → ${round(pts[best.i]!.p * 100, 1)}%) between ${iso(t0)} and ${iso(t1)}. $${symbol} moved ${pct(during)} during the swing, then ${pct(a1)} after 1h, ${pct(a6)} after 6h, ${pct(a24)} after 24h.`;
       return {
@@ -931,7 +934,7 @@ function createServer() {
       const peak = Math.max((Math.max(...after.map((c) => c[2]!)) / p0 - 1) * 100, change);
       const trough = Math.min((Math.min(...after.map((c) => c[3]!)) / p0 - 1) * 100, change);
       const grade = change >= 10 ? "HIT" as const : change <= -10 ? "MISS" as const : "FLAT" as const;
-      const symbol = String(pair.baseToken?.symbol ?? short(mint));
+      const symbol = pair.baseToken?.symbol ? sym(pair.baseToken.symbol) : short(mint);
       const when = new Date(atS * 1000).toISOString().replace(/:\d{2}\.\d{3}Z$/, "Z");
       const summary = `${grade}: $${symbol} ${pct(change)} since the call (${when}), peak ${pct(peak)}, worst ${pct(trough)}.` +
         (odds ? ` Odds on "${odds.question}" went ${odds.atCallPct}% → ${odds.nowPct}%${odds.resolved ? " (resolved)" : ""}.` : "");
