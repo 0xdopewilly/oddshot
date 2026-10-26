@@ -8,7 +8,9 @@ When the crowd's odds on a real-world story jump (a launch, an election, a celeb
 
 ## Demo
 
-The 1:51 demo (real PayBox runs, a live approved swap inside Claude, and the on-chain receipt) is attached to the [v1.1.0 release](../../releases/tag/v1.1.0), along with the built `plugin.mjs`.
+**[Late, again](https://x.com/sentinel_dapper/status/2114719962522611996)** (2:48, on X): a motion comic where every screen is a real Oddshot run in ChatGPT with PayBox. A lag check on $ANT, a graded $GTA6 call, a RED safety flag on $TRUMP, and a $WIF buy and sell approved in PayBox ([buy](https://solscan.io/tx/4QdHzPTbeQMH8STTbkeWfvvaBXrBfoGE3nPiLHeqYobBKNBmXoyFQucwCwFZNCJSKqyGy61pWUe9FX9xL3YGcSSP), [sell](https://solscan.io/tx/4HJjZdtPvS6fqKTepazeYeGfvcKnUnY4gE6gjG6PbJXkdgWw3Fb77jVKPXwqD7s6vqaFbmHQeXL4N6ZtQYWhh2SK)).
+
+The original 1:51 screen demo (real PayBox runs, a live approved swap inside Claude, and the on-chain receipt) is attached to the [v1.1.0 release](../../releases/tag/v1.1.0). The current bundle is on the [latest release](../../releases/latest).
 
 Built by **Dappest Dev** ([@sentinel_dapper](https://x.com/sentinel_dapper)) for the MoonPay × PayBox Hackathon.
 
