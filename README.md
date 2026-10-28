@@ -2,6 +2,8 @@
 
 **The odds moved. The memes haven't. Yet.**
 
+📖 **Docs: [0xdopewilly.github.io/oddshot](https://0xdopewilly.github.io/oddshot/)**: how it works, how to start in PayBox, what to ask, every tool and the safety model, in plain words.
+
 Oddshot is a [PayBox](https://paybox.sh) plugin that lets an AI agent turn prediction-market odds swings into Solana trades, behind a seatbelt: memecoin plays, majors (SOL, BTC, ETH) on macro odds, and exits to USDC when the odds turn.
 
 When the crowd's odds on a real-world story jump (a launch, an election, a celebrity, an IPO), memecoins named after that story often move in the hours after. Oddshot finds those stories on Polymarket and Kalshi, finds the memes riding them, checks each token against three safety sources, labels the timing, and proposes a capped Jupiter swap that you approve in PayBox.

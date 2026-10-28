@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-112 -112 224 224">
+  <defs>
+    <radialGradient id="i" cx="0.4" cy="0.35" r="0.7"><stop offset="0" stop-color="#8DFFC9"/><stop offset="0.6" stop-color="#3DFFA0"/><stop offset="1" stop-color="#0FA864"/></radialGradient>
+    <clipPath id="c"><circle r="42"/></clipPath>
+  </defs>
+  <g stroke="#3DFFA0" stroke-width="11" stroke-linecap="round">
+    <line y1="-80" y2="-99"/><line y1="-80" y2="-99" transform="rotate(90)"/><line y1="-80" y2="-99" transform="rotate(180)"/><line y1="-80" y2="-99" transform="rotate(270)"/>
+  </g>
+  <circle r="74" fill="#05110C" stroke="#3DFFA0" stroke-width="12"/>
+  <circle r="59" fill="none" stroke="#3DFFA0" stroke-width="3" opacity="0.4" stroke-dasharray="18 10"/>
+  <g clip-path="url(#c)">
+    <circle r="42" fill="#F2FFF8"/>
+    <g transform="translate(7 2.4)"><circle r="24" fill="url(#i)"/><circle r="11" fill="#03100A"/><circle cx="-8" cy="-9" r="5" fill="#fff"/></g>
+    <rect x="-60" y="-60" width="120" height="38.2" fill="#0A1E16"/>
+    <line x1="-60" y1="-21.8" x2="60" y2="-21.8" stroke="#3DFFA0" stroke-width="4"/>
+  </g>
+  <circle r="42" fill="none" stroke="#0A1E16" stroke-width="4"/>
+</svg>
