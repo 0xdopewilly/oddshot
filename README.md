@@ -162,3 +162,7 @@ Memecoins are extremely risky. Oddshot reports signals and safety checks; it is 
 ## Video pipeline
 
 `video/` holds the code that produced the demo: Remotion scenes (`video/src`), a neural voiceover with word-level timings and punctuated captions (`video/demo/tts.py`, `timeline.py`), a synthesized, ducked score with SFX (`video/demo/mix.py`), and capture scripts that run the real plugin and screenshot the live pages (`video/scripts`).
+
+## License
+
+MIT. See [LICENSE](LICENSE).

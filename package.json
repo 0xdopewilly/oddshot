@@ -1,6 +1,7 @@
 {
   "name": "oddshot",
   "version": "1.6.3",
+  "license": "MIT",
   "private": true,
   "type": "module",
   "engines": {
