@@ -1,0 +1,2292 @@
+{
+ "total": 167.99,
+ "fps": 30,
+ "scenes": [
+  {
+   "id": "hook",
+   "start": 0.0,
+   "end": 5.695
+  },
+  {
+   "id": "cold",
+   "start": 5.695,
+   "end": 17.697
+  },
+  {
+   "id": "oddy",
+   "start": 17.697,
+   "end": 39.685
+  },
+  {
+   "id": "install",
+   "start": 39.685,
+   "end": 47.617
+  },
+  {
+   "id": "lag",
+   "start": 47.617,
+   "end": 58.622
+  },
+  {
+   "id": "receipt",
+   "start": 58.622,
+   "end": 78.162
+  },
+  {
+   "id": "swarm",
+   "start": 78.162,
+   "end": 88.253
+  },
+  {
+   "id": "seatbelt",
+   "start": 88.253,
+   "end": 101.329
+  },
+  {
+   "id": "buy",
+   "start": 101.329,
+   "end": 114.84
+  },
+  {
+   "id": "exit",
+   "start": 114.84,
+   "end": 125.469
+  },
+  {
+   "id": "loop",
+   "start": 125.469,
+   "end": 153.483
+  },
+  {
+   "id": "sunrise",
+   "start": 153.483,
+   "end": 159.617
+  },
+  {
+   "id": "end",
+   "start": 159.617,
+   "end": 167.99
+  }
+ ],
+ "lines": [
+  {
+   "id": "h1",
+   "who": "oddy",
+   "text": "I called GTA Six. It's up a hundred forty-eight percent since.",
+   "words": [
+    {
+     "w": "I",
+     "t": 0.05,
+     "d": 0.164458,
+     "disp": "I"
+    },
+    {
+     "w": "called",
+     "t": 0.214458,
+     "d": 0.405708,
+     "disp": "called"
+    },
+    {
+     "w": "GTA",
+     "t": 0.620166,
+     "d": 0.416666,
+     "disp": "GTA"
+    },
+    {
+     "w": "6",
+     "t": 1.036833,
+     "d": 0.449541,
+     "disp": "Six."
+    },
+    {
+     "w": "It's",
+     "t": 1.782458,
+     "d": 0.186416,
+     "disp": "It's"
+    },
+    {
+     "w": "up",
+     "t": 1.968875,
+     "d": 0.120583,
+     "disp": "up"
+    },
+    {
+     "w": "a",
+     "t": 2.089458,
+     "d": 0.065791,
+     "disp": "a"
+    },
+    {
+     "w": "hundred",
+     "t": 2.15525,
+     "d": 0.328958,
+     "disp": "hundred"
+    },
+    {
+     "w": "forty-eight",
+     "t": 2.484208,
+     "d": 0.460541,
+     "disp": "forty-eight"
+    },
+    {
+     "w": "percent",
+     "t": 2.94475,
+     "d": 0.339916,
+     "disp": "percent"
+    },
+    {
+     "w": "since",
+     "t": 3.284666,
+     "d": 0.460541,
+     "disp": "since."
+    }
+   ],
+   "dur": 3.8652070000000003,
+   "pre": 0.5,
+   "hold": 0.6,
+   "scene": "hook",
+   "say": "I called GTA 6. It's up a hundred forty-eight percent since.",
+   "start": 0.8
+  },
+  {
+   "id": "c1",
+   "who": "dex",
+   "text": "Six hundred percent, and it's still early? Let's gooo! I'm in!",
+   "stretch": {
+    "go": 1.9
+   },
+   "words": [
+    {
+     "w": "Six",
+     "t": 0.047333,
+     "d": 0.200875,
+     "disp": "Six"
+    },
+    {
+     "w": "hundred",
+     "t": 0.259375,
+     "d": 0.245541,
+     "disp": "hundred"
+    },
+    {
+     "w": "percent",
+     "t": 0.516083,
+     "d": 0.457583,
+     "disp": "percent,"
+    },
+    {
+     "w": "and",
+     "t": 0.996,
+     "d": 0.145083,
+     "disp": "and"
+    },
+    {
+     "w": "it's",
+     "t": 1.15225,
+     "d": 0.111625,
+     "disp": "it's"
+    },
+    {
+     "w": "still",
+     "t": 1.275,
+     "d": 0.267875,
+     "disp": "still"
+    },
+    {
+     "w": "early",
+     "t": 1.565166,
+     "d": 0.424125,
+     "disp": "early?"
+    },
+    {
+     "w": "Let's",
+     "t": 2.332583,
+     "d": 0.167416,
+     "disp": "Let's"
+    },
+    {
+     "w": "go",
+     "t": 2.511166,
+     "d": 0.6085327,
+     "disp": "gooo!"
+    },
+    {
+     "w": "I'm",
+     "t": 3.4768247,
+     "d": 0.133916,
+     "disp": "I'm"
+    },
+    {
+     "w": "in",
+     "t": 3.6219497,
+     "d": 0.279,
+     "disp": "in!"
+    }
+   ],
+   "dur": 4.0209497,
+   "pre": 1.3,
+   "hold": 0.2,
+   "scene": "cold",
+   "say": "Six hundred percent, and it's still early? Let's go! I'm in!",
+   "start": 7.295
+  },
+  {
+   "id": "c2",
+   "who": "dex",
+   "text": "Wait. It's dumping? Oh mehn. Late. Again.",
+   "stretch": {
+    "men": 1.4
+   },
+   "words": [
+    {
+     "w": "Wait",
+     "t": 0.055791,
+     "d": 0.223208,
+     "disp": "Wait."
+    },
+    {
+     "w": "It's",
+     "t": 0.608041,
+     "d": 0.15625,
+     "disp": "It's"
+    },
+    {
+     "w": "dumping",
+     "t": 0.775458,
+     "d": 0.50225,
+     "disp": "dumping?"
+    },
+    {
+     "w": "Oh",
+     "t": 1.618291,
+     "d": 0.078125,
+     "disp": "Oh"
+    },
+    {
+     "w": "men",
+     "t": 1.71875,
+     "d": 0.43786620000000004,
+     "disp": "mehn."
+    },
+    {
+     "w": "Late",
+     "t": 2.4816162,
+     "d": 0.245541,
+     "disp": "Late."
+    },
+    {
+     "w": "again",
+     "t": 2.7383242,
+     "d": 0.412958,
+     "disp": "Again."
+    }
+   ],
+   "dur": 3.2712822000000004,
+   "pre": 1.7,
+   "hold": 0.5,
+   "scene": "cold",
+   "say": "Wait. It's dumping? Oh, men. Late, again.",
+   "start": 13.496
+  },
+  {
+   "id": "o1",
+   "who": "oddy",
+   "text": "You bought the tweet. The money moved hours ago, on Polymarket.",
+   "words": [
+    {
+     "w": "You",
+     "t": 0.05,
+     "d": 0.252208,
+     "disp": "You"
+    },
+    {
+     "w": "bought",
+     "t": 0.302208,
+     "d": 0.307,
+     "disp": "bought"
+    },
+    {
+     "w": "the",
+     "t": 0.609208,
+     "d": 0.098666,
+     "disp": "the"
+    },
+    {
+     "w": "tweet",
+     "t": 0.707875,
+     "d": 0.416666,
+     "disp": "tweet."
+    },
+    {
+     "w": "The",
+     "t": 1.420625,
+     "d": 0.120583,
+     "disp": "The"
+    },
+    {
+     "w": "money",
+     "t": 1.541208,
+     "d": 0.252208,
+     "disp": "money"
+    },
+    {
+     "w": "moved",
+     "t": 1.793416,
+     "d": 0.318,
+     "disp": "moved"
+    },
+    {
+     "w": "hours",
+     "t": 2.111416,
+     "d": 0.241208,
+     "disp": "hours"
+    },
+    {
+     "w": "ago",
+     "t": 2.352625,
+     "d": 0.339916,
+     "disp": "ago,"
+    },
+    {
+     "w": "on",
+     "t": 2.911833,
+     "d": 0.164458,
+     "disp": "on"
+    },
+    {
+     "w": "Polymarket",
+     "t": 3.076333,
+     "d": 0.668875,
+     "disp": "Polymarket."
+    }
+   ],
+   "dur": 3.865208,
+   "pre": 1.3,
+   "scene": "oddy",
+   "start": 19.297
+  },
+  {
+   "id": "o2",
+   "who": "dex",
+   "text": "Yo! Who are you?!",
+   "words": [
+    {
+     "w": "Yo",
+     "t": 0.066958,
+     "d": 0.357125,
+     "disp": "Yo!"
+    },
+    {
+     "w": "Who",
+     "t": 0.78125,
+     "d": 0.111625,
+     "disp": "Who"
+    },
+    {
+     "w": "are",
+     "t": 0.904,
+     "d": 0.145083,
+     "disp": "are"
+    },
+    {
+     "w": "you",
+     "t": 1.06025,
+     "d": 0.234375,
+     "disp": "you?!"
+    }
+   ],
+   "dur": 1.414625,
+   "scene": "oddy",
+   "start": 23.443
+  },
+  {
+   "id": "o3",
+   "who": "oddy",
+   "text": "I'm Oddy, the Oddshot plugin. I watch prediction markets.",
+   "words": [
+    {
+     "w": "I'm",
+     "t": 0.05,
+     "d": 0.318,
+     "disp": "I'm"
+    },
+    {
+     "w": "Oddy",
+     "t": 0.368,
+     "d": 0.372791,
+     "disp": "Oddy,"
+    },
+    {
+     "w": "the",
+     "t": 0.927208,
+     "d": 0.175416,
+     "disp": "the"
+    },
+    {
+     "w": "Oddshot",
+     "t": 1.102625,
+     "d": 0.405708,
+     "disp": "Oddshot"
+    },
+    {
+     "w": "plugin",
+     "t": 1.508333,
+     "d": 0.416666,
+     "disp": "plugin."
+    },
+    {
+     "w": "I",
+     "t": 2.221041,
+     "d": 0.285083,
+     "disp": "I"
+    },
+    {
+     "w": "watch",
+     "t": 2.506125,
+     "d": 0.307,
+     "disp": "watch"
+    },
+    {
+     "w": "prediction",
+     "t": 2.813166,
+     "d": 0.394708,
+     "disp": "prediction"
+    },
+    {
+     "w": "markets",
+     "t": 3.207875,
+     "d": 0.504375,
+     "disp": "markets."
+    }
+   ],
+   "dur": 3.83225,
+   "scene": "oddy",
+   "start": 25.137
+  },
+  {
+   "id": "o4",
+   "who": "oddy",
+   "text": "When a story's odds jump, its memes tend to follow.",
+   "words": [
+    {
+     "w": "When",
+     "t": 0.05,
+     "d": 0.208333,
+     "disp": "When"
+    },
+    {
+     "w": "a",
+     "t": 0.258333,
+     "d": 0.032875,
+     "disp": "a"
+    },
+    {
+     "w": "story's",
+     "t": 0.291208,
+     "d": 0.438583,
+     "disp": "story's"
+    },
+    {
+     "w": "odds",
+     "t": 0.729833,
+     "d": 0.186375,
+     "disp": "odds"
+    },
+    {
+     "w": "jump",
+     "t": 0.916208,
+     "d": 0.383791,
+     "disp": "jump,"
+    },
+    {
+     "w": "its",
+     "t": 1.519291,
+     "d": 0.164458,
+     "disp": "its"
+    },
+    {
+     "w": "memes",
+     "t": 1.683791,
+     "d": 0.307,
+     "disp": "memes"
+    },
+    {
+     "w": "tend",
+     "t": 1.990791,
+     "d": 0.186416,
+     "disp": "tend"
+    },
+    {
+     "w": "to",
+     "t": 2.177208,
+     "d": 0.043833,
+     "disp": "to"
+    },
+    {
+     "w": "follow",
+     "t": 2.221041,
+     "d": 0.438583,
+     "disp": "follow."
+    }
+   ],
+   "dur": 2.779624,
+   "hold": 0.2,
+   "scene": "oddy",
+   "start": 29.25
+  },
+  {
+   "id": "o5",
+   "who": "oddy",
+   "text": "I spot the move, find the OG coin riding it, check it's safe, and set up the swap. You just approve.",
+   "words": [
+    {
+     "w": "I",
+     "t": 0.05,
+     "d": 0.208333,
+     "disp": "I"
+    },
+    {
+     "w": "spot",
+     "t": 0.258333,
+     "d": 0.252208,
+     "disp": "spot"
+    },
+    {
+     "w": "the",
+     "t": 0.510541,
+     "d": 0.054791,
+     "disp": "the"
+    },
+    {
+     "w": "move",
+     "t": 0.565333,
+     "d": 0.460541,
+     "disp": "move,"
+    },
+    {
+     "w": "find",
+     "t": 1.190333,
+     "d": 0.318,
+     "disp": "find"
+    },
+    {
+     "w": "the",
+     "t": 1.508333,
+     "d": 0.1535,
+     "disp": "the"
+    },
+    {
+     "w": "OG",
+     "t": 1.661833,
+     "d": 0.296041,
+     "disp": "OG"
+    },
+    {
+     "w": "coin",
+     "t": 1.957875,
+     "d": 0.263166,
+     "disp": "coin"
+    },
+    {
+     "w": "riding",
+     "t": 2.221041,
+     "d": 0.307,
+     "disp": "riding"
+    },
+    {
+     "w": "it",
+     "t": 2.528083,
+     "d": 0.164458,
+     "disp": "it,"
+    },
+    {
+     "w": "check",
+     "t": 2.900875,
+     "d": 0.208333,
+     "disp": "check"
+    },
+    {
+     "w": "it's",
+     "t": 3.109208,
+     "d": 0.109666,
+     "disp": "it's"
+    },
+    {
+     "w": "safe",
+     "t": 3.218875,
+     "d": 0.39475,
+     "disp": "safe,"
+    },
+    {
+     "w": "and",
+     "t": 3.756125,
+     "d": 0.120625,
+     "disp": "and"
+    },
+    {
+     "w": "set",
+     "t": 3.87675,
+     "d": 0.208333,
+     "disp": "set"
+    },
+    {
+     "w": "up",
+     "t": 4.085083,
+     "d": 0.120625,
+     "disp": "up"
+    },
+    {
+     "w": "the",
+     "t": 4.205708,
+     "d": 0.054833,
+     "disp": "the"
+    },
+    {
+     "w": "swap",
+     "t": 4.260541,
+     "d": 0.383791,
+     "disp": "swap."
+    },
+    {
+     "w": "You",
+     "t": 4.940333,
+     "d": 0.274125,
+     "disp": "You"
+    },
+    {
+     "w": "just",
+     "t": 5.214458,
+     "d": 0.274125,
+     "disp": "just"
+    },
+    {
+     "w": "approve",
+     "t": 5.488583,
+     "d": 0.537291,
+     "disp": "approve."
+    }
+   ],
+   "dur": 6.145874,
+   "hold": 0.6,
+   "scene": "oddy",
+   "start": 32.509
+  },
+  {
+   "id": "i1",
+   "who": "dex",
+   "text": "Okay, okay. Where do I get you?",
+   "words": [
+    {
+     "w": "Okay",
+     "t": 0.044625,
+     "d": 0.290166,
+     "disp": "Okay,"
+    },
+    {
+     "w": "okay",
+     "t": 0.513375,
+     "d": 0.379458,
+     "disp": "okay."
+    },
+    {
+     "w": "Where",
+     "t": 1.25,
+     "d": 0.12275,
+     "disp": "Where"
+    },
+    {
+     "w": "do",
+     "t": 1.383916,
+     "d": 0.111625,
+     "disp": "do"
+    },
+    {
+     "w": "I",
+     "t": 1.506708,
+     "d": 0.089291,
+     "disp": "I"
+    },
+    {
+     "w": "get",
+     "t": 1.607125,
+     "d": 0.200875,
+     "disp": "get"
+    },
+    {
+     "w": "you",
+     "t": 1.819208,
+     "d": 0.223208,
+     "disp": "you?"
+    }
+   ],
+   "dur": 2.162416,
+   "scene": "install",
+   "start": 39.985
+  },
+  {
+   "id": "i2",
+   "who": "oddy",
+   "text": "PayBox. Switch me on, then just ask your AI.",
+   "words": [
+    {
+     "w": "PayBox",
+     "t": 0.05,
+     "d": 0.679833,
+     "disp": "PayBox."
+    },
+    {
+     "w": "Switch",
+     "t": 1.025875,
+     "d": 0.328958,
+     "disp": "Switch"
+    },
+    {
+     "w": "me",
+     "t": 1.354833,
+     "d": 0.131583,
+     "disp": "me"
+    },
+    {
+     "w": "on",
+     "t": 1.486416,
+     "d": 0.318,
+     "disp": "on,"
+    },
+    {
+     "w": "then",
+     "t": 2.00175,
+     "d": 0.197375,
+     "disp": "then"
+    },
+    {
+     "w": "just",
+     "t": 2.199125,
+     "d": 0.285083,
+     "disp": "just"
+    },
+    {
+     "w": "ask",
+     "t": 2.484208,
+     "d": 0.263166,
+     "disp": "ask"
+    },
+    {
+     "w": "your",
+     "t": 2.747375,
+     "d": 0.142541,
+     "disp": "your"
+    },
+    {
+     "w": "AI",
+     "t": 2.889916,
+     "d": 0.449541,
+     "disp": "AI."
+    }
+   ],
+   "dur": 3.459457,
+   "hold": 1.3,
+   "scene": "install",
+   "start": 42.427
+  },
+  {
+   "id": "l1",
+   "who": "dex",
+   "text": "Sounds like hopium, bro.",
+   "words": [
+    {
+     "w": "Sounds",
+     "t": 0.047333,
+     "d": 0.301333,
+     "disp": "Sounds"
+    },
+    {
+     "w": "like",
+     "t": 0.359833,
+     "d": 0.145083,
+     "disp": "like"
+    },
+    {
+     "w": "hopium",
+     "t": 0.516083,
+     "d": 0.535708,
+     "disp": "hopium,"
+    },
+    {
+     "w": "bro",
+     "t": 1.062958,
+     "d": 0.334833,
+     "disp": "bro."
+    }
+   ],
+   "dur": 1.517791,
+   "hold": 1.0,
+   "scene": "lag",
+   "start": 47.917
+  },
+  {
+   "id": "l2",
+   "who": "oddy",
+   "text": "Anthropic ticker odds went from twenty-two to sixty-one percent. The meme dipped, then climbed fifteen percent the next day.",
+   "words": [
+    {
+     "w": "Anthropic",
+     "t": 0.05,
+     "d": 0.515333,
+     "disp": "Anthropic"
+    },
+    {
+     "w": "ticker",
+     "t": 0.565333,
+     "d": 0.296041,
+     "disp": "ticker"
+    },
+    {
+     "w": "odds",
+     "t": 0.861416,
+     "d": 0.296041,
+     "disp": "odds"
+    },
+    {
+     "w": "went",
+     "t": 1.157458,
+     "d": 0.197375,
+     "disp": "went"
+    },
+    {
+     "w": "from",
+     "t": 1.354833,
+     "d": 0.175416,
+     "disp": "from"
+    },
+    {
+     "w": "twenty-two",
+     "t": 1.53025,
+     "d": 0.4715,
+     "disp": "twenty-two"
+    },
+    {
+     "w": "to",
+     "t": 2.00175,
+     "d": 0.120625,
+     "disp": "to"
+    },
+    {
+     "w": "sixty-one",
+     "t": 2.122375,
+     "d": 0.4715,
+     "disp": "sixty-one"
+    },
+    {
+     "w": "percent",
+     "t": 2.593875,
+     "d": 0.449541,
+     "disp": "percent."
+    },
+    {
+     "w": "The",
+     "t": 3.339458,
+     "d": 0.120625,
+     "disp": "The"
+    },
+    {
+     "w": "meme",
+     "t": 3.460083,
+     "d": 0.252208,
+     "disp": "meme"
+    },
+    {
+     "w": "dipped",
+     "t": 3.712291,
+     "d": 0.416666,
+     "disp": "dipped,"
+    },
+    {
+     "w": "then",
+     "t": 4.34825,
+     "d": 0.186416,
+     "disp": "then"
+    },
+    {
+     "w": "climbed",
+     "t": 4.534666,
+     "d": 0.296041,
+     "disp": "climbed"
+    },
+    {
+     "w": "fifteen",
+     "t": 4.830708,
+     "d": 0.361833,
+     "disp": "fifteen"
+    },
+    {
+     "w": "percent",
+     "t": 5.192541,
+     "d": 0.361833,
+     "disp": "percent"
+    },
+    {
+     "w": "the",
+     "t": 5.554375,
+     "d": 0.065791,
+     "disp": "the"
+    },
+    {
+     "w": "next",
+     "t": 5.620166,
+     "d": 0.208333,
+     "disp": "next"
+    },
+    {
+     "w": "day",
+     "t": 5.8285,
+     "d": 0.328958,
+     "disp": "day."
+    }
+   ],
+   "dur": 6.277458,
+   "hold": 1.2,
+   "scene": "lag",
+   "start": 50.715
+  },
+  {
+   "id": "r1",
+   "who": "dex",
+   "text": "But have you ever actually been right?",
+   "words": [
+    {
+     "w": "But",
+     "t": 0.066958,
+     "d": 0.089291,
+     "disp": "But"
+    },
+    {
+     "w": "have",
+     "t": 0.167416,
+     "d": 0.15625,
+     "disp": "have"
+    },
+    {
+     "w": "you",
+     "t": 0.334833,
+     "d": 0.167416,
+     "disp": "you"
+    },
+    {
+     "w": "ever",
+     "t": 0.513375,
+     "d": 0.3125,
+     "disp": "ever"
+    },
+    {
+     "w": "actually",
+     "t": 0.837041,
+     "d": 0.334833,
+     "disp": "actually"
+    },
+    {
+     "w": "been",
+     "t": 1.183041,
+     "d": 0.178583,
+     "disp": "been"
+    },
+    {
+     "w": "right",
+     "t": 1.37275,
+     "d": 0.390625,
+     "disp": "right?"
+    }
+   ],
+   "dur": 1.883375,
+   "hold": 1.0,
+   "scene": "receipt",
+   "start": 58.922
+  },
+  {
+   "id": "r2",
+   "who": "oddy",
+   "text": "My GTA Six call, October sixteenth. Graded today: up a hundred forty-eight percent. Misses get graded too.",
+   "words": [
+    {
+     "w": "My",
+     "t": 0.05,
+     "d": 0.263166,
+     "disp": "My"
+    },
+    {
+     "w": "GTA",
+     "t": 0.313166,
+     "d": 0.4605,
+     "disp": "GTA"
+    },
+    {
+     "w": "Six",
+     "t": 0.773666,
+     "d": 0.241208,
+     "disp": "Six"
+    },
+    {
+     "w": "call",
+     "t": 1.014916,
+     "d": 0.383791,
+     "disp": "call,"
+    },
+    {
+     "w": "October",
+     "t": 1.596041,
+     "d": 0.438583,
+     "disp": "October"
+    },
+    {
+     "w": "sixteenth",
+     "t": 2.034666,
+     "d": 0.581125,
+     "disp": "sixteenth."
+    },
+    {
+     "w": "Graded",
+     "t": 2.911833,
+     "d": 0.350875,
+     "disp": "Graded"
+    },
+    {
+     "w": "today",
+     "t": 3.262708,
+     "d": 0.405708,
+     "disp": "today:"
+    },
+    {
+     "w": "up",
+     "t": 3.942541,
+     "d": 0.142541,
+     "disp": "up"
+    },
+    {
+     "w": "a",
+     "t": 4.085083,
+     "d": 0.054833,
+     "disp": "a"
+    },
+    {
+     "w": "hundred",
+     "t": 4.139916,
+     "d": 0.317958,
+     "disp": "hundred"
+    },
+    {
+     "w": "forty-eight",
+     "t": 4.457875,
+     "d": 0.427625,
+     "disp": "forty-eight"
+    },
+    {
+     "w": "percent",
+     "t": 4.885541,
+     "d": 0.460541,
+     "disp": "percent."
+    },
+    {
+     "w": "Misses",
+     "t": 5.642125,
+     "d": 0.427625,
+     "disp": "Misses"
+    },
+    {
+     "w": "get",
+     "t": 6.06975,
+     "d": 0.175416,
+     "disp": "get"
+    },
+    {
+     "w": "graded",
+     "t": 6.245166,
+     "d": 0.372791,
+     "disp": "graded"
+    },
+    {
+     "w": "too",
+     "t": 6.618,
+     "d": 0.39475,
+     "disp": "too."
+    }
+   ],
+   "dur": 7.132750000000001,
+   "hold": 0.4,
+   "scene": "receipt",
+   "start": 62.086
+  },
+  {
+   "id": "r3",
+   "who": "dex",
+   "text": "Daaamn. Why'd it pump?",
+   "stretch": {
+    "Damn": 1.8
+   },
+   "words": [
+    {
+     "w": "Damn",
+     "t": 0.055791,
+     "d": 0.5141749999999999,
+     "disp": "Daaamn."
+    },
+    {
+     "w": "Why'd",
+     "t": 0.927091,
+     "d": 0.178583,
+     "disp": "Why'd"
+    },
+    {
+     "w": "it",
+     "t": 1.116841,
+     "d": 0.111625,
+     "disp": "it"
+    },
+    {
+     "w": "pump",
+     "t": 1.2395909999999999,
+     "d": 0.357125,
+     "disp": "pump?"
+    }
+   ],
+   "dur": 1.716716,
+   "hold": 0.9,
+   "scene": "receipt",
+   "say": "Damn. Why'd it pump?",
+   "start": 69.898
+  },
+  {
+   "id": "w2",
+   "who": "oddy",
+   "text": "Ask me why. The odds of a ninety-seven on Metacritic rose nineteen points.",
+   "words": [
+    {
+     "w": "Ask",
+     "t": 0.05,
+     "d": 0.339916,
+     "disp": "Ask"
+    },
+    {
+     "w": "me",
+     "t": 0.389916,
+     "d": 0.109625,
+     "disp": "me"
+    },
+    {
+     "w": "why",
+     "t": 0.499541,
+     "d": 0.416666,
+     "disp": "why."
+    },
+    {
+     "w": "The",
+     "t": 1.212291,
+     "d": 0.219291,
+     "disp": "The"
+    },
+    {
+     "w": "odds",
+     "t": 1.431583,
+     "d": 0.208333,
+     "disp": "odds"
+    },
+    {
+     "w": "of",
+     "t": 1.639916,
+     "d": 0.065791,
+     "disp": "of"
+    },
+    {
+     "w": "a",
+     "t": 1.705708,
+     "d": 0.032875,
+     "disp": "a"
+    },
+    {
+     "w": "ninety-seven",
+     "t": 1.738583,
+     "d": 0.646916,
+     "disp": "ninety-seven"
+    },
+    {
+     "w": "on",
+     "t": 2.385541,
+     "d": 0.131583,
+     "disp": "on"
+    },
+    {
+     "w": "Metacritic",
+     "t": 2.517125,
+     "d": 0.559208,
+     "disp": "Metacritic"
+    },
+    {
+     "w": "rose",
+     "t": 3.076333,
+     "d": 0.328916,
+     "disp": "rose"
+    },
+    {
+     "w": "nineteen",
+     "t": 3.40525,
+     "d": 0.383791,
+     "disp": "nineteen"
+    },
+    {
+     "w": "points",
+     "t": 3.789041,
+     "d": 0.427625,
+     "disp": "points."
+    }
+   ],
+   "dur": 4.336666,
+   "hold": 0.6,
+   "scene": "receipt",
+   "start": 72.795
+  },
+  {
+   "id": "s1",
+   "who": "dex",
+   "text": "Bro, there's like twenty GTA Six coins!",
+   "words": [
+    {
+     "w": "Bro",
+     "t": 0.078125,
+     "d": 0.256708,
+     "disp": "Bro,"
+    },
+    {
+     "w": "there's",
+     "t": 0.357125,
+     "d": 0.178583,
+     "disp": "there's"
+    },
+    {
+     "w": "like",
+     "t": 0.546875,
+     "d": 0.200875,
+     "disp": "like"
+    },
+    {
+     "w": "twenty",
+     "t": 0.758916,
+     "d": 0.279,
+     "disp": "twenty"
+    },
+    {
+     "w": "GTA",
+     "t": 1.049125,
+     "d": 0.424125,
+     "disp": "GTA"
+    },
+    {
+     "w": "6",
+     "t": 1.484375,
+     "d": 0.279,
+     "disp": "Six"
+    },
+    {
+     "w": "coins",
+     "t": 1.774541,
+     "d": 0.491083,
+     "disp": "coins!"
+    }
+   ],
+   "dur": 2.385624,
+   "hold": 0.9,
+   "scene": "swarm",
+   "say": "Bro, there's like twenty GTA 6 coins!",
+   "start": 78.462
+  },
+  {
+   "id": "s2",
+   "who": "oddy",
+   "text": "Seventeen. One OG, eleven copycats. I skip the clones.",
+   "words": [
+    {
+     "w": "Seventeen",
+     "t": 0.05,
+     "d": 0.844291,
+     "disp": "Seventeen."
+    },
+    {
+     "w": "One",
+     "t": 1.190333,
+     "d": 0.405708,
+     "disp": "One"
+    },
+    {
+     "w": "O.G.",
+     "t": 1.596041,
+     "d": 0.515333,
+     "disp": "OG,"
+    },
+    {
+     "w": "eleven",
+     "t": 2.330708,
+     "d": 0.39475,
+     "disp": "eleven"
+    },
+    {
+     "w": "copycats",
+     "t": 2.725458,
+     "d": 0.614041,
+     "disp": "copycats."
+    },
+    {
+     "w": "I",
+     "t": 3.635541,
+     "d": 0.197333,
+     "disp": "I"
+    },
+    {
+     "w": "skip",
+     "t": 3.832875,
+     "d": 0.318,
+     "disp": "skip"
+    },
+    {
+     "w": "the",
+     "t": 4.150875,
+     "d": 0.07675,
+     "disp": "the"
+    },
+    {
+     "w": "clones",
+     "t": 4.227625,
+     "d": 0.54825,
+     "disp": "clones."
+    }
+   ],
+   "dur": 4.895875,
+   "hold": 0.9,
+   "scene": "swarm",
+   "say": "Seventeen. One O.G., eleven copycats. I skip the clones.",
+   "start": 82.027
+  },
+  {
+   "id": "b1",
+   "who": "dex",
+   "text": "Fine. Trump coin, then. Everybody knows Trump.",
+   "words": [
+    {
+     "w": "Fine",
+     "t": 0.044625,
+     "d": 0.267875,
+     "disp": "Fine."
+    },
+    {
+     "w": "Trump",
+     "t": 0.6585,
+     "d": 0.234375,
+     "disp": "Trump"
+    },
+    {
+     "w": "coin",
+     "t": 0.904,
+     "d": 0.379458,
+     "disp": "coin,"
+    },
+    {
+     "w": "then",
+     "t": 1.294625,
+     "d": 0.323666,
+     "disp": "then."
+    },
+    {
+     "w": "Everybody",
+     "t": 1.947333,
+     "d": 0.46875,
+     "disp": "Everybody"
+    },
+    {
+     "w": "knows",
+     "t": 2.42725,
+     "d": 0.301333,
+     "disp": "knows"
+    },
+    {
+     "w": "Trump",
+     "t": 2.73975,
+     "d": 0.50225,
+     "disp": "Trump."
+    }
+   ],
+   "dur": 3.362,
+   "hold": 1.0,
+   "scene": "seatbelt",
+   "start": 88.553
+  },
+  {
+   "id": "b2",
+   "who": "oddy",
+   "text": "Red. One wallet holds seventy-two percent, and none of the liquidity is locked. Famous isn't safe.",
+   "words": [
+    {
+     "w": "Red",
+     "t": 0.05,
+     "d": 0.504375,
+     "disp": "Red."
+    },
+    {
+     "w": "One",
+     "t": 0.850458,
+     "d": 0.296041,
+     "disp": "One"
+    },
+    {
+     "w": "wallet",
+     "t": 1.1465,
+     "d": 0.263166,
+     "disp": "wallet"
+    },
+    {
+     "w": "holds",
+     "t": 1.409666,
+     "d": 0.274125,
+     "disp": "holds"
+    },
+    {
+     "w": "seventy-two",
+     "t": 1.683791,
+     "d": 0.449541,
+     "disp": "seventy-two"
+    },
+    {
+     "w": "percent",
+     "t": 2.133333,
+     "d": 0.460541,
+     "disp": "percent,"
+    },
+    {
+     "w": "and",
+     "t": 2.846041,
+     "d": 0.164458,
+     "disp": "and"
+    },
+    {
+     "w": "none",
+     "t": 3.010541,
+     "d": 0.208333,
+     "disp": "none"
+    },
+    {
+     "w": "of",
+     "t": 3.218875,
+     "d": 0.07675,
+     "disp": "of"
+    },
+    {
+     "w": "the",
+     "t": 3.295625,
+     "d": 0.054833,
+     "disp": "the"
+    },
+    {
+     "w": "liquidity",
+     "t": 3.350458,
+     "d": 0.504375,
+     "disp": "liquidity"
+    },
+    {
+     "w": "is",
+     "t": 3.854833,
+     "d": 0.142541,
+     "disp": "is"
+    },
+    {
+     "w": "locked",
+     "t": 3.997375,
+     "d": 0.372791,
+     "disp": "locked."
+    },
+    {
+     "w": "Famous",
+     "t": 4.666208,
+     "d": 0.515333,
+     "disp": "Famous"
+    },
+    {
+     "w": "isn't",
+     "t": 5.181583,
+     "d": 0.285083,
+     "disp": "isn't"
+    },
+    {
+     "w": "safe",
+     "t": 5.466666,
+     "d": 0.438583,
+     "disp": "safe."
+    }
+   ],
+   "dur": 6.0252490000000005,
+   "hold": 0.2,
+   "scene": "seatbelt",
+   "start": 93.195
+  },
+  {
+   "id": "b3",
+   "who": "dex",
+   "text": "Oh mehn.",
+   "stretch": {
+    "mehn": 1.5
+   },
+   "words": [
+    {
+     "w": "Oh",
+     "t": 0.066958,
+     "d": 0.089291,
+     "disp": "Oh"
+    },
+    {
+     "w": "mehn",
+     "t": 0.18975,
+     "d": 0.48875,
+     "disp": "mehn."
+    }
+   ],
+   "dur": 0.7985,
+   "hold": 0.4,
+   "scene": "seatbelt",
+   "say": "Oh, mehn.",
+   "start": 99.7
+  },
+  {
+   "id": "a1",
+   "who": "dex",
+   "text": "Okay. Just a little WIF, then.",
+   "words": [
+    {
+     "w": "Okay",
+     "t": 0.066958,
+     "d": 0.234375,
+     "disp": "Okay."
+    },
+    {
+     "w": "Just",
+     "t": 0.625,
+     "d": 0.178583,
+     "disp": "Just"
+    },
+    {
+     "w": "a",
+     "t": 0.81475,
+     "d": 0.055791,
+     "disp": "a"
+    },
+    {
+     "w": "little",
+     "t": 0.881708,
+     "d": 0.256708,
+     "disp": "little"
+    },
+    {
+     "w": "weef",
+     "t": 1.149541,
+     "d": 0.357125,
+     "disp": "WIF,"
+    },
+    {
+     "w": "then",
+     "t": 1.517875,
+     "d": 0.334833,
+     "disp": "then."
+    }
+   ],
+   "dur": 1.972708,
+   "hold": 0.8,
+   "scene": "buy",
+   "say": "Okay. Just a little weef, then.",
+   "start": 101.629
+  },
+  {
+   "id": "a2",
+   "who": "oddy",
+   "text": "Swap's ready. You approve, PayBox signs. I never touch your keys.",
+   "words": [
+    {
+     "w": "Swap's",
+     "t": 0.05,
+     "d": 0.4715,
+     "disp": "Swap's"
+    },
+    {
+     "w": "ready",
+     "t": 0.5215,
+     "d": 0.372791,
+     "disp": "ready."
+    },
+    {
+     "w": "You",
+     "t": 1.190333,
+     "d": 0.274125,
+     "disp": "You"
+    },
+    {
+     "w": "approve",
+     "t": 1.464458,
+     "d": 0.537291,
+     "disp": "approve,"
+    },
+    {
+     "w": "PayBox",
+     "t": 2.210083,
+     "d": 0.39475,
+     "disp": "PayBox"
+    },
+    {
+     "w": "signs",
+     "t": 2.604833,
+     "d": 0.493416,
+     "disp": "signs."
+    },
+    {
+     "w": "I",
+     "t": 3.394291,
+     "d": 0.197375,
+     "disp": "I"
+    },
+    {
+     "w": "never",
+     "t": 3.591666,
+     "d": 0.339916,
+     "disp": "never"
+    },
+    {
+     "w": "touch",
+     "t": 3.931583,
+     "d": 0.252208,
+     "disp": "touch"
+    },
+    {
+     "w": "your",
+     "t": 4.183791,
+     "d": 0.087708,
+     "disp": "your"
+    },
+    {
+     "w": "keys",
+     "t": 4.2715,
+     "d": 0.482458,
+     "disp": "keys."
+    }
+   ],
+   "dur": 4.873958,
+   "hold": 0.2,
+   "scene": "buy",
+   "start": 104.682
+  },
+  {
+   "id": "a3",
+   "who": "dex",
+   "text": "Let's gooo!",
+   "stretch": {
+    "go": 1.9
+   },
+   "words": [
+    {
+     "w": "Let's",
+     "t": 0.066958,
+     "d": 0.167416,
+     "disp": "Let's"
+    },
+    {
+     "w": "go",
+     "t": 0.245541,
+     "d": 0.6085327,
+     "disp": "gooo!"
+    }
+   ],
+   "dur": 0.9740737,
+   "pre": 2.6,
+   "hold": 0.8,
+   "scene": "buy",
+   "say": "Let's go!",
+   "start": 112.636
+  },
+  {
+   "id": "e1",
+   "who": "dex",
+   "text": "What am I holding?",
+   "words": [
+    {
+     "w": "What",
+     "t": 0.066958,
+     "d": 0.12275,
+     "disp": "What"
+    },
+    {
+     "w": "am",
+     "t": 0.200875,
+     "d": 0.12275,
+     "disp": "am"
+    },
+    {
+     "w": "I",
+     "t": 0.334833,
+     "d": 0.089291,
+     "disp": "I"
+    },
+    {
+     "w": "holding",
+     "t": 0.43525,
+     "d": 0.524541,
+     "disp": "holding?"
+    }
+   ],
+   "dur": 1.0797910000000002,
+   "hold": 2.6,
+   "scene": "exit",
+   "start": 115.14
+  },
+  {
+   "id": "e2",
+   "who": "dex",
+   "text": "Sell all my WIF.",
+   "words": [
+    {
+     "w": "Sell",
+     "t": 0.047333,
+     "d": 0.279,
+     "disp": "Sell"
+    },
+    {
+     "w": "all",
+     "t": 0.3375,
+     "d": 0.178583,
+     "disp": "all"
+    },
+    {
+     "w": "my",
+     "t": 0.52725,
+     "d": 0.167416,
+     "disp": "my"
+    },
+    {
+     "w": "weef",
+     "t": 0.705791,
+     "d": 0.412958,
+     "disp": "WIF."
+    }
+   ],
+   "dur": 1.2387489999999999,
+   "hold": 1.8,
+   "scene": "exit",
+   "say": "Sell all my weef.",
+   "start": 119.099
+  },
+  {
+   "id": "e3",
+   "who": "oddy",
+   "text": "Done. Exits are never blocked.",
+   "words": [
+    {
+     "w": "Done",
+     "t": 0.05,
+     "d": 0.449541,
+     "disp": "Done."
+    },
+    {
+     "w": "Exits",
+     "t": 0.795625,
+     "d": 0.4605,
+     "disp": "Exits"
+    },
+    {
+     "w": "are",
+     "t": 1.256125,
+     "d": 0.109666,
+     "disp": "are"
+    },
+    {
+     "w": "never",
+     "t": 1.365791,
+     "d": 0.307,
+     "disp": "never"
+    },
+    {
+     "w": "blocked",
+     "t": 1.672791,
+     "d": 0.427625,
+     "disp": "blocked."
+    }
+   ],
+   "dur": 2.220416,
+   "hold": 0.4,
+   "scene": "exit",
+   "start": 122.418
+  },
+  {
+   "id": "p1",
+   "who": "dex",
+   "text": "Alright, Oddy. The whole play. One sentence.",
+   "words": [
+    {
+     "w": "Alright",
+     "t": 0.044625,
+     "d": 0.357125,
+     "disp": "Alright,"
+    },
+    {
+     "w": "Oddy",
+     "t": 0.691958,
+     "d": 0.379458,
+     "disp": "Oddy."
+    },
+    {
+     "w": "The",
+     "t": 1.40625,
+     "d": 0.055791,
+     "disp": "The"
+    },
+    {
+     "w": "whole",
+     "t": 1.473208,
+     "d": 0.200875,
+     "disp": "whole"
+    },
+    {
+     "w": "play",
+     "t": 1.68525,
+     "d": 0.379458,
+     "disp": "play."
+    },
+    {
+     "w": "One",
+     "t": 2.421875,
+     "d": 0.18975,
+     "disp": "One"
+    },
+    {
+     "w": "sentence",
+     "t": 2.62275,
+     "d": 0.5915,
+     "disp": "sentence."
+    }
+   ],
+   "dur": 3.33425,
+   "hold": 1.4,
+   "scene": "loop",
+   "start": 125.769
+  },
+  {
+   "id": "p2",
+   "who": "oddy",
+   "text": "Biggest odds moves. The best story. The OG riding it. A seatbelt check: yellow. Zero organic trading. Zero locked liquidity. Then a swap, waiting on you.",
+   "words": [
+    {
+     "w": "Biggest",
+     "t": 0.05,
+     "d": 0.427625,
+     "disp": "Biggest"
+    },
+    {
+     "w": "odds",
+     "t": 0.477625,
+     "d": 0.274125,
+     "disp": "odds"
+    },
+    {
+     "w": "moves",
+     "t": 0.75175,
+     "d": 0.504375,
+     "disp": "moves."
+    },
+    {
+     "w": "The",
+     "t": 1.552208,
+     "d": 0.142541,
+     "disp": "The"
+    },
+    {
+     "w": "best",
+     "t": 1.69475,
+     "d": 0.328916,
+     "disp": "best"
+    },
+    {
+     "w": "story",
+     "t": 2.023666,
+     "d": 0.482458,
+     "disp": "story."
+    },
+    {
+     "w": "The",
+     "t": 2.802208,
+     "d": 0.252166,
+     "disp": "The"
+    },
+    {
+     "w": "OG",
+     "t": 3.054375,
+     "d": 0.39475,
+     "disp": "OG"
+    },
+    {
+     "w": "riding",
+     "t": 3.449125,
+     "d": 0.350875,
+     "disp": "riding"
+    },
+    {
+     "w": "it",
+     "t": 3.8,
+     "d": 0.219291,
+     "disp": "it."
+    },
+    {
+     "w": "A",
+     "t": 4.315333,
+     "d": 0.098666,
+     "disp": "A"
+    },
+    {
+     "w": "seatbelt",
+     "t": 4.414041,
+     "d": 0.4605,
+     "disp": "seatbelt"
+    },
+    {
+     "w": "check",
+     "t": 4.874541,
+     "d": 0.372791,
+     "disp": "check:"
+    },
+    {
+     "w": "yellow",
+     "t": 5.565333,
+     "d": 0.4715,
+     "disp": "yellow."
+    },
+    {
+     "w": "Zero",
+     "t": 6.332875,
+     "d": 0.482458,
+     "disp": "Zero"
+    },
+    {
+     "w": "organic",
+     "t": 6.815333,
+     "d": 0.427625,
+     "disp": "organic"
+    },
+    {
+     "w": "trading",
+     "t": 7.243,
+     "d": 0.4715,
+     "disp": "trading."
+    },
+    {
+     "w": "Zero",
+     "t": 8.010541,
+     "d": 0.4605,
+     "disp": "Zero"
+    },
+    {
+     "w": "locked",
+     "t": 8.471041,
+     "d": 0.274125,
+     "disp": "locked"
+    },
+    {
+     "w": "liquidity",
+     "t": 8.745166,
+     "d": 0.581125,
+     "disp": "liquidity."
+    },
+    {
+     "w": "Then",
+     "t": 9.622375,
+     "d": 0.208333,
+     "disp": "Then"
+    },
+    {
+     "w": "a",
+     "t": 9.830708,
+     "d": 0.043833,
+     "disp": "a"
+    },
+    {
+     "w": "swap",
+     "t": 9.874541,
+     "d": 0.449541,
+     "disp": "swap,"
+    },
+    {
+     "w": "waiting",
+     "t": 10.5215,
+     "d": 0.350875,
+     "disp": "waiting"
+    },
+    {
+     "w": "on",
+     "t": 10.872375,
+     "d": 0.098666,
+     "disp": "on"
+    },
+    {
+     "w": "you",
+     "t": 10.971041,
+     "d": 0.263166,
+     "disp": "you."
+    }
+   ],
+   "dur": 11.354206999999999,
+   "pre": 0.8,
+   "hold": 0.4,
+   "scene": "loop",
+   "start": 131.583
+  },
+  {
+   "id": "p3",
+   "who": "dex",
+   "text": "Approve.",
+   "words": [
+    {
+     "w": "Approve",
+     "t": 0.046,
+     "d": 0.479916,
+     "disp": "Approve."
+    }
+   ],
+   "dur": 0.645916,
+   "hold": 1.7,
+   "scene": "loop",
+   "start": 143.617
+  },
+  {
+   "id": "p4",
+   "who": "oddy",
+   "text": "Confirmed. I flagged the risks, so we kept it small. Yellow means careful. Red means no.",
+   "words": [
+    {
+     "w": "Confirmed",
+     "t": 0.05,
+     "d": 0.723666,
+     "disp": "Confirmed."
+    },
+    {
+     "w": "I",
+     "t": 1.06975,
+     "d": 0.197375,
+     "disp": "I"
+    },
+    {
+     "w": "flagged",
+     "t": 1.267125,
+     "d": 0.361833,
+     "disp": "flagged"
+    },
+    {
+     "w": "the",
+     "t": 1.628958,
+     "d": 0.07675,
+     "disp": "the"
+    },
+    {
+     "w": "risks",
+     "t": 1.705708,
+     "d": 0.438583,
+     "disp": "risks,"
+    },
+    {
+     "w": "so",
+     "t": 2.286833,
+     "d": 0.186416,
+     "disp": "so"
+    },
+    {
+     "w": "we",
+     "t": 2.47325,
+     "d": 0.120625,
+     "disp": "we"
+    },
+    {
+     "w": "kept",
+     "t": 2.593875,
+     "d": 0.241208,
+     "disp": "kept"
+    },
+    {
+     "w": "it",
+     "t": 2.835083,
+     "d": 0.07675,
+     "disp": "it"
+    },
+    {
+     "w": "small",
+     "t": 2.911833,
+     "d": 0.460541,
+     "disp": "small."
+    },
+    {
+     "w": "Yellow",
+     "t": 3.668416,
+     "d": 0.405708,
+     "disp": "Yellow"
+    },
+    {
+     "w": "means",
+     "t": 4.074125,
+     "d": 0.285083,
+     "disp": "means"
+    },
+    {
+     "w": "careful",
+     "t": 4.359208,
+     "d": 0.504375,
+     "disp": "careful."
+    },
+    {
+     "w": "Red",
+     "t": 5.159666,
+     "d": 0.372791,
+     "disp": "Red"
+    },
+    {
+     "w": "means",
+     "t": 5.532458,
+     "d": 0.285083,
+     "disp": "means"
+    },
+    {
+     "w": "no",
+     "t": 5.817541,
+     "d": 0.372791,
+     "disp": "no."
+    }
+   ],
+   "dur": 6.310332000000001,
+   "hold": 0.5,
+   "scene": "loop",
+   "start": 146.243
+  },
+  {
+   "id": "f1",
+   "who": "dex",
+   "text": "Wait. The sun's up? And I'm early!",
+   "words": [
+    {
+     "w": "Wait",
+     "t": 0.055791,
+     "d": 0.223208,
+     "disp": "Wait."
+    },
+    {
+     "w": "The",
+     "t": 0.625,
+     "d": 0.055791,
+     "disp": "The"
+    },
+    {
+     "w": "sun's",
+     "t": 0.691958,
+     "d": 0.346,
+     "disp": "sun's"
+    },
+    {
+     "w": "up",
+     "t": 1.049125,
+     "d": 0.256708,
+     "disp": "up?"
+    },
+    {
+     "w": "And",
+     "t": 1.662958,
+     "d": 0.100458,
+     "disp": "And"
+    },
+    {
+     "w": "I'm",
+     "t": 1.774541,
+     "d": 0.15625,
+     "disp": "I'm"
+    },
+    {
+     "w": "early",
+     "t": 1.953125,
+     "d": 0.43525,
+     "disp": "early!"
+    }
+   ],
+   "dur": 2.508375,
+   "pre": 0.9,
+   "scene": "sunrise",
+   "start": 154.683
+  },
+  {
+   "id": "f2",
+   "who": "oddy",
+   "text": "For once.",
+   "words": [
+    {
+     "w": "For",
+     "t": 0.05,
+     "d": 0.307,
+     "disp": "For"
+    },
+    {
+     "w": "once",
+     "t": 0.357,
+     "d": 0.438583,
+     "disp": "once."
+    }
+   ],
+   "dur": 0.9155829999999999,
+   "hold": 0.8,
+   "scene": "sunrise",
+   "start": 157.472
+  },
+  {
+   "id": "t1",
+   "who": "oddy",
+   "text": "The odds moved. The memes haven't. Yet.",
+   "words": [
+    {
+     "w": "The",
+     "t": 0.05,
+     "d": 0.252208,
+     "disp": "The"
+    },
+    {
+     "w": "odds",
+     "t": 0.302208,
+     "d": 0.252166,
+     "disp": "odds"
+    },
+    {
+     "w": "moved",
+     "t": 0.554375,
+     "d": 0.515333,
+     "disp": "moved."
+    },
+    {
+     "w": "The",
+     "t": 1.365791,
+     "d": 0.131583,
+     "disp": "The"
+    },
+    {
+     "w": "memes",
+     "t": 1.497375,
+     "d": 0.350875,
+     "disp": "memes"
+    },
+    {
+     "w": "haven't",
+     "t": 1.84825,
+     "d": 0.427625,
+     "disp": "haven't."
+    },
+    {
+     "w": "Yet",
+     "t": 2.571916,
+     "d": 0.504375,
+     "disp": "Yet."
+    }
+   ],
+   "dur": 3.196291,
+   "pre": 1.0,
+   "scene": "end",
+   "start": 160.917
+  }
+ ]
+}

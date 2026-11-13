@@ -1,0 +1,12 @@
+{
+ "dex": {
+  "voice": "en-US-BrianMultilingualNeural",
+  "rate": "+12%",
+  "pitch": "-2Hz"
+ },
+ "oddy": {
+  "voice": "en-AU-WilliamMultilingualNeural",
+  "rate": "+14%",
+  "fx": "highpass=f=70"
+ }
+}

@@ -1,0 +1,236 @@
+[
+ {
+  "id": "h1",
+  "who": "nar",
+  "scene": "hook",
+  "pre": 0.15,
+  "text": "My own plugin flagged this coin."
+ },
+ {
+  "id": "h2",
+  "who": "nar",
+  "scene": "hook",
+  "pre": 0.1,
+  "text": "I bought it anyway."
+ },
+ {
+  "id": "h3",
+  "who": "nar",
+  "scene": "hook",
+  "pre": 0.35,
+  "hold": 0.9,
+  "text": "Five minutes later, it was gone."
+ },
+ {
+  "id": "h4",
+  "who": "nar",
+  "scene": "hook",
+  "hold": 0.5,
+  "text": "Here's every warning, the exact second the rug hit, and what really happens when your AI buys a coin."
+ },
+ {
+  "id": "p1",
+  "who": "nar",
+  "scene": "paybox",
+  "text": "First, the part most people get wrong: your AI never holds your money."
+ },
+ {
+  "id": "p2",
+  "who": "nar",
+  "scene": "paybox",
+  "hold": 0.4,
+  "text": "I funded my PayBox wallet straight from MoonPay: five dollars of USDC, on Solana."
+ },
+ {
+  "id": "p4",
+  "who": "nar",
+  "scene": "paybox",
+  "text": "Then I ask my AI. It calls Oddshot, a plugin inside PayBox, which checks the markets and the coin, and builds a swap it can't sign."
+ },
+ {
+  "id": "p5",
+  "who": "nar",
+  "scene": "paybox",
+  "hold": 0.5,
+  "text": "PayBox shows me that swap, and I approve it. PayBox signs. The AI never touches the keys."
+ },
+ {
+  "id": "b1",
+  "who": "nar",
+  "scene": "board",
+  "text": "So I asked ChatGPT for Oddshot's board: the biggest odds swings, and the meme riding each one."
+ },
+ {
+  "id": "b2",
+  "who": "nar",
+  "scene": "board",
+  "hold": 0.4,
+  "text": "The board's call: no strong buy right now. The coin everyone was chasing: NVIDIA, up almost eighteen hundred percent."
+ },
+ {
+  "id": "w1",
+  "who": "nar",
+  "scene": "warnings",
+  "text": "Then I checked it. Every warning was there."
+ },
+ {
+  "id": "w2",
+  "who": "nar",
+  "scene": "warnings",
+  "text": "Timing: already late. Fourteen copycats in a day."
+ },
+ {
+  "id": "w3",
+  "who": "nar",
+  "scene": "warnings",
+  "text": "Safety: yellow, high risk. The pool was thirty minutes old."
+ },
+ {
+  "id": "w4",
+  "who": "nar",
+  "scene": "warnings",
+  "text": "Organic score: zero out of a hundred. Bots, not buyers."
+ },
+ {
+  "id": "w5",
+  "who": "nar",
+  "scene": "warnings",
+  "hold": 0.5,
+  "text": "ChatGPT's verdict: I would not buy this token right now."
+ },
+ {
+  "id": "a1",
+  "who": "nar",
+  "scene": "buy",
+  "hold": 0.2,
+  "text": "I bought a two-dollar test anyway."
+ },
+ {
+  "id": "a2",
+  "who": "nar",
+  "scene": "buy",
+  "hold": 0.3,
+  "text": "Oddshot built the swap, PayBox showed it to me, I hit submit. Confirmed.",
+  "say": "Odd-shot, built the swap, PayBox showed it to me, I hit submit. Confirmed."
+ },
+ {
+  "id": "a3",
+  "who": "nar",
+  "scene": "buy",
+  "hold": 0.5,
+  "text": "Then the seatbelt checked my wallet. The verdict: trim half. The trim never went through."
+ },
+ {
+  "id": "r1",
+  "who": "nar",
+  "scene": "rug",
+  "text": "Here's what the chat couldn't show me. For forty minutes, the price ticked up every minute."
+ },
+ {
+  "id": "r2",
+  "who": "nar",
+  "scene": "rug",
+  "hold": 0.2,
+  "text": "My two dollars was even up thirteen percent."
+ },
+ {
+  "id": "r3",
+  "who": "nar",
+  "scene": "rug",
+  "text": "In the last minute: two hundred wallets, six-dollar buys, and almost two hundred trades worth nothing. That's what organic zero looks like."
+ },
+ {
+  "id": "r4",
+  "who": "nar",
+  "scene": "rug",
+  "hold": 0.4,
+  "text": "Then, at eleven-eleven, the coin's creator sold four hundred seventy-eight million tokens. Forty thousand dollars, in one transaction."
+ },
+ {
+  "id": "r5",
+  "who": "nar",
+  "scene": "rug",
+  "hold": 0.3,
+  "text": "Minus ninety-nine point eight percent. My two dollars: less than half a cent."
+ },
+ {
+  "id": "r6",
+  "who": "nar",
+  "scene": "rug",
+  "hold": 0.5,
+  "text": "The liquidity was locked. That stops the pool being pulled, not the creator selling."
+ },
+ {
+  "id": "g1",
+  "who": "nar",
+  "scene": "wif",
+  "text": "So I switched to Claude, and ran the same steps on a coin that passes."
+ },
+ {
+  "id": "g2",
+  "who": "nar",
+  "scene": "wif",
+  "text": "WIF: five point three million in liquidity, organic score seventy-six.",
+  "say": "Weef: five point three million in liquidity, organic score seventy-six."
+ },
+ {
+  "id": "g3",
+  "who": "nar",
+  "scene": "wif",
+  "text": "It's yellow too, for one reason: the top ten holders own thirty-one percent. Normal for a coin this size."
+ },
+ {
+  "id": "g4",
+  "who": "nar",
+  "scene": "wif",
+  "hold": 0.3,
+  "text": "A dollar fifty. Submit. Confirmed."
+ },
+ {
+  "id": "g5",
+  "who": "nar",
+  "scene": "wif",
+  "hold": 0.5,
+  "text": "Sell it all. Submit. Confirmed. Back to USDC, every cent."
+ },
+ {
+  "id": "l1",
+  "who": "nar",
+  "scene": "lesson",
+  "text": "Same tool, same steps, two yellows. The reason made the difference."
+ },
+ {
+  "id": "l2",
+  "who": "nar",
+  "scene": "lesson",
+  "text": "A brand-new pool with zero organic trading is the classic rug setup. So I changed the rule."
+ },
+ {
+  "id": "l3",
+  "who": "nar",
+  "scene": "lesson",
+  "hold": 0.3,
+  "text": "In Oddshot one point four point one, that's red, and Oddshot won't build the buy."
+ },
+ {
+  "id": "l4",
+  "who": "nar",
+  "scene": "lesson",
+  "hold": 0.5,
+  "text": "Every transaction in this video is on Solana. Check them."
+ },
+ {
+  "id": "s1",
+  "who": "nar",
+  "scene": "start",
+  "text": "Oddshot is live on PayBox. Fund your wallet with MoonPay, switch on Oddshot, and ask your AI."
+ },
+ {
+  "id": "s2",
+  "who": "nar",
+  "scene": "start",
+  "pre": 0.3,
+  "hold": 1.2,
+  "text": "Read the warnings. I learned that for two dollars."
+ }
+]

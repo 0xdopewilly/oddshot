@@ -4,7 +4,7 @@ import { loadFont as loadHand } from "@remotion/google-fonts/Caveat";
 import TL from "./demo-timeline.json";
 import { Bg, C, Chip, DISPLAY, MONO, Panel, Rich, TargetMark, Terminal, Words, clamp, data, fade, redHead, redReasons, split, token, mover } from "./Oddshot";
 
-const { fontFamily: HAND } = loadHand("normal", { weights: ["700"], subsets: ["latin"] });
+export const { fontFamily: HAND } = loadHand("normal", { weights: ["700"], subsets: ["latin"] });
 const FPS = 30;
 type Word = { w: string; disp?: string; t: number; d: number };
 type Line = { id: string; chapter: string; text: string; start: number; dur: number; words: Word[] };
@@ -28,7 +28,7 @@ function ellipse(x: number, y: number, w: number, h: number, seed = 2) {
 const draw = (f: number, at: number, len = 14) => interpolate(f, [at, at + len], [0, 1], { ...clamp, easing: Easing.out(Easing.cubic) });
 
 /** Annotation in pixel space: a circle/underline around (x,y,w,h), optional handwritten note at (nx,ny) with an arrow. */
-const Anno: React.FC<{ at: number; x: number; y: number; w: number; h: number; kind?: "circle" | "underline"; color?: string;
+export const Anno: React.FC<{ at: number; x: number; y: number; w: number; h: number; kind?: "circle" | "underline"; color?: string;
   note?: string; nx?: number; ny?: number; size?: number }> = ({ at, x, y, w, h, kind = "circle", color = C.yellow, note, nx = 0, ny = 0, size = 46 }) => {
   const f = useCurrentFrame();
   if (f < at) return null;
@@ -63,7 +63,7 @@ const Anno: React.FC<{ at: number; x: number; y: number; w: number; h: number; k
 };
 
 /** Inline mark around a piece of text: hand-drawn circle or underline, optional note. */
-const Mark: React.FC<{ at: number; kind?: "circle" | "underline"; color?: string; note?: string; noteStyle?: React.CSSProperties; children: React.ReactNode }> =
+export const Mark: React.FC<{ at: number; kind?: "circle" | "underline"; color?: string; note?: string; noteStyle?: React.CSSProperties; children: React.ReactNode }> =
   ({ at, kind = "circle", color = C.yellow, note, noteStyle, children }) => {
   const f = useCurrentFrame();
   const p = draw(f, at);

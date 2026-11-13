@@ -1,0 +1,3127 @@
+{
+ "total": 184.74,
+ "fps": 30,
+ "scenes": [
+  {
+   "id": "hook",
+   "start": 0.0,
+   "end": 14.439
+  },
+  {
+   "id": "paybox",
+   "start": 14.439,
+   "end": 40.962
+  },
+  {
+   "id": "board",
+   "start": 40.962,
+   "end": 55.608
+  },
+  {
+   "id": "warnings",
+   "start": 55.608,
+   "end": 74.996
+  },
+  {
+   "id": "buy",
+   "start": 74.996,
+   "end": 88.649
+  },
+  {
+   "id": "rug",
+   "start": 88.649,
+   "end": 124.715
+  },
+  {
+   "id": "wif",
+   "start": 124.715,
+   "end": 149.922
+  },
+  {
+   "id": "lesson",
+   "start": 149.922,
+   "end": 171.31
+  },
+  {
+   "id": "start",
+   "start": 171.31,
+   "end": 184.74
+  }
+ ],
+ "lines": [
+  {
+   "id": "h1",
+   "who": "nar",
+   "text": "My own plugin flagged this coin.",
+   "words": [
+    {
+     "w": "My",
+     "t": 0.094333,
+     "d": 0.153291,
+     "disp": "My"
+    },
+    {
+     "w": "own",
+     "t": 0.247625,
+     "d": 0.188666,
+     "disp": "own"
+    },
+    {
+     "w": "plugin",
+     "t": 0.436333,
+     "d": 0.459916,
+     "disp": "plugin"
+    },
+    {
+     "w": "flagged",
+     "t": 0.908,
+     "d": 0.400958,
+     "disp": "flagged"
+    },
+    {
+     "w": "this",
+     "t": 1.308958,
+     "d": 0.153291,
+     "disp": "this"
+    },
+    {
+     "w": "coin",
+     "t": 1.46225,
+     "d": 0.330208,
+     "disp": "coin."
+    }
+   ],
+   "dur": 1.912458,
+   "pre": 0.15,
+   "scene": "hook",
+   "start": 0.45
+  },
+  {
+   "id": "h2",
+   "who": "nar",
+   "text": "I bought it anyway.",
+   "words": [
+    {
+     "w": "I",
+     "t": 0.094333,
+     "d": 0.0471659,
+     "disp": "I"
+    },
+    {
+     "w": "bought",
+     "t": 0.1415,
+     "d": 0.165083,
+     "disp": "bought"
+    },
+    {
+     "w": "it",
+     "t": 0.306583,
+     "d": 0.0471659,
+     "disp": "it"
+    },
+    {
+     "w": "anyway",
+     "t": 0.353791,
+     "d": 0.400958,
+     "disp": "anyway."
+    }
+   ],
+   "dur": 0.874749,
+   "pre": 0.1,
+   "scene": "hook",
+   "start": 2.742
+  },
+  {
+   "id": "h3",
+   "who": "nar",
+   "text": "Five minutes later, it was gone.",
+   "words": [
+    {
+     "w": "Five",
+     "t": 0.153291,
+     "d": 0.176875,
+     "disp": "Five"
+    },
+    {
+     "w": "minutes",
+     "t": 0.330208,
+     "d": 0.224041,
+     "disp": "minutes"
+    },
+    {
+     "w": "later",
+     "t": 0.566041,
+     "d": 0.342,
+     "disp": "later,"
+    },
+    {
+     "w": "it",
+     "t": 1.084916,
+     "d": 0.07075,
+     "disp": "it"
+    },
+    {
+     "w": "was",
+     "t": 1.155666,
+     "d": 0.117916,
+     "disp": "was"
+    },
+    {
+     "w": "gone",
+     "t": 1.285375,
+     "d": 0.330208,
+     "disp": "gone."
+    }
+   ],
+   "dur": 1.735583,
+   "pre": 0.35,
+   "hold": 0.9,
+   "scene": "hook",
+   "start": 4.247
+  },
+  {
+   "id": "h4",
+   "who": "nar",
+   "text": "Here's every warning, the exact second the rug hit, and what really happens when your AI buys a coin.",
+   "words": [
+    {
+     "w": "Here's",
+     "t": 0.106125,
+     "d": 0.342,
+     "disp": "Here's"
+    },
+    {
+     "w": "every",
+     "t": 0.459916,
+     "d": 0.306583,
+     "disp": "every"
+    },
+    {
+     "w": "warning",
+     "t": 0.7665,
+     "d": 0.530666,
+     "disp": "warning,"
+    },
+    {
+     "w": "the",
+     "t": 1.568416,
+     "d": 0.058958,
+     "disp": "the"
+    },
+    {
+     "w": "exact",
+     "t": 1.627375,
+     "d": 0.566041,
+     "disp": "exact"
+    },
+    {
+     "w": "second",
+     "t": 2.217,
+     "d": 0.412708,
+     "disp": "second"
+    },
+    {
+     "w": "the",
+     "t": 2.629708,
+     "d": 0.058958,
+     "disp": "the"
+    },
+    {
+     "w": "rug",
+     "t": 2.688666,
+     "d": 0.306583,
+     "disp": "rug"
+    },
+    {
+     "w": "hit",
+     "t": 3.007083,
+     "d": 0.294791,
+     "disp": "hit,"
+    },
+    {
+     "w": "and",
+     "t": 3.667458,
+     "d": 0.07075,
+     "disp": "and"
+    },
+    {
+     "w": "what",
+     "t": 3.738208,
+     "d": 0.247625,
+     "disp": "what"
+    },
+    {
+     "w": "really",
+     "t": 3.997625,
+     "d": 0.247625,
+     "disp": "really"
+    },
+    {
+     "w": "happens",
+     "t": 4.245291,
+     "d": 0.436291,
+     "disp": "happens"
+    },
+    {
+     "w": "when",
+     "t": 4.681583,
+     "d": 0.094333,
+     "disp": "when"
+    },
+    {
+     "w": "your",
+     "t": 4.775958,
+     "d": 0.129708,
+     "disp": "your"
+    },
+    {
+     "w": "AI",
+     "t": 4.917458,
+     "d": 0.55425,
+     "disp": "AI"
+    },
+    {
+     "w": "buys",
+     "t": 5.55425,
+     "d": 0.306583,
+     "disp": "buys"
+    },
+    {
+     "w": "a",
+     "t": 5.860833,
+     "d": 0.035375,
+     "disp": "a"
+    },
+    {
+     "w": "coin",
+     "t": 5.908,
+     "d": 0.318416,
+     "disp": "coin."
+    }
+   ],
+   "dur": 6.3464160000000005,
+   "hold": 0.5,
+   "scene": "hook",
+   "start": 7.163
+  },
+  {
+   "id": "p1",
+   "who": "nar",
+   "text": "First, the part most people get wrong: your AI never holds your money.",
+   "words": [
+    {
+     "w": "First",
+     "t": 0.129708,
+     "d": 0.436333,
+     "disp": "First,"
+    },
+    {
+     "w": "the",
+     "t": 0.790083,
+     "d": 0.094333,
+     "disp": "the"
+    },
+    {
+     "w": "part",
+     "t": 0.884416,
+     "d": 0.21225,
+     "disp": "part"
+    },
+    {
+     "w": "most",
+     "t": 1.096708,
+     "d": 0.271208,
+     "disp": "most"
+    },
+    {
+     "w": "people",
+     "t": 1.367916,
+     "d": 0.247625,
+     "disp": "people"
+    },
+    {
+     "w": "get",
+     "t": 1.615583,
+     "d": 0.188666,
+     "disp": "get"
+    },
+    {
+     "w": "wrong",
+     "t": 1.80425,
+     "d": 0.283,
+     "disp": "wrong:"
+    },
+    {
+     "w": "your",
+     "t": 2.57075,
+     "d": 0.129708,
+     "disp": "your"
+    },
+    {
+     "w": "AI",
+     "t": 2.818416,
+     "d": 0.389125,
+     "disp": "AI"
+    },
+    {
+     "w": "never",
+     "t": 3.207541,
+     "d": 0.342,
+     "disp": "never"
+    },
+    {
+     "w": "holds",
+     "t": 3.561333,
+     "d": 0.224041,
+     "disp": "holds"
+    },
+    {
+     "w": "your",
+     "t": 3.785375,
+     "d": 0.094333,
+     "disp": "your"
+    },
+    {
+     "w": "money",
+     "t": 3.8915,
+     "d": 0.306583,
+     "disp": "money."
+    }
+   ],
+   "dur": 4.318083000000001,
+   "scene": "paybox",
+   "start": 14.739
+  },
+  {
+   "id": "p2",
+   "who": "nar",
+   "text": "I funded my PayBox wallet straight from MoonPay: five dollars of USDC, on Solana.",
+   "words": [
+    {
+     "w": "I",
+     "t": 0.106125,
+     "d": 0.0471659,
+     "disp": "I"
+    },
+    {
+     "w": "funded",
+     "t": 0.165083,
+     "d": 0.283,
+     "disp": "funded"
+    },
+    {
+     "w": "my",
+     "t": 0.448125,
+     "d": 0.1415,
+     "disp": "my"
+    },
+    {
+     "w": "PayBox",
+     "t": 0.589625,
+     "d": 0.471708,
+     "disp": "PayBox"
+    },
+    {
+     "w": "wallet",
+     "t": 1.061333,
+     "d": 0.271208,
+     "disp": "wallet"
+    },
+    {
+     "w": "straight",
+     "t": 1.332541,
+     "d": 0.342,
+     "disp": "straight"
+    },
+    {
+     "w": "from",
+     "t": 1.674541,
+     "d": 0.21225,
+     "disp": "from"
+    },
+    {
+     "w": "MoonPay",
+     "t": 1.886791,
+     "d": 0.69575,
+     "disp": "MoonPay:"
+    },
+    {
+     "w": "five",
+     "t": 3.030666,
+     "d": 0.283,
+     "disp": "five"
+    },
+    {
+     "w": "dollars",
+     "t": 3.313666,
+     "d": 0.318416,
+     "disp": "dollars"
+    },
+    {
+     "w": "of",
+     "t": 3.632083,
+     "d": 0.035375,
+     "disp": "of"
+    },
+    {
+     "w": "USDC",
+     "t": 3.667458,
+     "d": 0.7665,
+     "disp": "USDC,"
+    },
+    {
+     "w": "on",
+     "t": 4.705208,
+     "d": 0.1415,
+     "disp": "on"
+    },
+    {
+     "w": "Solana",
+     "t": 4.8585,
+     "d": 0.530666,
+     "disp": "Solana."
+    }
+   ],
+   "dur": 5.5091660000000005,
+   "hold": 0.4,
+   "scene": "paybox",
+   "start": 19.337
+  },
+  {
+   "id": "p4",
+   "who": "nar",
+   "text": "Then I ask my AI. It calls Oddshot, a plugin inside PayBox, which checks the markets and the coin, and builds a swap it can't sign.",
+   "words": [
+    {
+     "w": "Then",
+     "t": 0.094333,
+     "d": 0.082541,
+     "disp": "Then"
+    },
+    {
+     "w": "I",
+     "t": 0.176875,
+     "d": 0.082541,
+     "disp": "I"
+    },
+    {
+     "w": "ask",
+     "t": 0.259416,
+     "d": 0.176875,
+     "disp": "ask"
+    },
+    {
+     "w": "my",
+     "t": 0.436333,
+     "d": 0.129708,
+     "disp": "my"
+    },
+    {
+     "w": "AI",
+     "t": 0.566041,
+     "d": 0.400958,
+     "disp": "AI."
+    },
+    {
+     "w": "It",
+     "t": 1.344333,
+     "d": 0.07075,
+     "disp": "It"
+    },
+    {
+     "w": "calls",
+     "t": 1.415083,
+     "d": 0.330208,
+     "disp": "calls"
+    },
+    {
+     "w": "Oddshot",
+     "t": 1.757083,
+     "d": 0.625,
+     "disp": "Oddshot,"
+    },
+    {
+     "w": "a",
+     "t": 2.806583,
+     "d": 0.07075,
+     "disp": "a"
+    },
+    {
+     "w": "plugin",
+     "t": 2.889166,
+     "d": 0.424541,
+     "disp": "plugin"
+    },
+    {
+     "w": "inside",
+     "t": 3.325458,
+     "d": 0.530666,
+     "disp": "inside"
+    },
+    {
+     "w": "PayBox",
+     "t": 3.867916,
+     "d": 0.683958,
+     "disp": "PayBox,"
+    },
+    {
+     "w": "which",
+     "t": 4.728791,
+     "d": 0.153291,
+     "disp": "which"
+    },
+    {
+     "w": "checks",
+     "t": 4.893875,
+     "d": 0.235833,
+     "disp": "checks"
+    },
+    {
+     "w": "the",
+     "t": 5.129708,
+     "d": 0.07075,
+     "disp": "the"
+    },
+    {
+     "w": "markets",
+     "t": 5.21225,
+     "d": 0.4835,
+     "disp": "markets"
+    },
+    {
+     "w": "and",
+     "t": 5.707541,
+     "d": 0.058958,
+     "disp": "and"
+    },
+    {
+     "w": "the",
+     "t": 5.7665,
+     "d": 0.058958,
+     "disp": "the"
+    },
+    {
+     "w": "coin",
+     "t": 5.825458,
+     "d": 0.436333,
+     "disp": "coin,"
+    },
+    {
+     "w": "and",
+     "t": 6.615583,
+     "d": 0.117916,
+     "disp": "and"
+    },
+    {
+     "w": "builds",
+     "t": 6.745291,
+     "d": 0.247625,
+     "disp": "builds"
+    },
+    {
+     "w": "a",
+     "t": 6.992916,
+     "d": 0.035375,
+     "disp": "a"
+    },
+    {
+     "w": "swap",
+     "t": 7.028291,
+     "d": 0.365583,
+     "disp": "swap"
+    },
+    {
+     "w": "it",
+     "t": 7.393875,
+     "d": 0.058958,
+     "disp": "it"
+    },
+    {
+     "w": "can't",
+     "t": 7.452833,
+     "d": 0.224041,
+     "disp": "can't"
+    },
+    {
+     "w": "sign",
+     "t": 7.676875,
+     "d": 0.353791,
+     "disp": "sign."
+    }
+   ],
+   "dur": 8.150666,
+   "scene": "paybox",
+   "start": 25.526
+  },
+  {
+   "id": "p5",
+   "who": "nar",
+   "text": "PayBox shows me that swap, and I approve it. PayBox signs. The AI never touches the keys.",
+   "words": [
+    {
+     "w": "PayBox",
+     "t": 0.094333,
+     "d": 0.306583,
+     "disp": "PayBox"
+    },
+    {
+     "w": "shows",
+     "t": 0.518875,
+     "d": 0.247625,
+     "disp": "shows"
+    },
+    {
+     "w": "me",
+     "t": 0.7665,
+     "d": 0.094333,
+     "disp": "me"
+    },
+    {
+     "w": "that",
+     "t": 0.860833,
+     "d": 0.1415,
+     "disp": "that"
+    },
+    {
+     "w": "swap",
+     "t": 1.002375,
+     "d": 0.471708,
+     "disp": "swap,"
+    },
+    {
+     "w": "and",
+     "t": 1.698125,
+     "d": 0.058958,
+     "disp": "and"
+    },
+    {
+     "w": "I",
+     "t": 1.768875,
+     "d": 0.106125,
+     "disp": "I"
+    },
+    {
+     "w": "approve",
+     "t": 1.875,
+     "d": 0.318416,
+     "disp": "approve"
+    },
+    {
+     "w": "it",
+     "t": 2.193416,
+     "d": 0.153291,
+     "disp": "it."
+    },
+    {
+     "w": "PayBox",
+     "t": 2.724041,
+     "d": 0.330208,
+     "disp": "PayBox"
+    },
+    {
+     "w": "signs",
+     "t": 3.05425,
+     "d": 0.542458,
+     "disp": "signs."
+    },
+    {
+     "w": "The",
+     "t": 3.985833,
+     "d": 0.094333,
+     "disp": "The"
+    },
+    {
+     "w": "AI",
+     "t": 4.139166,
+     "d": 0.412708,
+     "disp": "AI"
+    },
+    {
+     "w": "never",
+     "t": 4.551875,
+     "d": 0.353791,
+     "disp": "never"
+    },
+    {
+     "w": "touches",
+     "t": 4.917458,
+     "d": 0.400958,
+     "disp": "touches"
+    },
+    {
+     "w": "the",
+     "t": 5.318416,
+     "d": 0.07075,
+     "disp": "the"
+    },
+    {
+     "w": "keys",
+     "t": 5.400958,
+     "d": 0.55425,
+     "disp": "keys."
+    }
+   ],
+   "dur": 6.075208,
+   "hold": 0.5,
+   "scene": "paybox",
+   "start": 33.957
+  },
+  {
+   "id": "b1",
+   "who": "nar",
+   "text": "So I asked ChatGPT for Oddshot's board: the biggest odds swings, and the meme riding each one.",
+   "words": [
+    {
+     "w": "So",
+     "t": 0.094333,
+     "d": 0.153291,
+     "disp": "So"
+    },
+    {
+     "w": "I",
+     "t": 0.259416,
+     "d": 0.094333,
+     "disp": "I"
+    },
+    {
+     "w": "asked",
+     "t": 0.353791,
+     "d": 0.247625,
+     "disp": "asked"
+    },
+    {
+     "w": "ChatGPT",
+     "t": 0.601416,
+     "d": 0.83725,
+     "disp": "ChatGPT"
+    },
+    {
+     "w": "for",
+     "t": 1.450458,
+     "d": 0.188666,
+     "disp": "for"
+    },
+    {
+     "w": "Oddshot's",
+     "t": 1.639166,
+     "d": 0.471666,
+     "disp": "Oddshot's"
+    },
+    {
+     "w": "board",
+     "t": 2.110833,
+     "d": 0.294791,
+     "disp": "board:"
+    },
+    {
+     "w": "the",
+     "t": 2.830208,
+     "d": 0.082541,
+     "disp": "the"
+    },
+    {
+     "w": "biggest",
+     "t": 2.924541,
+     "d": 0.35375,
+     "disp": "biggest"
+    },
+    {
+     "w": "odds",
+     "t": 3.278291,
+     "d": 0.200458,
+     "disp": "odds"
+    },
+    {
+     "w": "swings",
+     "t": 3.478791,
+     "d": 0.589625,
+     "disp": "swings,"
+    },
+    {
+     "w": "and",
+     "t": 4.30425,
+     "d": 0.082541,
+     "disp": "and"
+    },
+    {
+     "w": "the",
+     "t": 4.386791,
+     "d": 0.058958,
+     "disp": "the"
+    },
+    {
+     "w": "meme",
+     "t": 4.457541,
+     "d": 0.353791,
+     "disp": "meme"
+    },
+    {
+     "w": "riding",
+     "t": 4.811333,
+     "d": 0.365583,
+     "disp": "riding"
+    },
+    {
+     "w": "each",
+     "t": 5.365583,
+     "d": 0.153291,
+     "disp": "each"
+    },
+    {
+     "w": "one",
+     "t": 5.530666,
+     "d": 0.306583,
+     "disp": "one."
+    }
+   ],
+   "dur": 5.957249,
+   "scene": "board",
+   "start": 41.262
+  },
+  {
+   "id": "b2",
+   "who": "nar",
+   "text": "The board's call: no strong buy right now. The coin everyone was chasing: NVIDIA, up almost eighteen hundred percent.",
+   "words": [
+    {
+     "w": "The",
+     "t": 0.106125,
+     "d": 0.0471659,
+     "disp": "The"
+    },
+    {
+     "w": "board's",
+     "t": 0.153291,
+     "d": 0.224041,
+     "disp": "board's"
+    },
+    {
+     "w": "call",
+     "t": 0.377375,
+     "d": 0.318416,
+     "disp": "call:"
+    },
+    {
+     "w": "no",
+     "t": 1.1085,
+     "d": 0.165083,
+     "disp": "no"
+    },
+    {
+     "w": "strong",
+     "t": 1.285375,
+     "d": 0.41275,
+     "disp": "strong"
+    },
+    {
+     "w": "buy",
+     "t": 1.698125,
+     "d": 0.1415,
+     "disp": "buy"
+    },
+    {
+     "w": "right",
+     "t": 1.851416,
+     "d": 0.21225,
+     "disp": "right"
+    },
+    {
+     "w": "now",
+     "t": 2.075458,
+     "d": 0.318416,
+     "disp": "now."
+    },
+    {
+     "w": "The",
+     "t": 2.783,
+     "d": 0.058958,
+     "disp": "The"
+    },
+    {
+     "w": "coin",
+     "t": 2.842,
+     "d": 0.235833,
+     "disp": "coin"
+    },
+    {
+     "w": "everyone",
+     "t": 3.077833,
+     "d": 0.318375,
+     "disp": "everyone"
+    },
+    {
+     "w": "was",
+     "t": 3.396208,
+     "d": 0.117916,
+     "disp": "was"
+    },
+    {
+     "w": "chasing",
+     "t": 3.525958,
+     "d": 0.530666,
+     "disp": "chasing:"
+    },
+    {
+     "w": "NVIDIA",
+     "t": 4.44575,
+     "d": 0.613208,
+     "disp": "NVIDIA,"
+    },
+    {
+     "w": "up",
+     "t": 5.448125,
+     "d": 0.1415,
+     "disp": "up"
+    },
+    {
+     "w": "almost",
+     "t": 5.660375,
+     "d": 0.400958,
+     "disp": "almost"
+    },
+    {
+     "w": "eighteen",
+     "t": 6.202833,
+     "d": 0.294791,
+     "disp": "eighteen"
+    },
+    {
+     "w": "hundred",
+     "t": 6.497625,
+     "d": 0.21225,
+     "disp": "hundred"
+    },
+    {
+     "w": "percent",
+     "t": 6.709916,
+     "d": 0.448125,
+     "disp": "percent."
+    }
+   ],
+   "dur": 7.278041,
+   "hold": 0.4,
+   "scene": "board",
+   "start": 47.5
+  },
+  {
+   "id": "w1",
+   "who": "nar",
+   "text": "Then I checked it. Every warning was there.",
+   "words": [
+    {
+     "w": "Then",
+     "t": 0.106125,
+     "d": 0.07075,
+     "disp": "Then"
+    },
+    {
+     "w": "I",
+     "t": 0.188666,
+     "d": 0.07075,
+     "disp": "I"
+    },
+    {
+     "w": "checked",
+     "t": 0.271208,
+     "d": 0.294791,
+     "disp": "checked"
+    },
+    {
+     "w": "it",
+     "t": 0.577833,
+     "d": 0.1415,
+     "disp": "it."
+    },
+    {
+     "w": "Every",
+     "t": 1.096708,
+     "d": 0.21225,
+     "disp": "Every"
+    },
+    {
+     "w": "warning",
+     "t": 1.308958,
+     "d": 0.377375,
+     "disp": "warning"
+    },
+    {
+     "w": "was",
+     "t": 1.851416,
+     "d": 0.176875,
+     "disp": "was"
+    },
+    {
+     "w": "there",
+     "t": 2.028291,
+     "d": 0.365583,
+     "disp": "there."
+    }
+   ],
+   "dur": 2.513874,
+   "scene": "warnings",
+   "start": 55.908
+  },
+  {
+   "id": "w2",
+   "who": "nar",
+   "text": "Timing: already late. Fourteen copycats in a day.",
+   "words": [
+    {
+     "w": "Timing",
+     "t": 0.094333,
+     "d": 0.353791,
+     "disp": "Timing:"
+    },
+    {
+     "w": "already",
+     "t": 0.896208,
+     "d": 0.283,
+     "disp": "already"
+    },
+    {
+     "w": "late",
+     "t": 1.191041,
+     "d": 0.342,
+     "disp": "late."
+    },
+    {
+     "w": "Fourteen",
+     "t": 1.981125,
+     "d": 0.365583,
+     "disp": "Fourteen"
+    },
+    {
+     "w": "copycats",
+     "t": 2.346708,
+     "d": 0.648583,
+     "disp": "copycats"
+    },
+    {
+     "w": "in",
+     "t": 3.007083,
+     "d": 0.094333,
+     "disp": "in"
+    },
+    {
+     "w": "a",
+     "t": 3.101416,
+     "d": 0.0471659,
+     "disp": "a"
+    },
+    {
+     "w": "day",
+     "t": 3.148583,
+     "d": 0.342,
+     "disp": "day."
+    }
+   ],
+   "dur": 3.610583,
+   "scene": "warnings",
+   "start": 58.701
+  },
+  {
+   "id": "w3",
+   "who": "nar",
+   "text": "Safety: yellow, high risk. The pool was thirty minutes old.",
+   "words": [
+    {
+     "w": "Safety",
+     "t": 0.106125,
+     "d": 0.448125,
+     "disp": "Safety:"
+    },
+    {
+     "w": "yellow",
+     "t": 0.83725,
+     "d": 0.259416,
+     "disp": "yellow,"
+    },
+    {
+     "w": "high",
+     "t": 1.096708,
+     "d": 0.188666,
+     "disp": "high"
+    },
+    {
+     "w": "risk",
+     "t": 1.285375,
+     "d": 0.471708,
+     "disp": "risk."
+    },
+    {
+     "w": "The",
+     "t": 2.146208,
+     "d": 0.082541,
+     "disp": "The"
+    },
+    {
+     "w": "pool",
+     "t": 2.240583,
+     "d": 0.247625,
+     "disp": "pool"
+    },
+    {
+     "w": "was",
+     "t": 2.488208,
+     "d": 0.188666,
+     "disp": "was"
+    },
+    {
+     "w": "thirty",
+     "t": 2.747625,
+     "d": 0.283,
+     "disp": "thirty"
+    },
+    {
+     "w": "minutes",
+     "t": 3.030666,
+     "d": 0.235833,
+     "disp": "minutes"
+    },
+    {
+     "w": "old",
+     "t": 3.2665,
+     "d": 0.294791,
+     "disp": "old."
+    }
+   ],
+   "dur": 3.6812910000000003,
+   "scene": "warnings",
+   "start": 62.592
+  },
+  {
+   "id": "w4",
+   "who": "nar",
+   "text": "Organic score: zero out of a hundred. Bots, not buyers.",
+   "words": [
+    {
+     "w": "Organic",
+     "t": 0.094333,
+     "d": 0.342,
+     "disp": "Organic"
+    },
+    {
+     "w": "score",
+     "t": 0.436333,
+     "d": 0.353791,
+     "disp": "score:"
+    },
+    {
+     "w": "zero",
+     "t": 1.238208,
+     "d": 0.377375,
+     "disp": "zero"
+    },
+    {
+     "w": "out",
+     "t": 1.615583,
+     "d": 0.094333,
+     "disp": "out"
+    },
+    {
+     "w": "of",
+     "t": 1.709916,
+     "d": 0.035375,
+     "disp": "of"
+    },
+    {
+     "w": "a",
+     "t": 1.757083,
+     "d": 0.035375,
+     "disp": "a"
+    },
+    {
+     "w": "hundred",
+     "t": 1.792458,
+     "d": 0.400958,
+     "disp": "hundred."
+    },
+    {
+     "w": "Bots",
+     "t": 2.57075,
+     "d": 0.342,
+     "disp": "Bots,"
+    },
+    {
+     "w": "not",
+     "t": 2.924541,
+     "d": 0.224041,
+     "disp": "not"
+    },
+    {
+     "w": "buyers",
+     "t": 3.148583,
+     "d": 0.55425,
+     "disp": "buyers."
+    }
+   ],
+   "dur": 3.822833,
+   "scene": "warnings",
+   "start": 66.553
+  },
+  {
+   "id": "w5",
+   "who": "nar",
+   "text": "ChatGPT's verdict: I would not buy this token right now.",
+   "words": [
+    {
+     "w": "ChatGPT's",
+     "t": 0.094333,
+     "d": 0.908,
+     "disp": "ChatGPT's"
+    },
+    {
+     "w": "verdict",
+     "t": 1.002375,
+     "d": 0.400958,
+     "disp": "verdict:"
+    },
+    {
+     "w": "I",
+     "t": 1.80425,
+     "d": 0.0235829,
+     "disp": "I"
+    },
+    {
+     "w": "would",
+     "t": 1.827833,
+     "d": 0.117916,
+     "disp": "would"
+    },
+    {
+     "w": "not",
+     "t": 1.94575,
+     "d": 0.224041,
+     "disp": "not"
+    },
+    {
+     "w": "buy",
+     "t": 2.181583,
+     "d": 0.117916,
+     "disp": "buy"
+    },
+    {
+     "w": "this",
+     "t": 2.311333,
+     "d": 0.165083,
+     "disp": "this"
+    },
+    {
+     "w": "token",
+     "t": 2.476416,
+     "d": 0.271208,
+     "disp": "token"
+    },
+    {
+     "w": "right",
+     "t": 2.747625,
+     "d": 0.200458,
+     "disp": "right"
+    },
+    {
+     "w": "now",
+     "t": 2.948125,
+     "d": 0.342,
+     "disp": "now."
+    }
+   ],
+   "dur": 3.4101250000000003,
+   "hold": 0.5,
+   "scene": "warnings",
+   "start": 70.656
+  },
+  {
+   "id": "a1",
+   "who": "nar",
+   "text": "I bought a two-dollar test anyway.",
+   "words": [
+    {
+     "w": "I",
+     "t": 0.094333,
+     "d": 0.058958,
+     "disp": "I"
+    },
+    {
+     "w": "bought",
+     "t": 0.165083,
+     "d": 0.176875,
+     "disp": "bought"
+    },
+    {
+     "w": "a",
+     "t": 0.342,
+     "d": 0.0471659,
+     "disp": "a"
+    },
+    {
+     "w": "two-dollar",
+     "t": 0.389166,
+     "d": 0.518833,
+     "disp": "two-dollar"
+    },
+    {
+     "w": "test",
+     "t": 0.908,
+     "d": 0.365583,
+     "disp": "test"
+    },
+    {
+     "w": "anyway",
+     "t": 1.285375,
+     "d": 0.436333,
+     "disp": "anyway."
+    }
+   ],
+   "dur": 1.8417080000000001,
+   "hold": 0.2,
+   "scene": "buy",
+   "start": 75.296
+  },
+  {
+   "id": "a2",
+   "who": "nar",
+   "text": "Oddshot built the swap, PayBox showed it to me, I hit submit. Confirmed.",
+   "words": [
+    {
+     "w": "Odd-shot",
+     "t": 0.094333,
+     "d": 0.518875,
+     "disp": "Oddshot"
+    },
+    {
+     "w": "built",
+     "t": 0.813666,
+     "d": 0.21225,
+     "disp": "built"
+    },
+    {
+     "w": "the",
+     "t": 1.025958,
+     "d": 0.058958,
+     "disp": "the"
+    },
+    {
+     "w": "swap",
+     "t": 1.084916,
+     "d": 0.400958,
+     "disp": "swap,"
+    },
+    {
+     "w": "PayBox",
+     "t": 1.521208,
+     "d": 0.436333,
+     "disp": "PayBox"
+    },
+    {
+     "w": "showed",
+     "t": 1.957541,
+     "d": 0.21225,
+     "disp": "showed"
+    },
+    {
+     "w": "it",
+     "t": 2.181583,
+     "d": 0.07075,
+     "disp": "it"
+    },
+    {
+     "w": "to",
+     "t": 2.252375,
+     "d": 0.094333,
+     "disp": "to"
+    },
+    {
+     "w": "me",
+     "t": 2.346708,
+     "d": 0.283,
+     "disp": "me,"
+    },
+    {
+     "w": "I",
+     "t": 2.818416,
+     "d": 0.082541,
+     "disp": "I"
+    },
+    {
+     "w": "hit",
+     "t": 2.900958,
+     "d": 0.153291,
+     "disp": "hit"
+    },
+    {
+     "w": "submit",
+     "t": 3.05425,
+     "d": 0.459916,
+     "disp": "submit."
+    },
+    {
+     "w": "Confirmed",
+     "t": 3.8915,
+     "d": 0.518875,
+     "disp": "Confirmed."
+    }
+   ],
+   "dur": 4.530375,
+   "hold": 0.3,
+   "scene": "buy",
+   "say": "Odd-shot, built the swap, PayBox showed it to me, I hit submit. Confirmed.",
+   "start": 77.618
+  },
+  {
+   "id": "a3",
+   "who": "nar",
+   "text": "Then the seatbelt checked my wallet. The verdict: trim half. The trim never went through.",
+   "words": [
+    {
+     "w": "Then",
+     "t": 0.094333,
+     "d": 0.058958,
+     "disp": "Then"
+    },
+    {
+     "w": "the",
+     "t": 0.153291,
+     "d": 0.0471659,
+     "disp": "the"
+    },
+    {
+     "w": "seatbelt",
+     "t": 0.200458,
+     "d": 0.459916,
+     "disp": "seatbelt"
+    },
+    {
+     "w": "checked",
+     "t": 0.672166,
+     "d": 0.235833,
+     "disp": "checked"
+    },
+    {
+     "w": "my",
+     "t": 0.908,
+     "d": 0.106125,
+     "disp": "my"
+    },
+    {
+     "w": "wallet",
+     "t": 1.025958,
+     "d": 0.471708,
+     "disp": "wallet."
+    },
+    {
+     "w": "The",
+     "t": 1.886791,
+     "d": 0.058958,
+     "disp": "The"
+    },
+    {
+     "w": "verdict",
+     "t": 1.957541,
+     "d": 0.424541,
+     "disp": "verdict:"
+    },
+    {
+     "w": "trim",
+     "t": 2.629708,
+     "d": 0.247625,
+     "disp": "trim"
+    },
+    {
+     "w": "half",
+     "t": 2.877375,
+     "d": 0.4835,
+     "disp": "half."
+    },
+    {
+     "w": "The",
+     "t": 3.761791,
+     "d": 0.035375,
+     "disp": "The"
+    },
+    {
+     "w": "trim",
+     "t": 3.808958,
+     "d": 0.259416,
+     "disp": "trim"
+    },
+    {
+     "w": "never",
+     "t": 4.080208,
+     "d": 0.235833,
+     "disp": "never"
+    },
+    {
+     "w": "went",
+     "t": 4.316041,
+     "d": 0.165083,
+     "disp": "went"
+    },
+    {
+     "w": "through",
+     "t": 4.481125,
+     "d": 0.389166,
+     "disp": "through."
+    }
+   ],
+   "dur": 4.990291,
+   "hold": 0.5,
+   "scene": "buy",
+   "start": 82.728
+  },
+  {
+   "id": "r1",
+   "who": "nar",
+   "text": "Here's what the chat couldn't show me. For forty minutes, the price ticked up every minute.",
+   "words": [
+    {
+     "w": "Here's",
+     "t": 0.106125,
+     "d": 0.165083,
+     "disp": "Here's"
+    },
+    {
+     "w": "what",
+     "t": 0.271208,
+     "d": 0.082541,
+     "disp": "what"
+    },
+    {
+     "w": "the",
+     "t": 0.365583,
+     "d": 0.058958,
+     "disp": "the"
+    },
+    {
+     "w": "chat",
+     "t": 0.424541,
+     "d": 0.330166,
+     "disp": "chat"
+    },
+    {
+     "w": "couldn't",
+     "t": 0.754708,
+     "d": 0.224041,
+     "disp": "couldn't"
+    },
+    {
+     "w": "show",
+     "t": 0.990583,
+     "d": 0.235833,
+     "disp": "show"
+    },
+    {
+     "w": "me",
+     "t": 1.238208,
+     "d": 0.224041,
+     "disp": "me."
+    },
+    {
+     "w": "For",
+     "t": 1.886791,
+     "d": 0.165083,
+     "disp": "For"
+    },
+    {
+     "w": "forty",
+     "t": 2.051875,
+     "d": 0.283,
+     "disp": "forty"
+    },
+    {
+     "w": "minutes",
+     "t": 2.346708,
+     "d": 0.471708,
+     "disp": "minutes,"
+    },
+    {
+     "w": "the",
+     "t": 3.018875,
+     "d": 0.094333,
+     "disp": "the"
+    },
+    {
+     "w": "price",
+     "t": 3.113208,
+     "d": 0.342,
+     "disp": "price"
+    },
+    {
+     "w": "ticked",
+     "t": 3.455208,
+     "d": 0.271208,
+     "disp": "ticked"
+    },
+    {
+     "w": "up",
+     "t": 3.726416,
+     "d": 0.224041,
+     "disp": "up"
+    },
+    {
+     "w": "every",
+     "t": 4.174541,
+     "d": 0.21225,
+     "disp": "every"
+    },
+    {
+     "w": "minute",
+     "t": 4.386791,
+     "d": 0.41275,
+     "disp": "minute."
+    }
+   ],
+   "dur": 4.919541,
+   "scene": "rug",
+   "start": 88.949
+  },
+  {
+   "id": "r2",
+   "who": "nar",
+   "text": "My two dollars was even up thirteen percent.",
+   "words": [
+    {
+     "w": "My",
+     "t": 0.094333,
+     "d": 0.094333,
+     "disp": "My"
+    },
+    {
+     "w": "two",
+     "t": 0.200458,
+     "d": 0.165083,
+     "disp": "two"
+    },
+    {
+     "w": "dollars",
+     "t": 0.365583,
+     "d": 0.330166,
+     "disp": "dollars"
+    },
+    {
+     "w": "was",
+     "t": 0.69575,
+     "d": 0.153291,
+     "disp": "was"
+    },
+    {
+     "w": "even",
+     "t": 0.978791,
+     "d": 0.200458,
+     "disp": "even"
+    },
+    {
+     "w": "up",
+     "t": 1.17925,
+     "d": 0.106125,
+     "disp": "up"
+    },
+    {
+     "w": "thirteen",
+     "t": 1.297166,
+     "d": 0.507083,
+     "disp": "thirteen"
+    },
+    {
+     "w": "percent",
+     "t": 1.80425,
+     "d": 0.4835,
+     "disp": "percent."
+    }
+   ],
+   "dur": 2.40775,
+   "hold": 0.2,
+   "scene": "rug",
+   "start": 94.148
+  },
+  {
+   "id": "r3",
+   "who": "nar",
+   "text": "In the last minute: two hundred wallets, six-dollar buys, and almost two hundred trades worth nothing. That's what organic zero looks like.",
+   "words": [
+    {
+     "w": "In",
+     "t": 0.082541,
+     "d": 0.058958,
+     "disp": "In"
+    },
+    {
+     "w": "the",
+     "t": 0.1415,
+     "d": 0.07075,
+     "disp": "the"
+    },
+    {
+     "w": "last",
+     "t": 0.21225,
+     "d": 0.353791,
+     "disp": "last"
+    },
+    {
+     "w": "minute",
+     "t": 0.577833,
+     "d": 0.247625,
+     "disp": "minute:"
+    },
+    {
+     "w": "two",
+     "t": 1.261791,
+     "d": 0.188666,
+     "disp": "two"
+    },
+    {
+     "w": "hundred",
+     "t": 1.450458,
+     "d": 0.21225,
+     "disp": "hundred"
+    },
+    {
+     "w": "wallets",
+     "t": 1.66275,
+     "d": 0.377375,
+     "disp": "wallets,"
+    },
+    {
+     "w": "six-dollar",
+     "t": 2.051875,
+     "d": 0.518875,
+     "disp": "six-dollar"
+    },
+    {
+     "w": "buys",
+     "t": 2.57075,
+     "d": 0.471708,
+     "disp": "buys,"
+    },
+    {
+     "w": "and",
+     "t": 3.254708,
+     "d": 0.176875,
+     "disp": "and"
+    },
+    {
+     "w": "almost",
+     "t": 3.514166,
+     "d": 0.389166,
+     "disp": "almost"
+    },
+    {
+     "w": "two",
+     "t": 3.997625,
+     "d": 0.200458,
+     "disp": "two"
+    },
+    {
+     "w": "hundred",
+     "t": 4.209916,
+     "d": 0.247625,
+     "disp": "hundred"
+    },
+    {
+     "w": "trades",
+     "t": 4.457541,
+     "d": 0.342,
+     "disp": "trades"
+    },
+    {
+     "w": "worth",
+     "t": 4.799541,
+     "d": 0.21225,
+     "disp": "worth"
+    },
+    {
+     "w": "nothing",
+     "t": 5.023583,
+     "d": 0.436333,
+     "disp": "nothing."
+    },
+    {
+     "w": "That's",
+     "t": 5.849041,
+     "d": 0.129708,
+     "disp": "That's"
+    },
+    {
+     "w": "what",
+     "t": 5.978791,
+     "d": 0.094333,
+     "disp": "what"
+    },
+    {
+     "w": "organic",
+     "t": 6.073125,
+     "d": 0.471666,
+     "disp": "organic"
+    },
+    {
+     "w": "zero",
+     "t": 6.544791,
+     "d": 0.318416,
+     "disp": "zero"
+    },
+    {
+     "w": "looks",
+     "t": 6.863208,
+     "d": 0.21225,
+     "disp": "looks"
+    },
+    {
+     "w": "like",
+     "t": 7.08725,
+     "d": 0.330208,
+     "disp": "like."
+    }
+   ],
+   "dur": 7.537458,
+   "scene": "rug",
+   "start": 97.036
+  },
+  {
+   "id": "r4",
+   "who": "nar",
+   "text": "Then, at eleven-eleven, the coin's creator sold four hundred seventy-eight million tokens. Forty thousand dollars, in one transaction.",
+   "words": [
+    {
+     "w": "Then",
+     "t": 0.094333,
+     "d": 0.353791,
+     "disp": "Then,"
+    },
+    {
+     "w": "at",
+     "t": 0.672166,
+     "d": 0.07075,
+     "disp": "at"
+    },
+    {
+     "w": "eleven-eleven",
+     "t": 0.742916,
+     "d": 0.577833,
+     "disp": "eleven-eleven,"
+    },
+    {
+     "w": "the",
+     "t": 1.66275,
+     "d": 0.082541,
+     "disp": "the"
+    },
+    {
+     "w": "coin's",
+     "t": 1.745291,
+     "d": 0.294791,
+     "disp": "coin's"
+    },
+    {
+     "w": "creator",
+     "t": 2.040083,
+     "d": 0.342,
+     "disp": "creator"
+    },
+    {
+     "w": "sold",
+     "t": 2.382083,
+     "d": 0.306583,
+     "disp": "sold"
+    },
+    {
+     "w": "four",
+     "t": 2.794791,
+     "d": 0.271208,
+     "disp": "four"
+    },
+    {
+     "w": "hundred",
+     "t": 3.066041,
+     "d": 0.235833,
+     "disp": "hundred"
+    },
+    {
+     "w": "seventy-eight",
+     "t": 3.313666,
+     "d": 0.55425,
+     "disp": "seventy-eight"
+    },
+    {
+     "w": "million",
+     "t": 3.879708,
+     "d": 0.424541,
+     "disp": "million"
+    },
+    {
+     "w": "tokens",
+     "t": 4.30425,
+     "d": 0.601416,
+     "disp": "tokens."
+    },
+    {
+     "w": "Forty",
+     "t": 5.330208,
+     "d": 0.235833,
+     "disp": "Forty"
+    },
+    {
+     "w": "thousand",
+     "t": 5.577833,
+     "d": 0.389166,
+     "disp": "thousand"
+    },
+    {
+     "w": "dollars",
+     "t": 5.967,
+     "d": 0.507083,
+     "disp": "dollars,"
+    },
+    {
+     "w": "in",
+     "t": 6.698125,
+     "d": 0.106125,
+     "disp": "in"
+    },
+    {
+     "w": "one",
+     "t": 6.80425,
+     "d": 0.1415,
+     "disp": "one"
+    },
+    {
+     "w": "transaction",
+     "t": 6.94575,
+     "d": 0.790083,
+     "disp": "transaction."
+    }
+   ],
+   "dur": 7.8558330000000005,
+   "hold": 0.4,
+   "scene": "rug",
+   "start": 104.853
+  },
+  {
+   "id": "r5",
+   "who": "nar",
+   "text": "Minus ninety-nine point eight percent. My two dollars: less than half a cent.",
+   "words": [
+    {
+     "w": "Minus",
+     "t": 0.094333,
+     "d": 0.389166,
+     "disp": "Minus"
+    },
+    {
+     "w": "ninety-nine",
+     "t": 0.495291,
+     "d": 0.660375,
+     "disp": "ninety-nine"
+    },
+    {
+     "w": "point",
+     "t": 1.155666,
+     "d": 0.294791,
+     "disp": "point"
+    },
+    {
+     "w": "eight",
+     "t": 1.556583,
+     "d": 0.117916,
+     "disp": "eight"
+    },
+    {
+     "w": "percent",
+     "t": 1.674541,
+     "d": 0.530666,
+     "disp": "percent."
+    },
+    {
+     "w": "My",
+     "t": 2.594333,
+     "d": 0.129708,
+     "disp": "My"
+    },
+    {
+     "w": "two",
+     "t": 2.724041,
+     "d": 0.200458,
+     "disp": "two"
+    },
+    {
+     "w": "dollars",
+     "t": 2.924541,
+     "d": 0.530666,
+     "disp": "dollars:"
+    },
+    {
+     "w": "less",
+     "t": 3.856125,
+     "d": 0.129708,
+     "disp": "less"
+    },
+    {
+     "w": "than",
+     "t": 3.997625,
+     "d": 0.094333,
+     "disp": "than"
+    },
+    {
+     "w": "half",
+     "t": 4.092,
+     "d": 0.200458,
+     "disp": "half"
+    },
+    {
+     "w": "a",
+     "t": 4.30425,
+     "d": 0.035375,
+     "disp": "a"
+    },
+    {
+     "w": "cent",
+     "t": 4.351416,
+     "d": 0.400958,
+     "disp": "cent."
+    }
+   ],
+   "dur": 4.872374000000001,
+   "hold": 0.3,
+   "scene": "rug",
+   "start": 113.389
+  },
+  {
+   "id": "r6",
+   "who": "nar",
+   "text": "The liquidity was locked. That stops the pool being pulled, not the creator selling.",
+   "words": [
+    {
+     "w": "The",
+     "t": 0.094333,
+     "d": 0.058958,
+     "disp": "The"
+    },
+    {
+     "w": "liquidity",
+     "t": 0.153291,
+     "d": 0.542458,
+     "disp": "liquidity"
+    },
+    {
+     "w": "was",
+     "t": 0.707541,
+     "d": 0.176875,
+     "disp": "was"
+    },
+    {
+     "w": "locked",
+     "t": 0.896208,
+     "d": 0.518875,
+     "disp": "locked."
+    },
+    {
+     "w": "That",
+     "t": 1.80425,
+     "d": 0.082541,
+     "disp": "That"
+    },
+    {
+     "w": "stops",
+     "t": 1.886791,
+     "d": 0.318416,
+     "disp": "stops"
+    },
+    {
+     "w": "the",
+     "t": 2.205208,
+     "d": 0.106125,
+     "disp": "the"
+    },
+    {
+     "w": "pool",
+     "t": 2.323125,
+     "d": 0.283,
+     "disp": "pool"
+    },
+    {
+     "w": "being",
+     "t": 2.606125,
+     "d": 0.259416,
+     "disp": "being"
+    },
+    {
+     "w": "pulled",
+     "t": 2.865583,
+     "d": 0.507083,
+     "disp": "pulled,"
+    },
+    {
+     "w": "not",
+     "t": 3.82075,
+     "d": 0.188666,
+     "disp": "not"
+    },
+    {
+     "w": "the",
+     "t": 4.021208,
+     "d": 0.07075,
+     "disp": "the"
+    },
+    {
+     "w": "creator",
+     "t": 4.092,
+     "d": 0.353791,
+     "disp": "creator"
+    },
+    {
+     "w": "selling",
+     "t": 4.457541,
+     "d": 0.365583,
+     "disp": "selling."
+    }
+   ],
+   "dur": 4.943124,
+   "hold": 0.5,
+   "scene": "rug",
+   "start": 118.842
+  },
+  {
+   "id": "g1",
+   "who": "nar",
+   "text": "So I switched to Claude, and ran the same steps on a coin that passes.",
+   "words": [
+    {
+     "w": "So",
+     "t": 0.082541,
+     "d": 0.106125,
+     "disp": "So"
+    },
+    {
+     "w": "I",
+     "t": 0.188666,
+     "d": 0.058958,
+     "disp": "I"
+    },
+    {
+     "w": "switched",
+     "t": 0.259416,
+     "d": 0.283,
+     "disp": "switched"
+    },
+    {
+     "w": "to",
+     "t": 0.542458,
+     "d": 0.07075,
+     "disp": "to"
+    },
+    {
+     "w": "Claude",
+     "t": 0.625,
+     "d": 0.459916,
+     "disp": "Claude,"
+    },
+    {
+     "w": "and",
+     "t": 1.450458,
+     "d": 0.153291,
+     "disp": "and"
+    },
+    {
+     "w": "ran",
+     "t": 1.615583,
+     "d": 0.224041,
+     "disp": "ran"
+    },
+    {
+     "w": "the",
+     "t": 1.839625,
+     "d": 0.058958,
+     "disp": "the"
+    },
+    {
+     "w": "same",
+     "t": 1.910375,
+     "d": 0.283,
+     "disp": "same"
+    },
+    {
+     "w": "steps",
+     "t": 2.193416,
+     "d": 0.283,
+     "disp": "steps"
+    },
+    {
+     "w": "on",
+     "t": 2.488208,
+     "d": 0.058958,
+     "disp": "on"
+    },
+    {
+     "w": "a",
+     "t": 2.547166,
+     "d": 0.035375,
+     "disp": "a"
+    },
+    {
+     "w": "coin",
+     "t": 2.594333,
+     "d": 0.271208,
+     "disp": "coin"
+    },
+    {
+     "w": "that",
+     "t": 2.865583,
+     "d": 0.129708,
+     "disp": "that"
+    },
+    {
+     "w": "passes",
+     "t": 3.007083,
+     "d": 0.589625,
+     "disp": "passes."
+    }
+   ],
+   "dur": 3.716708,
+   "scene": "wif",
+   "start": 125.015
+  },
+  {
+   "id": "g2",
+   "who": "nar",
+   "text": "WIF: five point three million in liquidity, organic score seventy-six.",
+   "words": [
+    {
+     "w": "Weef",
+     "t": 0.094333,
+     "d": 0.377375,
+     "disp": "WIF:"
+    },
+    {
+     "w": "five",
+     "t": 0.83725,
+     "d": 0.283,
+     "disp": "five"
+    },
+    {
+     "w": "point",
+     "t": 1.120291,
+     "d": 0.247625,
+     "disp": "point"
+    },
+    {
+     "w": "three",
+     "t": 1.379708,
+     "d": 0.283,
+     "disp": "three"
+    },
+    {
+     "w": "million",
+     "t": 1.66275,
+     "d": 0.542458,
+     "disp": "million"
+    },
+    {
+     "w": "in",
+     "t": 2.217,
+     "d": 0.094333,
+     "disp": "in"
+    },
+    {
+     "w": "liquidity",
+     "t": 2.323125,
+     "d": 0.566041,
+     "disp": "liquidity,"
+    },
+    {
+     "w": "organic",
+     "t": 3.2665,
+     "d": 0.436333,
+     "disp": "organic"
+    },
+    {
+     "w": "score",
+     "t": 3.702833,
+     "d": 0.306583,
+     "disp": "score"
+    },
+    {
+     "w": "seventy-six",
+     "t": 4.009416,
+     "d": 0.83725,
+     "disp": "seventy-six."
+    }
+   ],
+   "dur": 4.966666,
+   "scene": "wif",
+   "say": "Weef: five point three million in liquidity, organic score seventy-six.",
+   "start": 129.011
+  },
+  {
+   "id": "g3",
+   "who": "nar",
+   "text": "It's yellow too, for one reason: the top ten holders own thirty-one percent. Normal for a coin this size.",
+   "words": [
+    {
+     "w": "It's",
+     "t": 0.094333,
+     "d": 0.117916,
+     "disp": "It's"
+    },
+    {
+     "w": "yellow",
+     "t": 0.224041,
+     "d": 0.294791,
+     "disp": "yellow"
+    },
+    {
+     "w": "too",
+     "t": 0.518875,
+     "d": 0.377375,
+     "disp": "too,"
+    },
+    {
+     "w": "for",
+     "t": 1.155666,
+     "d": 0.200458,
+     "disp": "for"
+    },
+    {
+     "w": "one",
+     "t": 1.356125,
+     "d": 0.235833,
+     "disp": "one"
+    },
+    {
+     "w": "reason",
+     "t": 1.592,
+     "d": 0.342,
+     "disp": "reason:"
+    },
+    {
+     "w": "the",
+     "t": 2.299541,
+     "d": 0.07075,
+     "disp": "the"
+    },
+    {
+     "w": "top",
+     "t": 2.382083,
+     "d": 0.235833,
+     "disp": "top"
+    },
+    {
+     "w": "ten",
+     "t": 2.617916,
+     "d": 0.176875,
+     "disp": "ten"
+    },
+    {
+     "w": "holders",
+     "t": 2.794791,
+     "d": 0.424541,
+     "disp": "holders"
+    },
+    {
+     "w": "own",
+     "t": 3.231125,
+     "d": 0.259416,
+     "disp": "own"
+    },
+    {
+     "w": "thirty-one",
+     "t": 3.502375,
+     "d": 0.459875,
+     "disp": "thirty-one"
+    },
+    {
+     "w": "percent",
+     "t": 3.96225,
+     "d": 0.518875,
+     "disp": "percent."
+    },
+    {
+     "w": "Normal",
+     "t": 4.8585,
+     "d": 0.271208,
+     "disp": "Normal"
+    },
+    {
+     "w": "for",
+     "t": 5.129708,
+     "d": 0.129708,
+     "disp": "for"
+    },
+    {
+     "w": "a",
+     "t": 5.271208,
+     "d": 0.0471659,
+     "disp": "a"
+    },
+    {
+     "w": "coin",
+     "t": 5.318416,
+     "d": 0.271208,
+     "disp": "coin"
+    },
+    {
+     "w": "this",
+     "t": 5.589625,
+     "d": 0.153291,
+     "disp": "this"
+    },
+    {
+     "w": "size",
+     "t": 5.754708,
+     "d": 0.471708,
+     "disp": "size."
+    }
+   ],
+   "dur": 6.3464160000000005,
+   "scene": "wif",
+   "start": 134.258
+  },
+  {
+   "id": "g4",
+   "who": "nar",
+   "text": "A dollar fifty. Submit. Confirmed.",
+   "words": [
+    {
+     "w": "A",
+     "t": 0.094333,
+     "d": 0.058958,
+     "disp": "A"
+    },
+    {
+     "w": "dollar",
+     "t": 0.165083,
+     "d": 0.318416,
+     "disp": "dollar"
+    },
+    {
+     "w": "fifty",
+     "t": 0.495291,
+     "d": 0.471708,
+     "disp": "fifty."
+    },
+    {
+     "w": "Submit",
+     "t": 1.344333,
+     "d": 0.389166,
+     "disp": "Submit."
+    },
+    {
+     "w": "Confirmed",
+     "t": 2.110833,
+     "d": 0.507083,
+     "disp": "Confirmed."
+    }
+   ],
+   "dur": 2.7379160000000002,
+   "hold": 0.3,
+   "scene": "wif",
+   "start": 140.885
+  },
+  {
+   "id": "g5",
+   "who": "nar",
+   "text": "Sell it all. Submit. Confirmed. Back to USDC, every cent.",
+   "words": [
+    {
+     "w": "Sell",
+     "t": 0.094333,
+     "d": 0.176875,
+     "disp": "Sell"
+    },
+    {
+     "w": "it",
+     "t": 0.271208,
+     "d": 0.035375,
+     "disp": "it"
+    },
+    {
+     "w": "all",
+     "t": 0.318416,
+     "d": 0.21225,
+     "disp": "all."
+    },
+    {
+     "w": "Submit",
+     "t": 0.919791,
+     "d": 0.400958,
+     "disp": "Submit."
+    },
+    {
+     "w": "Confirmed",
+     "t": 1.709916,
+     "d": 0.530666,
+     "disp": "Confirmed."
+    },
+    {
+     "w": "Back",
+     "t": 2.629708,
+     "d": 0.1415,
+     "disp": "Back"
+    },
+    {
+     "w": "to",
+     "t": 2.771208,
+     "d": 0.094333,
+     "disp": "to"
+    },
+    {
+     "w": "USDC",
+     "t": 2.865583,
+     "d": 0.896208,
+     "disp": "USDC,"
+    },
+    {
+     "w": "every",
+     "t": 4.033,
+     "d": 0.224041,
+     "disp": "every"
+    },
+    {
+     "w": "cent",
+     "t": 4.268875,
+     "d": 0.400958,
+     "disp": "cent."
+    }
+   ],
+   "dur": 4.789833000000001,
+   "hold": 0.5,
+   "scene": "wif",
+   "start": 144.202
+  },
+  {
+   "id": "l1",
+   "who": "nar",
+   "text": "Same tool, same steps, two yellows. The reason made the difference.",
+   "words": [
+    {
+     "w": "Same",
+     "t": 0.094333,
+     "d": 0.283,
+     "disp": "Same"
+    },
+    {
+     "w": "tool",
+     "t": 0.377375,
+     "d": 0.377375,
+     "disp": "tool,"
+    },
+    {
+     "w": "same",
+     "t": 1.014166,
+     "d": 0.259416,
+     "disp": "same"
+    },
+    {
+     "w": "steps",
+     "t": 1.273583,
+     "d": 0.436333,
+     "disp": "steps,"
+    },
+    {
+     "w": "two",
+     "t": 1.7335,
+     "d": 0.129708,
+     "disp": "two"
+    },
+    {
+     "w": "yellows",
+     "t": 1.863208,
+     "d": 0.55425,
+     "disp": "yellows."
+    },
+    {
+     "w": "The",
+     "t": 2.794791,
+     "d": 0.07075,
+     "disp": "The"
+    },
+    {
+     "w": "reason",
+     "t": 2.877375,
+     "d": 0.448125,
+     "disp": "reason"
+    },
+    {
+     "w": "made",
+     "t": 3.490583,
+     "d": 0.35375,
+     "disp": "made"
+    },
+    {
+     "w": "the",
+     "t": 3.844333,
+     "d": 0.07075,
+     "disp": "the"
+    },
+    {
+     "w": "difference",
+     "t": 3.915083,
+     "d": 0.601416,
+     "disp": "difference."
+    }
+   ],
+   "dur": 4.636499,
+   "scene": "lesson",
+   "start": 150.222
+  },
+  {
+   "id": "l2",
+   "who": "nar",
+   "text": "A brand-new pool with zero organic trading is the classic rug setup. So I changed the rule.",
+   "words": [
+    {
+     "w": "A",
+     "t": 0.082541,
+     "d": 0.0471659,
+     "disp": "A"
+    },
+    {
+     "w": "brand-new",
+     "t": 0.129708,
+     "d": 0.4835,
+     "disp": "brand-new"
+    },
+    {
+     "w": "pool",
+     "t": 0.625,
+     "d": 0.400958,
+     "disp": "pool"
+    },
+    {
+     "w": "with",
+     "t": 1.202833,
+     "d": 0.200458,
+     "disp": "with"
+    },
+    {
+     "w": "zero",
+     "t": 1.403291,
+     "d": 0.377375,
+     "disp": "zero"
+    },
+    {
+     "w": "organic",
+     "t": 1.780666,
+     "d": 0.400916,
+     "disp": "organic"
+    },
+    {
+     "w": "trading",
+     "t": 2.181583,
+     "d": 0.448125,
+     "disp": "trading"
+    },
+    {
+     "w": "is",
+     "t": 2.971708,
+     "d": 0.082541,
+     "disp": "is"
+    },
+    {
+     "w": "the",
+     "t": 3.066041,
+     "d": 0.07075,
+     "disp": "the"
+    },
+    {
+     "w": "classic",
+     "t": 3.148583,
+     "d": 0.518875,
+     "disp": "classic"
+    },
+    {
+     "w": "rug",
+     "t": 3.67925,
+     "d": 0.294791,
+     "disp": "rug"
+    },
+    {
+     "w": "setup",
+     "t": 3.974041,
+     "d": 0.459916,
+     "disp": "setup."
+    },
+    {
+     "w": "So",
+     "t": 4.799541,
+     "d": 0.094333,
+     "disp": "So"
+    },
+    {
+     "w": "I",
+     "t": 4.893875,
+     "d": 0.07075,
+     "disp": "I"
+    },
+    {
+     "w": "changed",
+     "t": 4.976416,
+     "d": 0.330166,
+     "disp": "changed"
+    },
+    {
+     "w": "the",
+     "t": 5.306583,
+     "d": 0.0471659,
+     "disp": "the"
+    },
+    {
+     "w": "rule",
+     "t": 5.353791,
+     "d": 0.342,
+     "disp": "rule."
+    }
+   ],
+   "dur": 5.815791,
+   "scene": "lesson",
+   "start": 155.139
+  },
+  {
+   "id": "l3",
+   "who": "nar",
+   "text": "In Oddshot one point four point one, that's red, and Oddshot won't build the buy.",
+   "words": [
+    {
+     "w": "In",
+     "t": 0.082541,
+     "d": 0.082541,
+     "disp": "In"
+    },
+    {
+     "w": "Oddshot",
+     "t": 0.165083,
+     "d": 0.495291,
+     "disp": "Oddshot"
+    },
+    {
+     "w": "one",
+     "t": 0.672166,
+     "d": 0.247625,
+     "disp": "one"
+    },
+    {
+     "w": "point",
+     "t": 0.931583,
+     "d": 0.235833,
+     "disp": "point"
+    },
+    {
+     "w": "four",
+     "t": 1.167458,
+     "d": 0.247625,
+     "disp": "four"
+    },
+    {
+     "w": "point",
+     "t": 1.415083,
+     "d": 0.235833,
+     "disp": "point"
+    },
+    {
+     "w": "one",
+     "t": 1.650958,
+     "d": 0.259416,
+     "disp": "one,"
+    },
+    {
+     "w": "that's",
+     "t": 2.28775,
+     "d": 0.21225,
+     "disp": "that's"
+    },
+    {
+     "w": "red",
+     "t": 2.511791,
+     "d": 0.365583,
+     "disp": "red,"
+    },
+    {
+     "w": "and",
+     "t": 3.113208,
+     "d": 0.188666,
+     "disp": "and"
+    },
+    {
+     "w": "Oddshot",
+     "t": 3.408,
+     "d": 0.459916,
+     "disp": "Oddshot"
+    },
+    {
+     "w": "won't",
+     "t": 3.867916,
+     "d": 0.235833,
+     "disp": "won't"
+    },
+    {
+     "w": "build",
+     "t": 4.103791,
+     "d": 0.200458,
+     "disp": "build"
+    },
+    {
+     "w": "the",
+     "t": 4.316041,
+     "d": 0.058958,
+     "disp": "the"
+    },
+    {
+     "w": "buy",
+     "t": 4.386791,
+     "d": 0.365583,
+     "disp": "buy."
+    }
+   ],
+   "dur": 4.872374,
+   "hold": 0.3,
+   "scene": "lesson",
+   "start": 161.235
+  },
+  {
+   "id": "l4",
+   "who": "nar",
+   "text": "Every transaction in this video is on Solana. Check them.",
+   "words": [
+    {
+     "w": "Every",
+     "t": 0.082541,
+     "d": 0.224041,
+     "disp": "Every"
+    },
+    {
+     "w": "transaction",
+     "t": 0.318416,
+     "d": 0.672166,
+     "disp": "transaction"
+    },
+    {
+     "w": "in",
+     "t": 1.002375,
+     "d": 0.094333,
+     "disp": "in"
+    },
+    {
+     "w": "this",
+     "t": 1.096708,
+     "d": 0.188666,
+     "disp": "this"
+    },
+    {
+     "w": "video",
+     "t": 1.285375,
+     "d": 0.4835,
+     "disp": "video"
+    },
+    {
+     "w": "is",
+     "t": 2.051875,
+     "d": 0.106125,
+     "disp": "is"
+    },
+    {
+     "w": "on",
+     "t": 2.158,
+     "d": 0.106125,
+     "disp": "on"
+    },
+    {
+     "w": "Solana",
+     "t": 2.264166,
+     "d": 0.530666,
+     "disp": "Solana."
+    },
+    {
+     "w": "Check",
+     "t": 3.160375,
+     "d": 0.21225,
+     "disp": "Check"
+    },
+    {
+     "w": "them",
+     "t": 3.384416,
+     "d": 0.188666,
+     "disp": "them."
+    }
+   ],
+   "dur": 3.693082,
+   "hold": 0.5,
+   "scene": "lesson",
+   "start": 166.687
+  },
+  {
+   "id": "s1",
+   "who": "nar",
+   "text": "Oddshot is live on PayBox. Fund your wallet with MoonPay, switch on Oddshot, and ask your AI.",
+   "words": [
+    {
+     "w": "Oddshot",
+     "t": 0.094333,
+     "d": 0.330208,
+     "disp": "Oddshot"
+    },
+    {
+     "w": "is",
+     "t": 0.436333,
+     "d": 0.106125,
+     "disp": "is"
+    },
+    {
+     "w": "live",
+     "t": 0.55425,
+     "d": 0.306583,
+     "disp": "live"
+    },
+    {
+     "w": "on",
+     "t": 0.860833,
+     "d": 0.106125,
+     "disp": "on"
+    },
+    {
+     "w": "PayBox",
+     "t": 0.967,
+     "d": 0.731125,
+     "disp": "PayBox."
+    },
+    {
+     "w": "Fund",
+     "t": 2.122625,
+     "d": 0.1415,
+     "disp": "Fund"
+    },
+    {
+     "w": "your",
+     "t": 2.275958,
+     "d": 0.082541,
+     "disp": "your"
+    },
+    {
+     "w": "wallet",
+     "t": 2.3585,
+     "d": 0.247625,
+     "disp": "wallet"
+    },
+    {
+     "w": "with",
+     "t": 2.617916,
+     "d": 0.129708,
+     "disp": "with"
+    },
+    {
+     "w": "MoonPay",
+     "t": 2.747625,
+     "d": 0.601416,
+     "disp": "MoonPay,"
+    },
+    {
+     "w": "switch",
+     "t": 3.761791,
+     "d": 0.235833,
+     "disp": "switch"
+    },
+    {
+     "w": "on",
+     "t": 3.997625,
+     "d": 0.106125,
+     "disp": "on"
+    },
+    {
+     "w": "Oddshot",
+     "t": 4.115583,
+     "d": 0.55425,
+     "disp": "Oddshot,"
+    },
+    {
+     "w": "and",
+     "t": 5.047166,
+     "d": 0.106125,
+     "disp": "and"
+    },
+    {
+     "w": "ask",
+     "t": 5.153291,
+     "d": 0.259416,
+     "disp": "ask"
+    },
+    {
+     "w": "your",
+     "t": 5.424541,
+     "d": 0.106125,
+     "disp": "your"
+    },
+    {
+     "w": "AI",
+     "t": 5.530666,
+     "d": 0.41275,
+     "disp": "AI."
+    }
+   ],
+   "dur": 6.063416,
+   "scene": "start",
+   "start": 171.61
+  },
+  {
+   "id": "s2",
+   "who": "nar",
+   "text": "Read the warnings. I learned that for two dollars.",
+   "words": [
+    {
+     "w": "Read",
+     "t": 0.082541,
+     "d": 0.188666,
+     "disp": "Read"
+    },
+    {
+     "w": "the",
+     "t": 0.271208,
+     "d": 0.07075,
+     "disp": "the"
+    },
+    {
+     "w": "warnings",
+     "t": 0.353791,
+     "d": 0.613208,
+     "disp": "warnings."
+    },
+    {
+     "w": "I",
+     "t": 1.356125,
+     "d": 0.0471659,
+     "disp": "I"
+    },
+    {
+     "w": "learned",
+     "t": 1.403291,
+     "d": 0.224041,
+     "disp": "learned"
+    },
+    {
+     "w": "that",
+     "t": 1.627375,
+     "d": 0.153291,
+     "disp": "that"
+    },
+    {
+     "w": "for",
+     "t": 1.780666,
+     "d": 0.1415,
+     "disp": "for"
+    },
+    {
+     "w": "two",
+     "t": 1.933958,
+     "d": 0.200458,
+     "disp": "two"
+    },
+    {
+     "w": "dollars",
+     "t": 2.134416,
+     "d": 0.55425,
+     "disp": "dollars."
+    }
+   ],
+   "dur": 2.808666,
+   "pre": 0.3,
+   "hold": 1.2,
+   "scene": "start",
+   "start": 178.253
+  }
+ ]
+}

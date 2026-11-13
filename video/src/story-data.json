@@ -1,0 +1,152 @@
+{
+ "board": [
+  "🎯 ODDSHOT BOARD: 24h odds moves → memes",
+  "1. EARLY 🟡 $GTA6 ← \"GTA VI\" · play 49",
+  "   Crowd piling into \"Will \"Grand Theft Auto VI Launch Trailer\" get between 40 and 60 million views on week 1?\" (+29 pts → 67%). $GTA6 hasn't moved yet (-5.1% 6h). The window is open."
+ ],
+ "radar": [
+  {
+   "name": "GTA VI",
+   "signal": "BOTH CROWDS",
+   "leader": "TTWO",
+   "leaderChange1h": 0.027,
+   "leaderLiq": 165260.8148,
+   "also": "DacityCoin",
+   "crowd": {
+    "question": "Another GTA VI trailer released by November 30?",
+    "changePts": -10,
+    "probabilityPct": 16.5
+   }
+  },
+  {
+   "name": "Trump",
+   "signal": "BOTH CROWDS",
+   "leader": "TRUMP",
+   "leaderChange1h": 22.793,
+   "leaderLiq": 80654.9889,
+   "also": "YMB",
+   "crowd": {
+    "question": "Will Trump speak to Volodymyr Zelenskyy by October 31?",
+    "changePts": -10.5,
+    "probabilityPct": 20.5
+   }
+  },
+  {
+   "name": "COIL",
+   "signal": "ON-CHAIN ONLY",
+   "leader": "COIL",
+   "leaderChange1h": 392.353,
+   "leaderLiq": 44211.8546,
+   "also": null,
+   "crowd": null
+  }
+ ],
+ "red": "Seatbelt engaged: $ANTHROPIC is RED. Top 10 holders own 39% of supply.; Mint Authority still enabled; Permanent Control Enabled",
+ "check": {
+  "holderCount": 17758,
+  "lpLockedPct": 60.3,
+  "organicScore": 66,
+  "reasons": [
+   "Serial deployer: the dev has launched 8483 tokens."
+  ],
+  "rugcheckScore": 1,
+  "sizeFor1pctUsd": 1097,
+  "sources": [
+   "DexScreener",
+   "RugCheck",
+   "Jupiter"
+  ],
+  "token": {
+   "ageHours": 1882.3,
+   "buys1h": 3,
+   "change1hPct": -3.31,
+   "change24hPct": 31.5,
+   "change6hPct": -6.4,
+   "liquidityUsd": 219311.49,
+   "marketCapUsd": 3016212,
+   "mint": "4kjruqGHDsSqkMdFfCjV7Vb62HPFhtXyWc2t6JpQzDnz",
+   "name": "GTA VI",
+   "priceUsd": 0.003016,
+   "sells1h": 3,
+   "symbol": "GTA6",
+   "url": "https://dexscreener.com/solana/fdamuzyiea7cq1vniqcbhuhpfcmmcjfga6dwqq1hhld2",
+   "volume24hUsd": 73753.5
+  },
+  "verdict": "YELLOW"
+ },
+ "exit": "🧭 Exit plan (from this token's own volatility): take 50% at +46% ($0.00452), the rest at +92% ($0.00595); bail below -23% ($0.00239). When a level hits, ape side \"sell\" with percent 50 or 100.",
+ "tx": "6GSfKKTcMDEK3ksCEiJQnsvMidkn4TbZrfVPHBygPhTcAYz1tG69P9DDC5Jmhg1STSqvNUdf53cLPWpn5ESCoxq",
+ "txDetail": {
+  "sol": 0.01,
+  "got": 676.03,
+  "symbol": "GTA6",
+  "wallet": "14dwppGv5KgUztwnoKydqRA3ruEGRzE1DgjtN7sBNuDX"
+ },
+ "receiptGta6": {
+  "mint": "4kjruqGHDsSqkMdFfCjV7Vb62HPFhtXyWc2t6JpQzDnz",
+  "symbol": "GTA6",
+  "calledAt": "2026-10-16T21:44Z",
+  "priceAtCall": 0.00120758,
+  "priceNow": 0.00307066,
+  "changePct": 154.3,
+  "peakPct": 330.6,
+  "troughPct": -13.8,
+  "grade": "HIT",
+  "odds": {
+   "question": "Will \"Grand Theft Auto VI Launch Trailer\" get between 40 and 60 million views on week 1?",
+   "atCallPct": 67,
+   "nowPct": 0.1,
+   "changePts": -66.9,
+   "resolved": true
+  },
+  "summary": "HIT: $GTA6 +154.3% since the call (2026-10-16T21:44Z), peak +330.6%, worst -13.8%. Odds on \"Will \"Grand Theft Auto VI Launch Trailer\" get between 40 and 60 million views on week 1?\" went 67% → 0.1% (resolved)."
+ },
+ "receiptAnt": {
+  "mint": "7ypCq2CJ4fnbtS3z2B1W1UT2he5E3u7Md6Gy1ri7uGrQ",
+  "symbol": "ANT",
+  "calledAt": "2026-10-23T23:52Z",
+  "priceAtCall": 0.000737878,
+  "priceNow": 0.000709556,
+  "changePct": -3.8,
+  "peakPct": 0.4,
+  "troughPct": -5.2,
+  "grade": "FLAT",
+  "odds": {
+   "question": "Will Anthropic's public ticker be $ANT?",
+   "atCallPct": 72,
+   "nowPct": 58.6,
+   "changePts": -13.4,
+   "resolved": false
+  },
+  "summary": "FLAT: $ANT -3.8% since the call (2026-10-23T23:52Z), peak +0.4%, worst -5.2%. Odds on \"Will Anthropic's public ticker be $ANT?\" went 72% → 58.6%."
+ },
+ "lag": {
+  "from": "2026-10-23T00:00Z",
+  "jumpPts": 39.6,
+  "meme1hPct": 1,
+  "meme24hPct": 15.1,
+  "meme6hPct": 13.3,
+  "memeDuringPct": -5.6,
+  "oddsAfter": 61.4,
+  "oddsBefore": 21.9,
+  "question": "Will Anthropic's public ticker be $ANT?",
+  "summary": "MEMES FOLLOWED: odds on \"Will Anthropic's public ticker be $ANT?\" swung +39.6 pts (21.9% → 61.4%) between 2026-10-23T00:00Z and 2026-10-23T07:00Z. $ANT moved -5.6% during the swing, then +1.0% after 1h, +13.3% after 6h, +15.1% after 24h.",
+  "symbol": "ANT",
+  "to": "2026-10-23T07:00Z",
+  "verdict": "MEMES FOLLOWED"
+ },
+ "lagOthers": [
+  {
+   "symbol": "TTWO",
+   "question": "Another GTA VI trailer released by November 30?",
+   "verdict": "NO REACTION",
+   "jumpPts": -43.5
+  },
+  {
+   "symbol": "GTA6",
+   "question": "Will \"Grand Theft Auto VI Launch Trailer\" get between 40 and 60 million views on week 1?",
+   "verdict": "NO REACTION",
+   "jumpPts": -44.5
+  }
+ ]
+}
