@@ -1,10 +1,15 @@
 import { AsyncLocalStorage } from "node:async_hooks";
 import { McpServer } from "@modelcontextprotocol/server";
-import { serveStdio } from "@modelcontextprotocol/server/stdio";
 import * as z from "zod/v4";
-import { atomicAmount, proposeSolana, solanaOutputSchema } from "./paybox.js";
+import { atomicAmount, proposeSolana, proposeX402, solanaOutputSchema, x402OutputSchema } from "./paybox.js";
 
 const PROTOCOL_VERSION = "2026-07-28";
+/** Oddshot Pro's server (pro/). Set at build time once it is hosted; while it is empty the pro_board tool isn't offered. */
+const PRO_URL = (process.env.ODDSHOT_PRO_URL || "").replace(/\/+$/, "");
+/** What one Pro board costs, in USDC's 6-decimal units: $0.05. The server's price must not be higher, or PayBox refuses to pay. */
+const PRO_PRICE_ATOMIC = "50000";
+/** One line under the free board pointing at Pro, only in builds that have a Pro server. */
+const PRO_HINT = PRO_URL ? `\n💎 Deeper: pro_board ($0.05) is this board rebuilt every minute on Oddshot's server, with more stories and how long each move has been watched. Every Pro call is graded in public: ${PRO_URL}` : "";
 // Keyless Jupiter by default. Set JUP_API_HOST=api.jup.ag plus a brokered x-api-key header for a dedicated quota.
 const JUP = `https://${process.env.JUP_API_HOST || "lite-api.jup.ag"}`;
 const USDC = "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v";
@@ -115,8 +120,8 @@ const beltSchema = z.object({
   sellPercent: z.number(), sellAmount: z.string().nullable(), cancelOrders: z.array(z.string()), reasons: z.array(z.string()), story: otherMarketSchema.nullable(),
 });
 
-type Token = z.infer<typeof tokenSchema>;
-type Mover = z.infer<typeof moverSchema>;
+export type Token = z.infer<typeof tokenSchema>;
+export type Mover = z.infer<typeof moverSchema>;
 type Venue = z.infer<typeof venueSchema>;
 type OtherMarket = z.infer<typeof otherMarketSchema>;
 type Verdict = z.infer<typeof verdictSchema>;
@@ -174,18 +179,18 @@ const n = (v: unknown): number | null => {
 };
 const round = (v: number | null, d = 2): number | null => (v === null ? null : Math.round(v * 10 ** d) / 10 ** d);
 const clamp = (v: number, lo: number, hi: number) => Math.min(hi, Math.max(lo, v));
-const usd = (v: number | null) => (v === null ? "?" : v >= 1e6 ? `$${(v / 1e6).toFixed(1)}M` : v >= 1e3 ? `$${(v / 1e3).toFixed(1)}K` : `$${v.toFixed(v < 10 ? 2 : 0)}`);
+export const usd = (v: number | null) => (v === null ? "?" : v >= 1e6 ? `$${(v / 1e6).toFixed(1)}M` : v >= 1e3 ? `$${(v / 1e3).toFixed(1)}K` : `$${v.toFixed(v < 10 ? 2 : 0)}`);
 /** Significant digits without exponent notation: big prices and token amounts read as 84,321 or 5,000,000, not 8.43e+4,
  *  and a rugged coin's price as 0.000000200, not 2.00e-7. */
-const px = (v: number, d = 4) => (Math.abs(v) >= 10 ** (d - 1) ? Math.round(v).toLocaleString("en-US")
+export const px = (v: number, d = 4) => (Math.abs(v) >= 10 ** (d - 1) ? Math.round(v).toLocaleString("en-US")
   : v !== 0 && Math.abs(v) < 1e-6 ? v.toFixed(Math.min(100, d - 1 - Math.floor(Math.log10(Math.abs(v))))) : v.toPrecision(d));
 /** `p`, or `fallback()` when `p` hasn't settled within `ms`: a slow extra check never costs a whole tool call, and the fallback can
  *  report whatever was read by then. */
 const within = <T>(p: Promise<T>, ms: number, fallback: () => T): Promise<T> =>
   Promise.race([p, new Promise<T>((r) => setTimeout(() => r(fallback()), ms).unref())]);
 /** Hours and minutes of a UTC time, e.g. 10:11. */
-const hhmm = (ms: number) => new Date(ms).toISOString().slice(11, 16);
-const pct = (v: number | null) => (v === null ? "?" : `${v > 0 ? "+" : ""}${v.toFixed(1)}%`);
+export const hhmm = (ms: number) => new Date(ms).toISOString().slice(11, 16);
+export const pct = (v: number | null) => (v === null ? "?" : `${v > 0 ? "+" : ""}${v.toFixed(1)}%`);
 const short = (a: string) => `${a.slice(0, 4)}…${a.slice(-4)}`;
 const list = (s: unknown): string[] => {
   try { const v = typeof s === "string" ? JSON.parse(s) : s; return Array.isArray(v) ? v.map(String) : []; } catch { return []; }
@@ -307,9 +312,9 @@ const SECTOR_ALIASES: Record<string, string> = { stock: "stocks", stonks: "stock
 /** Lowercase letters and digits in any script with accents folded, everything else one space: "Beyoncé" reads as "beyonce". */
 const norm = (s: string) => s.normalize("NFKD").replace(/\p{M}+/gu, "").toLowerCase().replace(/[^\p{L}\p{N}]+/gu, " ").trim();
 /** A sector preset matches on any of its words; a free keyword needs every one of its words ("Taylor Swift", not just "swift"). */
-type Focus = { label: string; words: string[]; every: boolean };
+export type Focus = { label: string; words: string[]; every: boolean };
 /** A focus as a sector preset ("tokenized stocks" reads as stocks, "US election" as politics) or as a free keyword such as "Tesla". */
-function focusOf(focus: string): Focus {
+export function focusOf(focus: string): Focus {
   const g = norm(focus);
   const has = (k: string) => ` ${g} `.includes(` ${k} `);
   const alias = Object.keys(SECTOR_ALIASES).find(has);
@@ -321,7 +326,7 @@ function focusOf(focus: string): Focus {
   const words = all.filter((w) => !STOP.has(w));
   return { label: `"${focus.trim()}"`, words: words.length ? words : all, every: true };
 }
-const inFocus = (f: Focus, ...texts: (string | null | undefined)[]) => {
+export const inFocus = (f: Focus, ...texts: (string | null | undefined)[]) => {
   const hay = ` ${norm(texts.filter(Boolean).join(" "))} `;
   const hit = (w: string) => hay.includes(` ${norm(w)} `);
   return f.every ? f.words.every(hit) : f.words.some(hit);
@@ -438,7 +443,7 @@ function fromJupiter(j: any): Token {
 }
 
 /** Deepest Solana pair per base token, skipping SOL/USDC/USDT as the base. */
-function bestPairs(pairs: any[]): Token[] {
+export function bestPairs(pairs: any[]): Token[] {
   const byMint = new Map<string, any>();
   for (const p of pairs ?? []) {
     const mint = p?.baseToken?.address;
@@ -663,7 +668,9 @@ function fromGecko(a: any, base: any): Token {
 
 /** Trending Solana pools (deepest pool per token), with the quote token kept: the pairing often names the narrative. */
 /** Tokenized shares ("SpaceX - Backpack Securities", xStocks) are securities, not memes, and restricted in the US: never surfaced. */
-const SECURITY = /\b(securities|xstocks?|tokenized)\b/i;
+const SECURITY = /\b(securities|xstocks?|prestocks?|tokenized)\b/i;
+/** Jupiter's tags for issuer-backed shares and other real-world assets: a backstop for a securities issuer whose names SECURITY misses. */
+const securityTagged = (j: any) => Array.isArray(j?.tags) && j.tags.some((t: unknown) => /^(rwa|xstocks|prestocks|equities)$/i.test(String(t)));
 
 async function geckoTrending(duration: "5m" | "1h" | "6h" | "24h", pages: number, ms = 3500): Promise<Hot[]> {
   const res = await Promise.all(Array.from({ length: pages }, (_, i) =>
@@ -1231,7 +1238,8 @@ async function scoreGroups(groups: Group[], limit: number, ms = 3500): Promise<{
   const jup = await jupTokens([...new Set(pool.map((t) => t.mint))].slice(0, 90), ms);
   const shaped = groups.map((g) => {
     const { og, role, cluster } = clusterOf(g.all, jup);
-    const ordered = [...g.cands].sort((a, b) => ROLE_RANK[role(b.t)] + b.m - (ROLE_RANK[role(a.t)] + a.m)).slice(0, limit);
+    const ordered = [...g.cands].filter((c) => !securityTagged(jup.get(c.t.mint)))
+      .sort((a, b) => ROLE_RANK[role(b.t)] + b.m - (ROLE_RANK[role(a.t)] + a.m)).slice(0, limit);
     return { og, role, cluster, ordered };
   });
   const mints = [...new Set(shaped.flatMap((x) => x.ordered.map((c) => c.t.mint)))];
@@ -1282,6 +1290,80 @@ function toPlay(narrative: string, mover: Mover, candidates: Scored[], window: "
     thesis: token ? `${crowd} $${token.symbol} ${memeLine[timing]}${swarm}${late}`
       : `${crowd} ${blocked ? `Every "${narrative}" meme failed the seatbelt.` : `No liquid "${mover.narrativeKeywords[0] ?? narrative}" meme yet.`}`,
   };
+}
+
+// ---------- The board ----------
+
+export type Play = z.infer<typeof playSchema>;
+/** How hard a board build digs. The free tool's limits fit PayBox's ~5 s call budget; the Pro server has no such budget and digs deeper. */
+export type BoardDepth = { movers: number; focusMovers: number; keywords: number; scoreStories: number; picks: number; moversMs: number; searchMs: number; scoreMs: number };
+export const FREE_DEPTH: BoardDepth = { movers: 20, focusMovers: 60, keywords: 16, scoreStories: 6, picks: 2, moversMs: 3500, searchMs: 2500, scoreMs: 2500 };
+export type BoardInput = { window: "1h" | "24h"; stories: number; minLiquidityUsd: number; minVolume24hUsd: number; focus?: string | undefined };
+
+/** Odds moves → meme plays, best first. Also returns every mover it read, so a caller that watches the market can remember them. */
+export async function buildBoard({ window, stories, minLiquidityUsd, minVolume24hUsd, focus }: BoardInput, depth: BoardDepth = FREE_DEPTH)
+  : Promise<{ focus: string | null; plays: Play[]; movers: Mover[] }> {
+  // Each story gets up to two keywords nobody else claimed; every keyword is searched in parallel.
+  const used = new Set<string>();
+  const picked: { keys: string[]; mover: Mover }[] = [];
+  const sector = focus ? focusOf(focus) : null;
+  const [all, trend] = await Promise.all([fetchMovers(window, sector ? depth.focusMovers : depth.movers, 5000, depth.moversMs), geckoTrending("1h", 1, 3000).catch(() => [] as Hot[])]);
+  const movers = sector ? all.filter((m) => inFocus(sector, m.question, ...m.narrativeKeywords)) : all;
+  const hot = new Set(trend.map((h) => h.t.mint));
+  // A mover that shares a subject with a story already picked is that story again from another market ("Likud wins the most seats",
+  // "Which bloc wins", "Netanyahu gets the mandate" are all Israel's election): the same memes ride it, so it would only take a slot
+  // from a different story. Subjects match whole, or as one word of a longer one ("Benjamin Netanyahu" and "Netanyahu").
+  const topics = new Set<string>();
+  const sameTopic = (k: string) => [...topics].some((u) => u === k || u.split(" ").includes(k) || k.split(" ").includes(u));
+  for (const mover of movers) {
+    const words = mover.narrativeKeywords.map((k) => k.toLowerCase());
+    if (words.some(sameTopic)) continue;
+    const keys = mover.narrativeKeywords.filter((k) => !used.has(k.toLowerCase())).slice(0, 2);
+    if (!keys.length) continue;
+    keys.forEach((k) => used.add(k.toLowerCase()));
+    words.forEach((w) => topics.add(w));
+    picked.push({ keys, mover });
+    if (used.size >= depth.keywords) break;
+  }
+  const results = new Map(await Promise.all([...new Set(picked.flatMap((p) => p.keys))].map(async (k) =>
+    [k, await searchNarrative(k, minLiquidityUsd, minVolume24hUsd, depth.searchMs).catch((): Group => ({ cands: [], all: [] }))] as const)));
+  const found = picked.map(({ keys, mover }) => {
+    const seen = new Set<string>();
+    const seenAll = new Set<string>();
+    const cands = keys.flatMap((k) => (results.get(k)?.cands ?? []).map((c) => ({ ...c, k })))
+      .sort((a, b) => b.m - a.m)
+      .filter((c) => !seen.has(c.t.mint) && seen.add(c.t.mint));
+    const all = keys.flatMap((k) => results.get(k)?.all ?? []).filter((t) => !seenAll.has(t.mint) && seenAll.add(t.mint));
+    const narrative = cands[0]?.k ?? keys[0]!;
+    return { narrative, keys: [narrative, ...keys.filter((k) => k !== narrative)], mover, group: { cands, all } };
+  });
+  // Cluster and safety-check the meme-carrying stories while the other venue is checked for each; keep the best plays.
+  // Stories without memes fill any gap.
+  const withMemes = found.filter((f) => f.group.cands.length).slice(0, depth.scoreStories);
+  const [scored, others] = await Promise.all([
+    scoreGroups(withMemes.map((f) => f.group), depth.picks, depth.scoreMs),
+    Promise.all(withMemes.map((f) => otherMarket(f.mover, f.keys, all))),
+  ]);
+  // A story searched under two keywords is labelled by the keyword that found the coin it plays, not the one with the loudest coin:
+  // "Will Jensen Huang talk to Trump?" playing $TRUMP reads "Trump", never "Jensen Huang". (toPlay plays the first pick that is
+  // neither RED nor a copycat.)
+  const labelOf = (f: (typeof withMemes)[number], picks: Scored[]) => {
+    const pick = picks.find((t) => t.verdict !== "RED" && t.role !== "COPYCAT");
+    return (pick && f.group.cands.find((c) => c.t.mint === pick.mint)?.k) ?? f.narrative;
+  };
+  const plays = [
+    ...withMemes.map((f, i) => toPlay(labelOf(f, scored[i]?.picks ?? []), f.mover, scored[i]?.picks ?? [], window, scored[i]?.cluster ?? clusterOf(f.group.all, new Map()).cluster, hot, others[i]))
+      .sort((a, b) => b.playScore - a.playScore),
+    ...found.filter((f) => !f.group.cands.length).map((f) => toPlay(f.narrative, f.mover, [], window, clusterOf(f.group.all, new Map()).cluster, hot)),
+  ].slice(0, stories);
+  return { focus: sector?.label ?? null, plays, movers: all };
+}
+
+/** The board's plays as numbered lines; `extra` adds lines under a play (Pro's watch notes). */
+export function boardLines(plays: Play[], focus: string | null, extra: (p: Play) => string = () => ""): string {
+  return plays.length
+    ? plays.map((p, i) => `${i + 1}. ${p.timing}${p.token ? ` ${light(p.token.verdict)} $${p.token.symbol}${p.cluster.size > 1 ? ` [${p.token.role} of ${p.cluster.size}]` : ""} ← "${p.narrative}" · play ${p.playScore}${p.otherMarket ? " · ✅ BOTH MARKETS" : ""}${p.trending ? " · 🔥 trending on-chain" : ""}` : ""}\n   ${p.thesis}${p.token ? `\n   mint ${p.token.mint}` : ""}${extra(p)}`).join("\n")
+    : `No qualifying odds moves${focus ? ` in ${focus}` : ""} right now.`;
 }
 
 // ---------- Macro: what the odds say for majors ----------
@@ -1644,9 +1726,9 @@ function belt(p: Position, read: StoryRead, mode: z.infer<typeof modeSchema>, ti
 
 // ---------- Server ----------
 
-function createServer() {
+export function createServer() {
   const server = new McpServer(
-    { name: "oddshot", version: "1.6.3" },
+    { name: "oddshot", version: "1.7.0" },
     { supportedProtocolVersions: [PROTOCOL_VERSION] },
   );
   const read = { readOnlyHint: true, destructiveHint: false, idempotentHint: false, openWorldHint: true };
@@ -1655,7 +1737,7 @@ function createServer() {
   // PayBox also checks error results against the declared output schema, so each research tool's schema allows an `error`
   // field (every other field becomes optional). The tools that propose a transaction keep PayBox's exact proposal schema; their
   // descriptions say where to find the reason when one fails.
-  const proposals = new Set(["ape", "take_profit", "cancel_order"]);
+  const proposals = new Set(["ape", "take_profit", "cancel_order", "pro_board"]);
   const register = server.registerTool.bind(server);
   server.registerTool = ((name: string, config: any, handler: (...a: any[]) => any) =>
     register(name, proposals.has(name) || !config.outputSchema ? config
@@ -1691,58 +1773,10 @@ function createServer() {
       annotations: read,
     },
     async ({ window, stories, minLiquidityUsd, minVolume24hUsd, focus }) => {
-      // Each story gets up to two keywords nobody else claimed; every keyword is searched in parallel.
-      const used = new Set<string>();
-      const picked: { keys: string[]; mover: Mover }[] = [];
-      const sector = focus ? focusOf(focus) : null;
-      const [all, trend] = await Promise.all([fetchMovers(window, sector ? 60 : 20, 5000, 3500), geckoTrending("1h", 1, 3000).catch(() => [] as Hot[])]);
-      const movers = sector ? all.filter((m) => inFocus(sector, m.question, ...m.narrativeKeywords)) : all;
-      const hot = new Set(trend.map((h) => h.t.mint));
-      // A mover that shares a subject with a story already picked is that story again from another market ("Likud wins the most seats",
-      // "Which bloc wins", "Netanyahu gets the mandate" are all Israel's election): the same memes ride it, so it would only take a slot
-      // from a different story. Subjects match whole, or as one word of a longer one ("Benjamin Netanyahu" and "Netanyahu").
-      const topics = new Set<string>();
-      const sameTopic = (k: string) => [...topics].some((u) => u === k || u.split(" ").includes(k) || k.split(" ").includes(u));
-      for (const mover of movers) {
-        const words = mover.narrativeKeywords.map((k) => k.toLowerCase());
-        if (words.some(sameTopic)) continue;
-        const keys = mover.narrativeKeywords.filter((k) => !used.has(k.toLowerCase())).slice(0, 2);
-        if (!keys.length) continue;
-        keys.forEach((k) => used.add(k.toLowerCase()));
-        words.forEach((w) => topics.add(w));
-        picked.push({ keys, mover });
-        if (used.size >= 16) break;
-      }
-      const results = new Map(await Promise.all([...new Set(picked.flatMap((p) => p.keys))].map(async (k) =>
-        [k, await searchNarrative(k, minLiquidityUsd, minVolume24hUsd, 2500).catch((): Group => ({ cands: [], all: [] }))] as const)));
-      const found = picked.map(({ keys, mover }) => {
-        const seen = new Set<string>();
-        const seenAll = new Set<string>();
-        const cands = keys.flatMap((k) => (results.get(k)?.cands ?? []).map((c) => ({ ...c, k })))
-          .sort((a, b) => b.m - a.m)
-          .filter((c) => !seen.has(c.t.mint) && seen.add(c.t.mint));
-        const all = keys.flatMap((k) => results.get(k)?.all ?? []).filter((t) => !seenAll.has(t.mint) && seenAll.add(t.mint));
-        const narrative = cands[0]?.k ?? keys[0]!;
-        return { narrative, keys: [narrative, ...keys.filter((k) => k !== narrative)], mover, group: { cands, all } };
-      });
-      // Cluster and safety-check up to six meme-carrying stories while the other venue is checked for each; keep the best plays.
-      // Stories without memes fill any gap.
-      const withMemes = found.filter((f) => f.group.cands.length).slice(0, 6);
-      const [scored, others] = await Promise.all([
-        scoreGroups(withMemes.map((f) => f.group), 2, 2500),
-        Promise.all(withMemes.map((f) => otherMarket(f.mover, f.keys, all))),
-      ]);
-      const plays = [
-        ...withMemes.map((f, i) => toPlay(f.narrative, f.mover, scored[i]?.picks ?? [], window, scored[i]?.cluster ?? clusterOf(f.group.all, new Map()).cluster, hot, others[i]))
-          .sort((a, b) => b.playScore - a.playScore),
-        ...found.filter((f) => !f.group.cands.length).map((f) => toPlay(f.narrative, f.mover, [], window, clusterOf(f.group.all, new Map()).cluster, hot)),
-      ].slice(0, stories);
-      const body = plays.length
-        ? plays.map((p, i) => `${i + 1}. ${p.timing}${p.token ? ` ${light(p.token.verdict)} $${p.token.symbol}${p.cluster.size > 1 ? ` [${p.token.role} of ${p.cluster.size}]` : ""} ← "${p.narrative}" · play ${p.playScore}${p.otherMarket ? " · ✅ BOTH MARKETS" : ""}${p.trending ? " · 🔥 trending on-chain" : ""}` : ""}\n   ${p.thesis}${p.token ? `\n   mint ${p.token.mint}` : ""}`).join("\n")
-        : `No qualifying odds moves${sector ? ` in ${sector.label}` : ""} right now.`;
+      const { focus: label, plays } = await buildBoard({ window, stories, minLiquidityUsd, minVolume24hUsd, focus });
       return {
-        content: text(`🎯 ODDSHOT BOARD: ${window} odds moves → memes${sector ? ` · focus ${sector.label}` : ""}\n${body}${plays.some((p) => p.token) ? "\nNext: check_token for the full seatbelt report, or ape with a mint and an amount. PayBox asks you to approve." : ""}`),
-        structuredContent: { window, focus: sector?.label ?? null, plays },
+        content: text(`🎯 ODDSHOT BOARD: ${window} odds moves → memes${label ? ` · focus ${label}` : ""}\n${boardLines(plays, label)}${plays.some((p) => p.token) ? "\nNext: check_token for the full seatbelt report, or ape with a mint and an amount. PayBox asks you to approve." : ""}${PRO_HINT}`),
+        structuredContent: { window, focus: label, plays },
       };
     },
   );
@@ -2391,7 +2425,9 @@ function createServer() {
       const change = (pNow / p0 - 1) * 100;
       const peak = Math.max((Math.max(...after.map((c) => c[2]!)) / p0 - 1) * 100, change);
       const trough = Math.min((Math.min(...after.map((c) => c[3]!)) / p0 - 1) * 100, change);
-      const grade = change >= 10 ? "HIT" as const : change <= -10 ? "MISS" as const : "FLAT" as const;
+      // Graded on the change as shown (one decimal), so a call printed as -10.0% is a MISS, not FLAT by a float hair.
+      const shown = round(change, 1)!;
+      const grade = shown >= 10 ? "HIT" as const : shown <= -10 ? "MISS" as const : "FLAT" as const;
       const symbol = pair.baseToken?.symbol ? sym(pair.baseToken.symbol) : short(mint);
       const when = new Date(atS * 1000).toISOString().replace(/:\d{2}\.\d{3}Z$/, "Z");
       const summary = `${grade}: $${symbol} ${pct(change)} since the call (${when}), peak ${pct(peak)}, worst ${pct(trough)}.` +
@@ -2962,7 +2998,23 @@ function createServer() {
     },
   );
 
+  if (PRO_URL) server.registerTool(
+    "pro_board",
+    {
+      title: "Oddshot Pro board ($0.05)",
+      description: "Paid: 5 cents of USDC per call, paid over x402 on Solana through PayBox. The Pro board is the Oddshot board rebuilt every minute by Oddshot's own server with no time limit, so it covers more stories and coins than oddshot_play, and each play says how long the server has watched that odds move and what the meme did since it first saw it. Every Pro call is graded in public 24 hours later, misses included. If the board can't be served (still building, or nothing in the focus) the payment is cancelled and nothing is charged. After the user approves, poll get_request with this call's request_id until it is terminal, then show the paid response's `text` exactly as received; if no body came back, say so plainly. PayBox applies the wallet's approval rules before anything is paid.",
+      inputSchema: z.object({
+        window: z.enum(["1h", "24h"]).default("24h").describe("Look-back window for the odds change."),
+        focus: FOCUS,
+      }).strict(),
+      outputSchema: x402OutputSchema,
+      annotations: { readOnlyHint: false, destructiveHint: false, idempotentHint: false, openWorldHint: true },
+    },
+    async ({ window, focus }) => {
+      const query = new URLSearchParams({ window, ...(focus ? { focus } : {}) });
+      return proposeX402({ chain: "solana:mainnet", url: `${PRO_URL}/pro/board?${query}`, maxAmount: PRO_PRICE_ATOMIC, method: "GET" });
+    },
+  );
+
   return server;
 }
-
-serveStdio(createServer, { legacy: "reject" });

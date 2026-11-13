@@ -1,5 +1,6 @@
 packages:
   - "."
+  - "pro"
 
 allowBuilds:
   esbuild: true

@@ -1,0 +1,5 @@
+# Railway uploads this folder as the build context (pnpm -C pro deploy). The image needs only the Dockerfile and the bundle.
+*
+!Dockerfile
+!dist/
+!dist/server.mjs

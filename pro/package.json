@@ -1,0 +1,24 @@
+{
+  "name": "oddshot-pro",
+  "version": "0.1.0",
+  "license": "MIT",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": "24.x"
+  },
+  "scripts": {
+    "dev": "tsx src/server.ts",
+    "build": "esbuild src/server.ts --bundle --platform=node --format=esm --target=node24 --outfile=dist/server.mjs",
+    "typecheck": "tsc --noEmit",
+    "test": "node --import tsx --test test/*.test.ts",
+    "deploy": "pnpm build && railway up --no-gitignore --service oddshot-pro --ci"
+  },
+  "dependencies": {
+    "@hono/node-server": "2.1.5",
+    "@x402/core": "2.29.0",
+    "@x402/hono": "2.29.0",
+    "@x402/svm": "2.29.0",
+    "hono": "4.13.14"
+  }
+}
